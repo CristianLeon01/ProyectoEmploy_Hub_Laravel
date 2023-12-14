@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Phudu&family=Sedgwick+Ave+Display&family=Ubuntu+Condensed&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #9DB4C0;
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.contenedor h1 {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0px;
+}
+
+.contenedor h2 {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.contenedor h3 {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.contenedor h4 {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.contenedor h5 {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.contenedor {
+  width: 92vw;
+  height: 500px;
+  background-color: rgb(210, 214, 213);
+  border: 2px solid #9DB4C0;
+  margin: 30px;
+  padding: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.contenedor p {
+  font-size: 12px;
+  padding: 10px;
+}
+
+.contenedor img {
+  right: 0;
+  width: 80px;
+  height: 70px;
+}
+
+/* empieza el codigo responsive */
+
+@media screen and (max-width: 600px) {
+  /* responsive del header  */
+
+  header {
+    width: 100%;
+    height: 25vw;
+  }
+
+  .interior {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    height: 25vw;
+  }
+
+  .logo img {
+    position: relative;
+    margin-left: 0;
+    margin-top: 5px;
+    left: 36vw;
+  }
+
+  .navegacion {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    padding: 10px 0;
+    top: 70vw;
+    right: 44vw;
+  }
+
+  .menu {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 59vw;
+    height: 87vw;
+    background-color: #9DB4C0;
+    position: relative;
+    bottom: 14.2vw;
+    display: none;
+    bottom: 13.9vw;
+    left: 6.7vw;
+  }
+
+  .sobreNosotros {
+    position: relative;
+    left: 10vw;
+  }
+
+  .terminos {
+    position: relative;
+    left: -2vw;
+  }
+
+  .menu li {
+    margin-bottom: 10px;
+  }
+
+  .menu li a {
+    padding-bottom: 8px;
+  }
+
+  .sub-Menu {
+    position: absolute;
+    left: 46vw;
+    min-width: 54vw;
+    background-color: #9DB4C0;
+    z-index: 2;
+  }
+
+  .menu:hover .sub-Menu {
+    display: none;
+  }
+
+  .sub-Menu li a {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5px;
+  }
+
+  .Busqueda {
+    height: auto;
+  }
+
+  .search {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+
+  .Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    right: 2vw;
+  }
+
+  .Login a {
+    padding: 5px 10px 5px 10px;
+  }
+
+  .interior label {
+    display: initial;
+    position: relative;
+    right: 18vw;
+  }
+
+  #icon-menu:checked ~ .navegacion .menu {
+    display: initial;
+  }
+
+/* termina el responsive del header  */
+
+/* Aqui empieza el estilo responsive del contenedor Terminos y condiciones */
+
+  .contenedor {
+    width: 90vw;
+    height: auto;
+    margin: 10px;
+    padding: 5px;
+  }
+
+  .contenedor h1 {
+    font-size: 20px;
+  }
+
+  .contenedor h2,
+  .contenedor h3,
+  .contenedor h4,
+  .contenedor h5 {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .contenedor img {
+    width: 60px;
+    height: 50px;
+  }
+}
+
+/* Aqui termina estilo terminos y condiciones */

@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Phudu&family=Sedgwick+Ave+Display&family=Ubuntu+Condensed&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #fff;
+    font-family: "Ubuntu Condensed", sans-serif;
+}
+
+/* Aqui empieza todo el estilo del header */
+
+header {
+    width: 100%;
+    background-color: #dcd020;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.interior {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 90px;
+    width: 110px;
+    margin-left: 20px;
+    transition: transform 0.3s;
+    min-width: 100px;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.navegacion {
+    display: flex;
+    font-size: 18px;
+    width: 800px;
+    height: 75%;
+    position: relative;
+    align-items: center;
+    margin: 0 auto;
+    right: 90px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-left: 60px;
+}
+
+.sobreNosotros {
+    width: 150%;
+}
+
+.terminos {
+    width: 200%;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.menu li:hover {
+    background-color: #8e8e8e;
+    border-radius: 10px;
+}
+
+.sub-Menu {
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: #dcd020;
+    min-width: 300px;
+}
+
+.menu li:hover .sub-Menu {
+    display: block;
+}
+
+.sub-Menu li:hover {
+    background-color: #8e8e8e;
+    border-radius: 10px;
+}
+
+.sub-Menu li a {
+    display: block;
+    color: black;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+}
+
+.Login {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    min-width: 100px;
+}
+
+.Login a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    background-color: transparent;
+    color: #333;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Login a:hover {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+#icon-menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 30px;
+}
+
+.interior label {
+    cursor: pointer;
+    display: none;
+}
+
+/* Aqui termina todo el estilo del header */
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 130px;
+    min-width: 300px;
+}
+
+span {
+    color: lightsteelblue;
+}
+
+.Busqueda {
+    width: 100%;
+    height: 500%;
+    min-width: 300px;
+    background-color: rgb(255, 255, 255);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search {
+    width: 50%;
+    height: 80%;
+    min-width: 300px;
+    margin: 20px auto;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 75px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 18px;
+    color: black;
+}
+
+::placeholder {
+    color: black;
+}
+
+.search button img {
+    width: 40%;
+    min-width: 30px;
+}
+
+.search button {
+    border: 0;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background-color: #dcd020;
+    cursor: pointer;
+}
+
+.barra {
+    width: 100%;
+    height: 9%;
+    min-width: 300px;
+    position: fixed;
+    transition: -4s all;
+    z-index: 1;
+}
+
+/* Aqui empieza todo el estilo del footer */
+
+footer {
+    width: 100vw;
+    height: 40vh;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    border: 2px solid rgb(220, 208, 32);
+    margin-top: 90px;
+}
+
+.redes-sociales,
+.menu-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.icono-redesSociales {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 1px solid white;
+    background-image: url(../Img/Facebook.png);
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    margin: 2rem;
+}
+
+.icono-redesSociales:hover {
+    background-color: black;
+    filter: invert(1);
+}
+
+.icono-redesSociales:nth-of-type(2) {
+    background-image: url(../Img/Instragram.png);
+}
+
+.icono-redesSociales:nth-of-type(3) {
+    background-image: url(../Img/GitHub.png);
+}
+
+.icono-redesSociales:nth-of-type(4) {
+    background-image: url(../Img/Email.png);
+}
+
+.menu-contenedor {
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
+}
+
+.menu-item {
+    margin: 1rem 1.5rem;
+    opacity: 0.6;
+}
+
+.menu-item:hover {
+    opacity: 1;
+}
+
+.copyright {
+    color: white;
+    opacity: 0.3;
+    text-align: center;
+}
+
+/* Aqui termina todo el estilo del footer */
+
+/* empieza el codigo responsive */
+
+@media screen and (max-width: 600px) {
+    /* responsive del header  */
+
+    header {
+        width: 100%;
+        height: 25vw;
+    }
+
+    .interior {
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        width: 100%;
+        height: 25vw;
+    }
+
+    .logo img {
+        position: relative;
+        margin-left: 0;
+        margin-top: 5px;
+        left: 36vw;
+    }
+
+    .navegacion {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        padding: 10px 0;
+        top: 70vw;
+        right: 44vw;
+    }
+
+    .menu {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 65vw;
+        background-color: #dcd020;
+        position: relative;
+        bottom: 14.2vw;
+        display: none;
+        z-index: 1;
+    }
+
+    .sobreNosotros {
+        position: relative;
+        right: 16vw;
+    }
+
+    .terminos {
+        position: relative;
+        right: 30vw;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu li a {
+        padding-bottom: 8px;
+    }
+
+    .sub-Menu {
+        position: absolute;
+        left: 51.6vw;
+        min-width: 54vw;
+        background-color: #dcd020;
+        z-index: 2;
+    }
+
+    .menu:hover .sub-Menu {
+        display: none;
+    }
+
+    .sub-Menu li a {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 5px;
+    }
+
+    .Busqueda {
+        height: auto;
+    }
+
+    .search {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+    .Login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+        right: 2vw;
+    }
+
+    .Login a {
+        padding: 5px 10px 5px 10px;
+    }
+
+    .interior label {
+        display: initial;
+        position: relative;
+        right: 18vw;
+    }
+
+    #icon-menu:checked ~ .navegacion .menu {
+        display: initial;
+    }
+
+    /* termina el responsive del header  */
+
+    /* incia el responsive de la seccion busqueda  */
+
+    .Busqueda {
+        background-color: #ffffff00;
+        height: 65vw;
+    }
+
+    .search {
+        height: 16vw;
+        margin: 0;
+        position: relative;
+        top: 22vw;
+    }
+
+    h1 {
+        margin: 0;
+        position: relative;
+        top: 14.2vw;
+    }
+
+    .search button {
+        border: 0;
+        border-radius: 50%;
+        width: 70px;
+        height: 45px;
+        background-color: #dcd020;
+        cursor: pointer;
+        position: relative;
+        right: 20px;
+    }
+
+    .search button img {
+        width: 32px;
+        margin: 5px;
+    }
+
+    /* termina el responsive de la seccion busqueda  */
+}
