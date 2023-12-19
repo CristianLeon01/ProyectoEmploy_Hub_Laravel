@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OfferRequest;
 use App\Models\Contract_type;
 use App\Models\Offer;
 use Illuminate\Http\Request;
@@ -22,20 +23,10 @@ class OfferController extends Controller
 
     public function Store(Request $request){
 
-        $offer = new Offer();
-        $offer->name_vacant = $request->input('name_vacant');
-        $offer->description_vacant = $request->input('description_vacant');
-        $offer->name_company = $request->input('name_company');
-        $offer->address = $request-> input('address');        
-        $offer->salary= $request->input('salary');
-        $offer->start_date = $request->input('start_date');
-        $offer->end_date = $request->input('end_date');
-        $offer->months_experience = $request->input('months_experience');
-        $offer->requirements = $request->input('requirements');
-        $offer->id_contract_types = $request->input('id_contract_types');
+        $offer = new Offer($request->validated());
         $offer->save();
 
-        return redirect()->route('offer');
+        return redirect('offer')->with('success', 'Oferta creada exitosamente');
     }
 
     public function Edit (Offer $offer){
@@ -43,7 +34,7 @@ class OfferController extends Controller
     }
 
 
-    public function Update(Request $request, Offer $offer){
+    public function Update(OfferRequest $request, Offer $offer){
         
         $offer->update($request->all()); 
         return redirect()->route('offer');

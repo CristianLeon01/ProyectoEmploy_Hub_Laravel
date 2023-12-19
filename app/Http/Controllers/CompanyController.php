@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CompanyRequest;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use App\Models\UserType;
@@ -22,28 +23,11 @@ class CompanyController extends Controller
         return view('company.create',['user_types'=> $user_types]);
     }
 
-    public function Store(Request $request){;
+    public function Store(CompanyRequest $request){;
 
-        $company = new Company();
-        $company->company_name = $request->input('company_name');
-        $company->legal_representative = $request->input('legal_representative');
-        $company->company_type = $request->input('company_type');
-        $company->NIT = $request->input('NIT');
-        $company->number_workers= $request -> input('number_workers');
-        $company->legal_representative_email= $request->input('legal_representative_email');
-        $company->nature = $request-> input ('nature');        
-        $company->email = $request->input('email');
-        $company->phone = $request->input('phone');
-        $company->alternate_phone=$request->input ('alternate_phone');
-        $company->human_resources_manager=$request->input ('human_resources_manager');
-        $company->phone_2=$request->input ('phone_2');
-        $company->alternate_phone_2= $request->input('alternate_phone_2');
-        $company->email_manager=$request->input ('email_manager');    
-        $company->id_post=$request->input ('id_post');     
-        $company->id_user_types=$request->input ('id_user_types');       
+        $company = new Company($request->validated());
         $company->save();
-
-        return redirect()->route('company');
+        return redirect('company')->with('success', 'Compañia creada exitosamente');
 
     }
 
@@ -52,7 +36,7 @@ class CompanyController extends Controller
     }
 
 
-    public function Update(Request $request, Company $company){
+    public function Update(CompanyRequest $request, Company $company){
         
         $company->update($request->all()); 
         return redirect()->route('company');

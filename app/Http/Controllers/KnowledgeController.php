@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\KnowledgeRequest;
 use App\Models\Knowledge;
 use Illuminate\Http\Request;
 
@@ -17,17 +18,11 @@ class KnowledgeController extends Controller
         return view('knowledge.create');
     }
 
-    public function Store(Request $request){
+    public function Store(KnowledgeRequest $request){
 
-        $knowledge = new Knowledge();
-        $knowledge->knowledge_name = $request->input('knowledge_name');
-        $knowledge->knowledge_description = $request->input('knowledge_description');
-        $knowledge->id_occupations = $request->input('id_occupations');
-        $knowledge->occupation_name = $request->input('occupation_name');
+        $knowledge = new Knowledge($request->validated());
         $knowledge->save();
-
-
-        return redirect()->route('knowledge');
+        return redirect('knowledge')->with('success', 'Conocimientos creados exitosamente');
     }
 
     public function Edit (Knowledge $knowledge){
@@ -35,7 +30,7 @@ class KnowledgeController extends Controller
     }
 
 
-    public function Update(Request $request, Knowledge $knowledge){
+    public function Update(KnowledgeRequest $request, Knowledge $knowledge){
         
         $knowledge->update($request->all()); 
         return redirect()->route('knowledge');

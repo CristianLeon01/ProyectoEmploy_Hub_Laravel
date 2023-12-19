@@ -2,7 +2,6 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/Knowledges/createKnowledge.css') }}">
-<a href="{{ route ('knowledge') }}"> Back</a>
 
 <section class="create">
     <h1 class="title">Create Your <span>Knowledge</span></h1>

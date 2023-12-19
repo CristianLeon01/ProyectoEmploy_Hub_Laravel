@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RecruiterRequest;
 use App\Models\Recruiter;
 use App\Models\UserType;
 use Illuminate\Http\Request;
@@ -21,10 +22,12 @@ class RecruiterController extends Controller
         return view('/recruiter/create',['user_type'=> $user_types]);
     }
 
-    public function Store(Request $request){
+    public function Store(RecruiterRequest $request){
 
-        Recruiter::create($request->all());
-        return redirect()->route('recruiter');
+        $recruiter = new Recruiter($request->validated());
+        $recruiter->save();
+
+        return redirect('recruiter')->with('success', 'Reclutador creado exitosamente');
     }
 
     public function Edit (Recruiter $recruiter){

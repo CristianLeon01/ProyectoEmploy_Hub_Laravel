@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DenominationRequest;
 use App\Models\Denomination;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,11 @@ class DenominationController extends Controller
         return view('denomination.create');
     }
 
-    public function Store(Request $request){
+    public function Store(DenominationRequest $request){
 
-        Denomination::create($request->all());
-        return redirect()->route('denomination');
+        $denomination = new Denomination($request->validated());
+        $denomination->save();
+        return redirect('denomination')->with('success', 'Denominacion creada exitosamente');
     }
 
     public function Edit (Denomination $denomination){
@@ -28,7 +30,7 @@ class DenominationController extends Controller
     }
 
 
-    public function Update(Request $request, Denomination $denomination){
+    public function Update(DenominationRequest $request, Denomination $denomination){
         
         $denomination->update($request->all()); 
         return redirect()->route('denomination');

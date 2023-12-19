@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LifeSheetRequest;
 use App\Models\LifeSheet;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,11 @@ class LifeSheetController extends Controller
         return view('lifeSheet.create');
     }
 
-    public function Store(Request $request){
+    public function Store(LifeSheetRequest $request){
 
-        LifeSheet::create($request->all());
-        return redirect()->route('lifeSheet');
+        $lifeSheet = new LifeSheet($request->validated());
+        $lifeSheet->save();
+        return redirect('lifeSheet')->with('success', 'Hoja de vida creada Exitosamente');
     }
 
     public function Edit (LifeSheet $lifeSheet){
@@ -28,7 +30,7 @@ class LifeSheetController extends Controller
     }
 
 
-    public function Update(Request $request, LifeSheet $lifeSheet){
+    public function Update(LifeSheetRequest $request, LifeSheet $lifeSheet){
         
         $lifeSheet->update($request->all()); 
         return redirect()->route('lifeSheet');
