@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('knowledge', function (Blueprint $table) {
             $table->id();
-            $table->string('knowledge_name', 30);
-            $table->string('knowledge_description', 300);
+            $table->string('knowledge_name', 100);
+            $table->string('knowledge_description', 500);
             $table->foreignID('id_occupations')->constrained('occupations')->onDelete('cascade');
-            $table->foreignID('occupation_name')->constrained('occupations')->onDelete('cascade');
+            $table->string('occupation_name');
             $table->timestamps();
         });
     }

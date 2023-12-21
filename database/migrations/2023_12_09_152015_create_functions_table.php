@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('functions', function (Blueprint $table) {
             $table->id();
-            $table->string('function_description', 500);
-            $table->foreignID('id_occupations')->constrained('occupations')->onDelete('cascade');
-            $table->foreignID('occupation_name')->constrained('occupations')->onDelete('cascade');
+            $table->string('function_description', 450);
+            $table->foreignId('id_occupations')->constrained('occupations')->onDelete('cascade');
+            $table->string('occupation_name');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('skill_name', 100);
             $table->string('skill_description', 350);
             $table->foreignID('id_occupations')->constrained('occupations')->onDelete('cascade');
-            $table->foreignID('occupation_name')->constrained('occupations')->onDelete('cascade');
+            $table->string('occupation_name');
             $table->timestamps();
         });
     }
