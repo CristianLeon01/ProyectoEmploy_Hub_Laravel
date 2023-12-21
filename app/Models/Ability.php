@@ -9,7 +9,7 @@ class Ability extends Model
 {
     use HasFactory;
 
-    protected $table = 'skills'; 
+    protected $table = 'abilities'; 
 
     protected $fillable = [
         'skill_name',

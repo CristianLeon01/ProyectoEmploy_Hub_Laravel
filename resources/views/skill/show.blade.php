@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="{{ route('index.skill')}}">Back</a>
+<a href="{{ route('skill')}}">Back</a>
 <h1>{{ $skill->skill_name }}</h1>
 <h1>{{ $skill->skill_description }}</h1>
 <h1>{{ $skill->id_occupations }}</h1>

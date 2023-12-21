@@ -5,7 +5,7 @@
 <a href="{{ route ('occupation') }}"> Back</a>
 
 <section class="create">
-    <h1 class="title">Create Your <span>Skill</span></h1>
+    <h1 class="title">Create Your <span>Occupation</span></h1>
     <form action="{{ route('store.occupation') }}" method="POST">
         @csrf
 

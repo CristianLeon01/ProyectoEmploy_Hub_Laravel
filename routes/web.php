@@ -16,11 +16,8 @@ use App\Http\Controllers\RelationController;
 use App\Http\Controllers\SelectorController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserTypeController;
-use App\Http\Controllers\VacantController;
 use App\Http\Controllers\WeighingController;
-use App\Http\Controllers\Contract_TypeController;
 use App\Http\Controllers\OfferController;
-use App\Http\Controllers\LocationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\AboutUSController;
@@ -29,8 +26,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TermsAndConditionsController;
 use App\Http\Controllers\UserController;
-use App\Models\Recruiter;
-use Illuminate\Auth\Events\Logout;
+use App\Models\UserType;
+use App\Models\Weighing;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +43,6 @@ use Illuminate\Auth\Events\Logout;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
 
 Route::get('/', function () {
     return view('layouts.app');

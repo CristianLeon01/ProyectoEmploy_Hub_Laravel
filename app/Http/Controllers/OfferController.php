@@ -23,10 +23,13 @@ class OfferController extends Controller
 
     public function Store(Request $request){
 
-        $offer = new Offer($request->validated());
-        $offer->save();
+        // $offer = new Offer($request->validated());
+        // $offer->save();
 
-        return redirect('offer')->with('success', 'Oferta creada exitosamente');
+        // return redirect('offer')->with('success', 'Oferta creada exitosamente');
+
+        Offer::create($request->all());
+        return redirect()->route('offer');
     }
 
     public function Edit (Offer $offer){

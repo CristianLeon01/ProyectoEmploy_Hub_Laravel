@@ -22,12 +22,15 @@ class SelectorController extends Controller
         return view('/selector/create',['user_type'=> $user_types]);
     }
 
-    public function Store(SelectorRequest $request){
+    public function Store(Request $request){
 
-        $selector = new Selector($request->validated());
-        $selector->save();
+        // $selector = new Selector($request->validated());
+        // $selector->save();
 
-        return redirect('selector')->with('success', 'Seleccionador creado exitosamente');
+        // return redirect('selector')->with('success', 'Seleccionador creado exitosamente');
+
+        Selector::create($request->all());
+        return redirect()->route('selector');
     }
 
     public function Edit (Selector $selector){
@@ -35,7 +38,7 @@ class SelectorController extends Controller
     }
 
 
-    public function Update(SelectorRequest $request, Selector $selector){
+    public function Update(Request $request, Selector $selector){
         
         $selector->update($request->all()); 
         return redirect()->route('selector');

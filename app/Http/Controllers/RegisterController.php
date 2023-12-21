@@ -14,15 +14,15 @@ class RegisterController extends Controller
 
     public function create(array $data)
     {
-        $user = User::create([
-            'username' => $data['username'],
-            'password' => Hash::make ($data['password']),
-            'email' => $data['email'],
-            'id_user_types' => $data['id_user_types']
-        ]);
+        // $user = User::create([
+        //     'username' => $data['username'],
+        //     'password' => Hash::make ($data['password']),
+        //     'email' => $data['email'],
+        //     'id_user_types' => $data['id_user_types']
+        // ]);
 
-        Mail::to($data['email'])->send(new WelcomeEmail($user));
-        return $user;
+        // Mail::to($data['email'])->send(new WelcomeEmail($user));
+        // return $user;
         
         // $validator = Validator::make($data, [
         //     'username' => 'required|string|max:10',
