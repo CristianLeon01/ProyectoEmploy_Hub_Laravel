@@ -23,11 +23,10 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\AboutUSController;
 use App\Http\Controllers\BienvenidaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TermsAndConditionsController;
 use App\Http\Controllers\UserController;
-use App\Models\UserType;
-use App\Models\Weighing;
 
 /*
 |--------------------------------------------------------------------------
@@ -217,6 +216,16 @@ Route::get('/weighing/edit/{weighing}', [WeighingController::class,'Edit'])->nam
 Route::put('/weighing/update/{weighing}', [WeighingController::class,'Update'])->name('update.weighing');
 Route::get('/weighing/show/{weighing}', [WeighingController::class,'Show'])->name('show.weighing');
 Route::delete('/weighing/destroy/{weighing}', [WeighingController::class,'Destroy'])->name('destroy.weighing');
+
+// Routes Instrcutor
+Route::get('/instructor', [InstructorController::class, 'Instructor'])->name('instructor');
+Route::get('/instructor/create', [InstructorController::class, 'Create'])->name('create.instructor')->middleware('auth');
+Route::post('/instructor/store', [InstructorController::class, 'Store'])->name('store.instructor');
+Route::get('/instructor/edit/{instructor}', [InstructorController::class, 'Edit'])->name('edit.instructor');
+Route::put('/instructor/update/{instructor}', [InstructorController::class, 'Update'])->name('update.instructor');
+Route::get('/instructor/show/{instructor}', [InstructorController::class, 'Show'])->name('show.instructor');
+Route::delete('/instructor/destroy/{instructor}', [InstructorController::class, 'Destroy'])->name('destroy.instructor');
+
 
 Route::get('auth/login', [LoginController::class, 'index'])->name('login');
 Route::post('logout', [LogoutController::class, 'store'])->name('logout');
