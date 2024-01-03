@@ -236,7 +236,3 @@ Route::get('home', [HomeController::class, 'index'])->name('home.index');
 Route::resource('user', UserController::class);
 Route::get('register', [UserController::class, 'create'])->name('register');
 Route::post('register', [UserController::class, 'store']);
-
-Route::get('/registro', [RegisterController::class, 'create'])->name('registro.create');
-Route::post('/registro', [RegisterController::class, 'store'])->name('registro.store');
-Route::get('/home', [HomeController::class, 'mostrarHTML'])->name('home');

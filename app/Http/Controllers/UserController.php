@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WelcomeEmail;
 use App\Models\User;
 use App\Models\UserType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -29,6 +31,10 @@ class UserController extends Controller
         $user->id_user_types = $request->input('id_user_types');
         $user->password = Hash::make($request->password);
         $user->save();
+
+        Mail::to($request['email'])->send(new WelcomeEmail($user));
+
+        return view('auth.welcome');
 
         return redirect()->back()->with('mensaje',  'Usuario creado correctamente...');
 

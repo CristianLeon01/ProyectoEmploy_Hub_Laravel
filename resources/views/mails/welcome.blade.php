@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Bienvenido a EmployHub, {{ $user->username}}! </h1>
+            <h1>¡Bienvenido a EmployHub, {{ $user->username}}! </h1>
         </header>
         <section>
             <p>Gracias por unirte a EmployHub, tu agencia pública de empleo. Estamos aquí para ayudarte a encontrar oportunidades laborales que se adapten a tus habilidades y metas profesionales.</p>

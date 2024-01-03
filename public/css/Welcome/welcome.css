@@ -1,37 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Phudu&family=Sedgwick+Ave+Display&family=Ubuntu+Condensed&display=swap");
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    font-family: "Ubuntu Condensed", sans-serif;
 }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.background {
+    background: linear-gradient(to right, #9DB4C0, #ffffff);
 }
 
-header {
+.card {
     text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
 }
 
-header h1 {
+.imagen {
+    width: 40%;
+    height: 20%;
+}
+
+h2 {
     color: #333;
 }
 
-section {
-    margin-top: 20px;
+p {
+    color: #666;
+    margin-bottom: 20px;
 }
 
-section p {
-    color: #555;
-    line-height: 1.6;
+button {
+    background-color:  #5C6B73;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-footer {
-    margin-top: 20px;
-    text-align: center;
-    color: #777;
+button:hover {
+    background-color: #9DB4C0;
 }

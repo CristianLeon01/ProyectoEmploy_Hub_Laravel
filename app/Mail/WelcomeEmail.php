@@ -16,21 +16,11 @@ class WelcomeEmail extends Mailable
 
     public $user;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
     public function __construct($user)
     {
         $this->user = $user;
     }
 
-    /**
-     * Get the message envelope.
-     *
-     * @return \Illuminate\Mail\Mailables\Envelope
-     */
     public function envelope()
     {
         return new Envelope(
@@ -39,26 +29,23 @@ class WelcomeEmail extends Mailable
         );
     }
 
-    /**
-     * Get the message content definition.
-     *
-     * @return \Illuminate\Mail\Mailables\Content
-     */
     public function content()
     {
+        // return new Content(
+        //     view: 'mails.welcome.blade',
+        //     with: [
+        //         'user' => $this->user
+        //     ]
+        // );
+
         return new Content(
-            view: 'mails.welcome.blade',
+            view: 'mails.welcome',
             with: [
                 'user' => $this->user
             ]
         );
     }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array
-     */
     public function attachments()
     {
         return [];

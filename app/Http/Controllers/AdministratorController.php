@@ -33,7 +33,7 @@ class AdministratorController extends Controller
         return redirect()->route('administrator.index');
     }
 
-    public function show(Administrator $administrator){
+    public function show(){
         return view('administrator.show', compact('administrator'));
     }
 

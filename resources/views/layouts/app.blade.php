@@ -26,32 +26,32 @@
                 @if (auth()->user())
                 <p class="mensaje-bienvenida">Bienvenid@ {{ auth()->user()->username }}</p>
                 <ul class="menu-usuario">
-                    @if (auth()->user()->id_user_types == 1)
-                    <li><a href="{{ route('headerAdmin')}}">User Type Admin</a></li>
+                    @if (session('id_user_types') == 1)
+                        <li><a href="{{ route('headerAdmin')}}">User Type Admin</a></li>
+                        
+                        @elseif (auth()->user()->id_user_types == 2)
+                        <li><a href="{{ route('headerSelector')}}">User Type Selector</a></li>
 
-                    @elseif (auth()->user()->id_user_types == 2)
-                    <li><a href="{{ route('headerSelector')}}">User Type Selector</a></li>
+                        @elseif (auth()->user()->id_user_types == 3)
+                        <li><a href="{{ route('headerRecruiter')}}">User Type Recruiter</a></li>
 
-                    @elseif (auth()->user()->id_user_types == 3)
-                    <li><a href="{{ route('headerRecruiter')}}">User Type Recruiter</a></li>
+                        @elseif (auth()->user()->id_user_types == 4)
+                        <li><a href= "{{ route('headerCandidate')}}">User Type Candidate</a></li>
 
-                    @elseif (auth()->user()->id_user_types == 4)
-                    <li><a href= "{{ route('headerCandidate')}}">User Type Candidate</a></li>
-
-                    @elseif (auth()->user()->id_user_types == 5)
-                    <li><a href="{{ route('headerCompany')}}" >User Type Company</a><li>
-                    @endif
-
-                </ul>
-                <form class="form-logout" action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button>Cerrar sesión</button>
-                </form>
+                        @elseif (auth()->user()->id_user_types == 5)
+                        <li><a href="{{ route('headerCompany')}}" >User Type Company</a><li>
+                            
+                        @endif
+                    </ul>
+                    <form class="form-logout" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button>Cerrar sesión</button>
+                    </form>
                 @else
-                <ul class="login">
-                    <li><a href="{{ route('register') }}">Sign in</a></li>
-                    <li><a href="{{ route('login') }}">Log in</a></li>
-                </ul>
+                    <ul class="login">
+                        <li><a href="{{ route('register') }}">Sign in</a></li>
+                        <li><a href="{{ route('login') }}">Log in</a></li>
+                    </ul>
                 @endif
             </div>
         </section>
