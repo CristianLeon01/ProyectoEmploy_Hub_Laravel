@@ -27,6 +27,7 @@ use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TermsAndConditionsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostulationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,8 @@ Route::get('/aboutUs', [AboutUSController::class, 'mostrarAbout'])->name('aboutU
 Route::get('/termsConditions', [TermsAndConditionsController::class, 'mostrarTermsConditions'])->name('termsConditions');
 
 Route::get('/layouts', [BienvenidaController::class, 'redirect'])->name('layouts');
+
+Route::get('/postulation', [PostulationController::class, 'mostrar'])->name('postulation');
 
 // Routes Ability
 Route::get('/skill', [AbilityController::class, 'Ability'])->name('skill');

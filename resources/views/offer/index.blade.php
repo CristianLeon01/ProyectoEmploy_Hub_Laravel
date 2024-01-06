@@ -19,7 +19,7 @@
                             <li class="oferta-item"><a>Fecha publicacion: {{ $offer->start_date }}</a></li>
                             <li class="oferta-item"><a>Fecha cierre: {{ $offer->end_date }}</a></li>
                             <section class="boton">
-                                <button class="botonUnico">Postularme</button>
+                                <a href="{{ route('postulation') }}"><button class="botonUnico">Postularme</button></a>
                             </section>
                         </section>
                     </section>
