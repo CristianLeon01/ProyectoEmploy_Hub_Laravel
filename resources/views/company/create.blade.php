@@ -77,7 +77,7 @@
         <label for="correo">Write ID Post</label>
         <input type="number" id=correo name="id_post" class="textarea1" required><br><br>
         
-        <label for="exampleInputEmail" class="user_type"></label>
+        <label for="exampleInputEmail" class="user_type">User Type Id</label>
         <select class="user_type" name="id_user_types" id="">
             @foreach ($user_types as $user_type)
             <option value="{{$user_type->id}}">{{$user_type->user_type_name}}</option>    

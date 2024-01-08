@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Mail\WelcomeEmail;
 use App\Models\User;
 use App\Models\UserType;
@@ -23,7 +24,7 @@ class UserController extends Controller
         return view('auth/register',['user_types'=> $user_types]);
     }
 
-    public function Store(Request $request){
+    public function Store(UserRequest $request){
 
         $user = new User();
         $user->username = $request->input('username');
@@ -44,7 +45,7 @@ class UserController extends Controller
         return view('user.edit', compact('user'));
     }
 
-    public function Update(Request $request, User $user){
+    public function Update(UserRequest $request, User $user){
         
         $user->update($request->all()); 
         return redirect()->route('user');

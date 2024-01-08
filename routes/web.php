@@ -231,6 +231,7 @@ Route::delete('/instructor/destroy/{instructor}', [InstructorController::class, 
 
 
 Route::get('auth/login', [LoginController::class, 'index'])->name('login');
+Route::get('/logout', [LogoutController::class, 'store'])->name('auth.despedida');
 Route::post('logout', [LogoutController::class, 'store'])->name('logout');
 Route::post('login', [LoginController::class, 'store'])->name('login.auth');
 

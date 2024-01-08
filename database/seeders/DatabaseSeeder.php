@@ -27,7 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AbilityTableSeeder::class);
         $this->call(RelationTableSeeder::class);
         $this->call(KnowledgeTableSeeder::class);
-
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

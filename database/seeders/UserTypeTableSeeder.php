@@ -25,6 +25,8 @@ class UserTypeTableSeeder extends Seeder
         ];
 
         DB::table('user_types')->insert($user_types);
+
+        $this->call(AdminTableSeeder::class);
         
     }
 }
