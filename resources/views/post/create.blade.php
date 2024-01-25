@@ -2,11 +2,10 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/Posts/createPost.css') }}">
-<a href="{{ route ('post') }}"> Back</a>
 
 <section class="create">
     <h1 class="title">Create Your <span>Post</span></h1>
-    <form action="{{ route('store.post') }}" method="POST">
+    <form class="form-post" action="{{ route('store.post') }}" method="POST">
         @csrf
 
         <label>Write the name of the post:</label>

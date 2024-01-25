@@ -2,11 +2,10 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/Occupations/createOccupation.css') }}">
-<a href="{{ route ('occupation') }}"> Back</a>
 
 <section class="create">
     <h1 class="title">Create Your <span>Occupation</span></h1>
-    <form action="{{ route('store.occupation') }}" method="POST">
+    <form class="form-occupation" action="{{ route('store.occupation') }}" method="POST">
         @csrf
 
         <label>Write the name of the occupation :</label>

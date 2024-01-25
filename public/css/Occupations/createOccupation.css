@@ -37,7 +37,7 @@ span {
 
 /* Aqui empieza el estilo del formulario */
 
-form {
+.form-occupation {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;

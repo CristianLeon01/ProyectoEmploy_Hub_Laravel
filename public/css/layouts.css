@@ -108,6 +108,11 @@ header {
   text-decoration: none;
 }
 
+.contenedor-admin .btnAdmin {
+  bottom: 86px;
+}
+
+
 
 /* ............................................. */
 
@@ -149,8 +154,8 @@ ul .sub-Menu-candidate{
   background-color: #5C6B73;
   width: 280px;
   right: 20%;
-  top: 10vh;
-  height: 13vw;
+  top: 9vh;
+  height: 11.4vw;
 }
 .sub-Menu-candidate li:hover {
   background-color: #8e8e8e;
@@ -206,10 +211,10 @@ ul .sub-Menu-admin{
   display: none;
   list-style: none;
   background-color: #5C6B73;
-  width: 280px;
+  width: 270px;
   right: 20%;
-  top: 12vh;
-  height: 15vw;
+  top: 8.3vh;
+  height: 11vw;
 }
 .sub-Menu-admin li:hover {
   background-color: #8e8e8e;
@@ -278,8 +283,8 @@ ul .sub-Menu-selector{
   background-color: #5C6B73;
   width: 280px;
   right: 20%;
-  top: 10vh;
-  height: 10vw;
+  top: 9vh;
+  height: 15.5vw;
 }
 .sub-Menu-selector li:hover {
   background-color: #8e8e8e;
@@ -337,7 +342,7 @@ ul .sub-Menu-company{
   background-color: #5C6B73;
   width: 280px;
   right: 20%;
-  top: 10vh;
+  top: 9vh;
   height: 11vw;
 }
 .sub-Menu-company li:hover {
@@ -395,10 +400,11 @@ ul .sub-Menu-recruiter{
   list-style: none;
   background-color: #5C6B73;
   width: 270px;
-  right: 20%;
-  top: 9.7vh;
-  height: 9vw;
+  right: 70px; 
+  top: 9vh;
+  height: 20vw;
 }
+
 .sub-Menu-recruiter li:hover {
   background-color: #8e8e8e;
   border-radius: 10px;
@@ -628,7 +634,7 @@ span {
 /* Aqui empieza todo el estilo del footer */
 
 footer {
-  width: 100vw;
+  width: 100%;
   height: 25vh;
   bottom: 0;
   left: 0;

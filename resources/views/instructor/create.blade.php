@@ -1,16 +1,16 @@
 @extends('layouts.app')
+
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/Instructor/createInstructor.css') }}">
-<a href="{{ route ('instructor') }}"> Back</a>
 
-<section class="create">
-    <h1 class="title">Create Your <span>Instructor</span></h1>
-    <form action="{{ route('store.instructor') }}" method="POST">
+<section class="createInstructor">
+    <h1 class="titleInstructor">Create Your <span>Instructor</span></h1>
+    <form class="form-instructor" action="{{ route('store.instructor') }}" method="POST">
         @csrf
 
         <label>Write your document number:</label>
-        <textarea  type="number" name="document_number" rows="4" cols="50" required></textarea><br><br>
+        <input  type="number" name="document_number" rows="4" cols="50" required><br><br>
 
         <label>Select your document type:</label><br>
         <select id="document_type" name="document_type">
@@ -33,7 +33,7 @@
         <label>Write your password:</label>
         <input type="password" name="password" required><br><br>
 
-        <center><button type="submit" class="create-application-button">Create</button></center>
+        <center><button type="submit" class="create-instructor-button">Create</button></center>
     </form>
-    @endsection
 </section>
+@endsection

@@ -2,11 +2,10 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/Weighings/weighing.css') }}">
-<a href="{{ route ('weighing') }}"> Back</a>
 
 <section class="create">
     <h1 class="title">Create Your <span>Weight</span></h1>
-    <form action="{{ route('store.weighing') }}" method="POST">
+    <form class="form-weighing" action="{{ route('store.weighing') }}" method="POST">
         @csrf
         <label>Select which languages you know:</label>
         <select id="language-type" name="languages">

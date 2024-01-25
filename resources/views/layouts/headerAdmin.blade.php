@@ -2,7 +2,7 @@
 @section('content')
     <ul class="menu-admin">
         <li class="contenedor-admin">
-            <a href="#">Admin</a>
+            <a class="btnAdmin" href="#">Admin</a>
             <ul class="sub-Menu-admin">
                 <li><a href="{{ route('create.instructor') }}">Register Instructors</a></li>
                 <li><a href="">Assign Role</a></li>

@@ -3,7 +3,7 @@
 <link rel="stylesheet"  href="{{ asset('/css/Offerts/createOffert.css') }}">
     <section class="crearOferta">
         <h1 class="tituloOferta">Cree Su <span>Oferta</span></h1>
-        <form action="{{ route('store.offer') }}" method="POST">
+        <form class="form-offer" action="{{ route('store.offer') }}" method="POST">
             @csrf
             <label for="titulo">Offer Title:</label>
             <input type="text" id="titulo" name="name_vacant" required><br><br>
