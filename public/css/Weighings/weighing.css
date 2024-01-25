@@ -16,12 +16,12 @@
 }
 
 span{
-    color:lightsteelblue;
+    color:rgb(255, 255, 255);
 }
 
 /* Aqui empieza el estilo del formulario */
 
-form {
+.form-weighing {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;

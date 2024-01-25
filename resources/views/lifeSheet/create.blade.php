@@ -1,11 +1,10 @@
 @extends('layouts.app')
 @section('content')
-<a href="{{ route ('lifeSheet') }}"> Back</a>
 
 <link rel="stylesheet" href="{{ asset('/css/Life_Sheets/createLifeSheet.css') }}">
-<section class="box">
-    <h1>Crear Hoja de Vida</h1>
-    <form method="post" action="{{ route('store.lifeSheet') }}">
+<section class="create">
+    <h1 class="title">Create Your Life<span> Sheets </span></h1>
+    <form class="form-life" method="post" action="{{ route('store.lifeSheet') }}">
         @csrf
 
         <label for="nombre">Personal Description:</label>
