@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="{{ route('index.company')}}">Back</a>
+<a href="{{ route('company')}}">Back</a>
 <h1>{{ $company->company_name }}</h1>
 <h1>{{ $company->legal_representative }}</h1>
 <h1>{{ $company->company_type }}</h1>
@@ -17,5 +17,8 @@
 <h1>{{ $company->phone_2}}</h1>
 <h1>{{ $company->alternate_phone_2 }}</h1>
 <h1>{{ $company->email_manager }}</h1>
+<h1>{{ $company->id_post }}</h1>
+<h1>{{ $company->id_user_types }}</h1>
+
 
 @endsection

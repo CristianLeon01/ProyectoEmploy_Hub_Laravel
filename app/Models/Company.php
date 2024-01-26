@@ -27,6 +27,11 @@ class Company extends Model
         'alternate_phone_2',
         'email_manager',
         'id_post',
-        'id_user_type'
+        'id_user_types'
     ];
+
+    public function userType()
+    {
+        return $this->belongsTo(UserType::class, 'id_user_types');
+    }
 }
