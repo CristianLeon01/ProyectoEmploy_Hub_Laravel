@@ -10,6 +10,9 @@
 body {
   background-color: #9DB4C0;
   font-family: "Ubuntu Condensed", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Aqui empieza todo el estilo del header */
@@ -110,6 +113,21 @@ header {
 
 .contenedor-admin .btnAdmin {
   bottom: 86px;
+}
+
+/* ............................................. */
+
+.imagen-fondo {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%; /* La imagen se ajustará para cubrir toda la pantalla */
+  background-position: cover;
+  background-image: url(prueba.jpg);
+  opacity: 0.5; /* Ajusta la opacidad según sea necesario */
+  z-index: -1; /* Asegura que la imagen de fondo esté detrás de la barra de navegación y el footer */
 }
 
 
@@ -634,18 +652,17 @@ span {
 /* Aqui empieza todo el estilo del footer */
 
 footer {
+  bottom: 0;
   width: 100%;
   height: 25vh;
-  bottom: 0;
-  left: 0;
-  padding: 2rem 8%;
+  padding: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: #5C6B73;
   border: 2px solid rgb(105, 105, 105);
-  margin-top: 10%;
+  margin-top: auto;
 
 }
 
