@@ -13,7 +13,7 @@ body {
 }
 
 .container1 {
-    max-width: 80%;
+    max-width: 90%;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -46,16 +46,15 @@ ul {
 }
 
 table {
-    width: 100%;
     margin-bottom: 20px;
     border-collapse: collapse;
-    border-spacing: 0;
+    border-spacing: 1;
 }
 
 th,
 td {
+    font-size: 13px;
     padding: 10px;
-    text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
