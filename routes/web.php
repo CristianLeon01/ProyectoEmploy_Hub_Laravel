@@ -53,7 +53,7 @@ Route::get('/aboutUs', [AboutUSController::class, 'mostrarAbout'])->name('aboutU
 
 Route::get('/termsConditions', [TermsAndConditionsController::class, 'mostrarTermsConditions'])->name('termsConditions');
 
-Route::get('/layouts', [BienvenidaController::class, 'redirect'])->name('layouts');
+Route::get('/layouts', [HomeController::class, 'redirect'])->name('layouts');
 
 Route::get('/postulation', [PostulationController::class, 'mostrar'])->name('postulation');
 
@@ -235,7 +235,6 @@ Route::get('/logout', [LogoutController::class, 'store'])->name('auth.despedida'
 Route::post('logout', [LogoutController::class, 'store'])->name('logout');
 Route::post('login', [LoginController::class, 'store'])->name('login.auth');
 
-Route::get('home', [HomeController::class, 'index'])->name('home.index');
 
 Route::resource('user', UserController::class);
 Route::get('register', [UserController::class, 'create'])->name('register');

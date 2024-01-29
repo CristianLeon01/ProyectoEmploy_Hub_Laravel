@@ -57,6 +57,8 @@
         </section>
     </header>
 
+    <div class="imagen-fondo"></div>
+
     <br>
     @yield('content')
 
