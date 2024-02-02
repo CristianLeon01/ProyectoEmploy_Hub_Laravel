@@ -10,6 +10,6 @@ class HomeController extends Controller
     public function redirect()
     {
         // Puedes agregar lógica adicional aquí antes de redirigir
-        return view('layouts.app');
+        return view('notRegister.index');
     }
 }
