@@ -33,6 +33,9 @@
         <label>Write your password:</label>
         <input type="password" name="password" required><br><br>
 
+        <label>Id Administrator:</label>
+        <input type="number" name="id_administrators" required><br><br
+
         <center><button type="submit" class="create-instructor-button">Create</button></center>
     </form>
 </section>
