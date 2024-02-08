@@ -34,8 +34,8 @@
 
 .sectionNum2{
     width: 100%;
-    height: 120vh;
-    background-color: rgba(255, 25, 25, 0.308);
+    height: 70vh;
+    background-color: rgba(255, 25, 25, 0);
 
 }
 
@@ -58,18 +58,59 @@
 
 .casilla1{
     width: 30%;
-    height: 40vh;
-    background-color: white;
+    height: 50vh;
+    background-color: rgba(196, 196, 196, 0.308);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }
 
 .casilla2{
     width: 30%;
-    height: 40vh;
-    background-color: rgb(202, 13, 13);
+    height: 50vh;
+    background-color: rgba(196, 196, 196, 0.308);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .casilla3{
     width: 30%;
-    height: 40vh;
-    background-color: rgb(64, 0, 254);
+    height: 50vh;
+    background-color: rgba(196, 196, 196, 0.308);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-oportunidad{
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.text-eficacia{
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.text-variedad-laboral{
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.parrafo-tarjetas{
+    color: white;
+    font-size: 20px;
+    text-align: justify;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.img-tarjeta{
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
 }
