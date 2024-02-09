@@ -18,6 +18,11 @@ class Instructor extends Model
         'instructor_lastname',
         'email',
         'password',
-        'id_administrators'
+        'id_administrator'
     ];
+
+    public function administrator()
+    {
+        return $this->belongsTo(Administrator::class, 'id_administrator');
+    }
 }

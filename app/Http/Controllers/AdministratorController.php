@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Administrator;
+use App\Models\UserType;
 use Illuminate\Http\Request;
 
 class AdministratorController extends Controller
 {
     public function index(){
         
-
         $administrators = Administrator::all();
-        return view("administrator.index", compact("administrators"));
-    
+        return view('administrator.index', compact('administrators'));
     }
 
     public function create(){
-        return view('administrator.create');
+
+        $user_types = UserType::all();
+        return view('administrator.create',['user_types'=> $user_types]);
     }
 
     public function store(Request $request){
