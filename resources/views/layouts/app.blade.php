@@ -31,7 +31,7 @@
                 @if (Auth::user()->id_user_types == 1)
                 <ul class="menu-admin">
                     <li class="contenedor-admin">
-                        <a class="btnAdmin" href="#">hola</a>
+                        <a class="btnAdmin" href="#"></a>
                         <ul class="sub-Menu-admin">
                             <li><a href="{{ route('create.instructor') }}">Register Instructors</a></li>
                             <li><a href="">Assign Role</a></li>
