@@ -195,18 +195,18 @@ ul .sub-Menu-candidate{
 
 ul .sub-Menu-admin{
   position: absolute;
-  left: 42vw;
+  left: 41vw;
   bottom: 40vh;
 }
 
 .menu-admin a{
   background-color: rgba(255, 0, 0, 0);
   color: #fff;
-  width: 5%;
-  position: relative;
-  left: 47vw;
+  width: 4.5%;
+  position: absolute;
+  left: 45.5vw;
   font-size: 18px;
-  bottom: 4.8vw;
+  bottom: 46.2vw;
   padding: 15px 20px;
 }
 
@@ -222,6 +222,7 @@ ul .sub-Menu-admin{
 .contenedor-admin{
   background-color: red;
   width: 0;
+  list-style: none;
 }
 
 .sub-Menu-admin {
@@ -230,8 +231,8 @@ ul .sub-Menu-admin{
   list-style: none;
   background-color: #5C6B73;
   width: 270px;
-  right: 20%;
-  top: 8.3vh;
+  right: 20vw;
+  top: 8.6vh;
   height: 11vw;
 }
 .sub-Menu-admin li:hover {
@@ -245,7 +246,7 @@ ul .sub-Menu-admin{
   padding: 15px 15px 15px 20px;
   text-decoration: none;
   position: relative;
-  left: 60px;
+  left: 50px;
   top: 1px;
   width: 70%;
 }

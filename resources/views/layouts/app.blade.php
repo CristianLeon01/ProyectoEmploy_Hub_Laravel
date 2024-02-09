@@ -31,7 +31,7 @@
                 @if (Auth::user()->id_user_types == 1)
                 <ul class="menu-admin">
                     <li class="contenedor-admin">
-                        <a class="btnAdmin" href="#"></a>
+                        <a class="text-recruiter" href="#">Admin</a>
                         <ul class="sub-Menu-admin">
                             <li><a href="{{ route('create.instructor') }}">Register Instructors</a></li>
                             <li><a href="">Assign Role</a></li>
@@ -40,7 +40,6 @@
                         </ul>
                     </li>    
                 </ul>
-                <li><a href="{{ route('headerAdmin')}}">User Type Admin</a></li>
                 @endif
                 @if (Auth::user()->id_user_types == 2)
                 <li><a href="{{ route('headerSelector')}}">User Type Selector</a></li>
@@ -62,7 +61,17 @@
                 </ul>
                 @endif
                 @if (Auth::user()->id_user_types == 4)
-                <li><a href="{{ route('headerCandidate')}}">User Type Candidate</a></li>
+                <ul class="menu-candidate">
+                    <li class="contenedor-candidate">
+                        <a href="#termino">Candidate</a>
+                        <ul class="sub-Menu-candidate">
+                            <li><a href="">Check Vacancy</a></li>
+                            <li><a href="{{ route('create.lifeSheet')}}">Register resume</a></li>
+                            <li><a href="{{ route('offer') }}">Apply for a Vacancy</a></li>
+                            <li><a href="">Consult Process Status</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 @endif
                 @if (Auth::user()->id_user_types == 5)
                 <li><a href="{{ route('headerCompany')}}">User Type Company</a></li>
