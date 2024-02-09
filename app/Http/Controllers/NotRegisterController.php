@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AboutUSController extends Controller
+class NotRegisterController extends Controller
 {
     public function mostrarNotRegister()
     {

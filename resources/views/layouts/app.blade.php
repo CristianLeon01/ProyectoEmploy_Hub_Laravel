@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INICIO</title>
     <link rel="stylesheet" href="{{ asset('css/layouts.css') }}">
 </head>
+
 <body>
     <header>
         <section class="interior">
             <a href="" class="logo"><img src="{{ asset('img/Logo_EmplyHub.png') }}" alt="Emplay_Hub"></a>
-            <input type="checkbox" id="icon-menu"/>
+            <input type="checkbox" id="icon-menu" />
             <label for="icon-menu">
                 <img src="{{ asset('img/menu.png') }}" class="menu-icono" alt="">
             </label>
@@ -18,44 +20,69 @@
                 <ul class="menu">
                     <li><a class="activa" href="{{ route('layouts') }}">Home</a></li>
                     <li><a class="sobreNosotros" href="{{ route('aboutUs') }}">About Us</a></li>
-                    <li><a class="terminos" href="{{ route('termsConditions') }}">Terms and Conditions</a></li>            
+                    <li><a class="terminos" href="{{ route('termsConditions') }}">Terms and Conditions</a></li>
                 </ul>
             </nav>
 
-            <div id="barra-superior">
-                @if (auth()->user())
-                <p class="mensaje-bienvenida">Bienvenid@ {{ auth()->user()->username }}</p>
-                <ul class="menu-usuario">
-                    @if (session('id_user_types') == 1)
-                        <li><a href="{{ route('headerAdmin')}}">User Type Admin</a></li>
-                        
-                        @elseif (auth()->user()->id_user_types == 2)
-                        <li><a href="{{ route('headerSelector')}}">User Type Selector</a></li>
-
-                        @elseif (auth()->user()->id_user_types == 3)
-                        <li><a href="{{ route('headerRecruiter')}}">User Type Recruiter</a></li>
-
-                        @elseif (auth()->user()->id_user_types == 4)
-                        <li><a href= "{{ route('headerCandidate')}}">User Type Candidate</a></li>
-
-                        @elseif (auth()->user()->id_user_types == 5)
-                        <li><a href="{{ route('headerCompany')}}" >User Type Company</a><li>
-                            
-                        @endif
-                    </ul>
-                    <form class="form-logout" action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button>Cerrar sesión</button>
-                    </form>
-                @else
-                    <ul class="login">
-                        <li><a href="{{ route('register') }}">Sign in</a></li>
-                        <li><a href="{{ route('login') }}">Log in</a></li>
-                    </ul>
+            @auth
+        <div id="barra-superior">
+            <p class="mensaje-bienvenida">Bienvenid@ {{ auth()->user()->username }}</p>
+            <ul class="menu-usuario">
+                @if (Auth::user()->id_user_types == 1)
+                <ul class="menu-admin">
+                    <li class="contenedor-admin">
+                        <a class="btnAdmin" href="#"></a>
+                        <ul class="sub-Menu-admin">
+                            <li><a href="{{ route('create.instructor') }}">Register Instructors</a></li>
+                            <li><a href="">Assign Role</a></li>
+                            <li><a href="#">Change Role</a></li>
+                            <li><a href="{{ route('instructor') }}">Delete instructor Role</a></li>
+                        </ul>
+                    </li>    
+                </ul>
+                <li><a href="{{ route('headerAdmin')}}">User Type Admin</a></li>
                 @endif
-            </div>
-        </section>
-    </header>
+                @if (Auth::user()->id_user_types == 2)
+                <li><a href="{{ route('headerSelector')}}">User Type Selector</a></li>
+                @endif
+                @if (Auth::user()->id_user_types == 3)
+                <ul class="menu-recruiter">
+                    <li class="contenedor-recruiter">
+                        <a class="text-recruiter" href="#">Recruiter</a>
+                        <ul class="sub-Menu-recruiter">
+                            <li><a href="{{ route('create.company')}}">Create Company</a></li>
+                            <li><a href="{{ route('create.occupation')}}">Create Occupation</a></li>
+                            <li><a href="{{ route('create.post')}}">Create Post</a></li>
+                            <li><a href="{{ route('create.weighing')}}">Create Weighing</a></li>
+                            <li><a href="#">Register Functions Manual</a></li> 
+                            <li><a href="#">Register The Requisition of a position</a></li>
+                            <li><a href="#">Post Vacancy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                @endif
+                @if (Auth::user()->id_user_types == 4)
+                <li><a href="{{ route('headerCandidate')}}">User Type Candidate</a></li>
+                @endif
+                @if (Auth::user()->id_user_types == 5)
+                <li><a href="{{ route('headerCompany')}}">User Type Company</a></li>
+                @endif
+            </ul>
+            <form class="form-logout" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button>Cerrar sesión</button>
+            </form>
+        </div>
+        @else
+        <ul class="login">
+            <li><a href="{{ route('register') }}">Sign in</a></li>
+            <li><a href="{{ route('login') }}">Log in</a></li>
+        </ul>
+        @endauth
+    </section>
+</header>
+
+    
 
     <div class="imagen-fondo"></div>
 
@@ -69,7 +96,7 @@
             <a href="https://github.com/CristianLeon01/ProyectoRH-3erTri" target="_blank" class="icono-redesSociales"></a>
             <a href="https://mail.google.com/mail/u/3/#all" target="_blank" class="icono-redesSociales"></a>
         </section>
-        <ul class="menu-contenedor">    
+        <ul class="menu-contenedor">
             <li class="menu-item">Cristian León</li>
             <li class="menu-item">Diego Carranza</li>
             <li class="menu-item">Danna Jimenez</li>
@@ -77,4 +104,5 @@
         <span class="copyright"> &copy; 2023-2024, ADSO </span>
     </footer>
 </body>
+
 </html>
