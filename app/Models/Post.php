@@ -16,4 +16,9 @@ class Post extends Model
         'direction',
         'phone'
     ];
+
+    public function occupations()
+    {
+        return $this->hasMany(Occupation::class);
+    }
 }

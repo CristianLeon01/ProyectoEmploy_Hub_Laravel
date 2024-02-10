@@ -2,15 +2,17 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/Administrators/administrators.css') }}">
-<a href="{{ route ('administrator.index') }}"> Back</a>
-
 <section class="create">
     <h1 class="title">Create Your <span>Administrator</span></h1>
     <form action="{{ route('administrator.store') }}" method="POST">
         @csrf
 
         <label>Write your document number:</label>
+<<<<<<< HEAD
         <input  type="text" name="document_number" required></input><br><br>
+=======
+        <input  type="text" name="document_number" rows="4" cols="50" required></input><br><br>
+>>>>>>> 10b5662b20314cf49fcefadd7fa296b6bc2f7d7b
 
         <label>Select your document type:</label><br>
         <select id="document_type" name="document_type">

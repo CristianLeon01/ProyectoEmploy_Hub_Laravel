@@ -10,10 +10,8 @@ class AdministratorController extends Controller
 {
     public function index(){
         
-
         $administrators = Administrator::all();
-        return view("administrator.index", compact("administrators"));
-    
+        return view('administrator.index', compact('administrators'));
     }
 
     public function create(){

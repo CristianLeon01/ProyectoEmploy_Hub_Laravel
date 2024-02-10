@@ -33,8 +33,13 @@
         <label>Write your password:</label>
         <input type="password" name="password" required><br><br>
 
+<<<<<<< HEAD
         <label>Id Administrator:</label>
         <input type="number" name="id_administrators" required><br><br
+=======
+        <label for="id_administrator">Administrator ID:</label> 
+        <input type="number" name="id_administrator" id="id_administrator" required>
+>>>>>>> 10b5662b20314cf49fcefadd7fa296b6bc2f7d7b
 
         <center><button type="submit" class="create-instructor-button">Create</button></center>
     </form>
