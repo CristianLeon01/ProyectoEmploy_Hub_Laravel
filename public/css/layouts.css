@@ -195,18 +195,18 @@ ul .sub-Menu-candidate{
 
 ul .sub-Menu-admin{
   position: absolute;
-  left: 42vw;
+  left: 41vw;
   bottom: 40vh;
 }
 
 .menu-admin a{
   background-color: rgba(255, 0, 0, 0);
   color: #fff;
-  width: 5%;
-  position: relative;
-  left: 47vw;
+  width: 4.5%;
+  position: absolute;
+  left: 45.5vw;
   font-size: 18px;
-  bottom: 4.8vw;
+  bottom: 46.2vw;
   padding: 15px 20px;
 }
 
@@ -222,6 +222,7 @@ ul .sub-Menu-admin{
 .contenedor-admin{
   background-color: red;
   width: 0;
+  list-style: none;
 }
 
 .sub-Menu-admin {
@@ -230,8 +231,8 @@ ul .sub-Menu-admin{
   list-style: none;
   background-color: #5C6B73;
   width: 270px;
-  right: 20%;
-  top: 8.3vh;
+  right: 20vw;
+  top: 8.6vh;
   height: 11vw;
 }
 .sub-Menu-admin li:hover {
@@ -245,7 +246,7 @@ ul .sub-Menu-admin{
   padding: 15px 15px 15px 20px;
   text-decoration: none;
   position: relative;
-  left: 60px;
+  left: 50px;
   top: 1px;
   width: 70%;
 }
@@ -383,19 +384,23 @@ ul .sub-Menu-company{
 
 ul .sub-Menu-recruiter{
   position: absolute;
-  left: 42vw;
+  left: 41.3vw;
   bottom: 40vh;
+  z-index: 10;
 }
 
-.menu-recruiter a{
+
+.menu-recruiter a {
   background-color: rgba(255, 0, 0, 0);
   color: #fff;
-  width: 5%;
+  width: auto;
   position: relative;
-  left: 47vw;
   font-size: 18px;
-  bottom: 4.8vw;
   padding: 15px 20px;
+  /* Ajusta el margen izquierdo a 0 para eliminar el espacio en blanco a la izquierda */
+  margin-left: 0;
+  right: 85vh;
+  
 }
 
 .menu-recruiter a:hover {
@@ -410,17 +415,20 @@ ul .sub-Menu-recruiter{
 .contenedor-recruiter{
   background-color: red;
   width: 0;
+  list-style: none;
+  height: 0;
 }
 
+
 .sub-Menu-recruiter {
-  position: absolute;
+  position: relative;
   display: none;
   list-style: none;
   background-color: #5C6B73;
   width: 270px;
-  right: 70px; 
-  top: 9vh;
-  height: 20vw;
+  right: 75px; 
+  top: 8.5vh;
+  height: 23vw;
 }
 
 .sub-Menu-recruiter li:hover {
@@ -511,7 +519,7 @@ ul .sub-Menu-recruiter{
 
 .menu-usuario li a {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   padding: 15px 20px;
 }
 

@@ -16,4 +16,9 @@ class Occupation extends Model
         'occupation_description',
         'id_post'
     ];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }

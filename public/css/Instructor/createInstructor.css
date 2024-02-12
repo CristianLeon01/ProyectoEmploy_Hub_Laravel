@@ -41,8 +41,8 @@ label {
 
 input[type="text"],
 input[type="number"],
-select,
-textarea {
+input[type="password"],
+select {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;

@@ -2,15 +2,17 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/Administrators/administrators.css') }}">
-<a href="{{ route ('administrator.index') }}"> Back</a>
-
 <section class="create">
     <h1 class="title">Create Your <span>Administrator</span></h1>
     <form action="{{ route('administrator.store') }}" method="POST">
         @csrf
 
         <label>Write your document number:</label>
-        <textarea  type="text" name="document_number" rows="4" cols="50" required></textarea><br><br>
+<<<<<<< HEAD
+        <input  type="text" name="document_number" required></input><br><br>
+=======
+        <input  type="text" name="document_number" rows="4" cols="50" required></input><br><br>
+>>>>>>> 10b5662b20314cf49fcefadd7fa296b6bc2f7d7b
 
         <label>Select your document type:</label><br>
         <select id="document_type" name="document_type">
@@ -33,8 +35,12 @@
         <label>Write your password:</label>
         <input type="password" name="password" required><br><br>
 
-        <label>Write the id of the user type:</label>
-        <input type="number" name="id_user_types" required><br><br>
+        <label for="exampleInputEmail" class="user_type">User Type Id</label>
+        <select class="user_type" name="id_user_types" id="">
+            @foreach ($user_types as $user_type)
+            <option value="{{$user_type->id}}">{{$user_type->user_type_name}}</option>    
+            @endforeach
+        </select>
 
         <center><button type="submit" class="create-application-button">Create</button></center>
     </form>
