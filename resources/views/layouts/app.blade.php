@@ -42,7 +42,18 @@
                 </ul>
                 @endif
                 @if (Auth::user()->id_user_types == 2)
-                <li><a href="{{ route('headerSelector')}}">User Type Selector</a></li>
+                <ul class="menu-selector">
+                    <li class="contenedor-selector">
+                        <a href="#">Selector</a>
+                        <ul class="sub-Menu-selector">
+                            <li><a href="">Consult Selection Process</a></li>
+                            <li><a href="">Consult list of selected</a></li>
+                            <li><a href="">Quote candidates</a></li>
+                            <li><a href="">Record result of the selection process</a></li>
+                            <li><a href="">Change Status</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 @endif
                 @if (Auth::user()->id_user_types == 3)
                 <ul class="menu-recruiter">
@@ -74,7 +85,16 @@
                 </ul>
                 @endif
                 @if (Auth::user()->id_user_types == 5)
-                <li><a href="{{ route('headerCompany')}}">User Type Company</a></li>
+                <ul class="menu-company">
+                    <li class="contenedor-company">
+                        <a href="#">Company</a>
+                        <ul class="sub-Menu-company">
+                            <li><a href="{{ route('create.offer')}}">Create Offer</a></li>
+                            <li><a href="#">Applied Vacancies</a></li>
+                            <li><a href="#">Setting</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 @endif
             </ul>
             <form class="form-logout" action="{{ route('logout') }}" method="POST">
