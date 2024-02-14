@@ -31,16 +31,12 @@ class Company extends Model
         'id_user_types'
     ];
 
-    public function id_Post(){
-        return $this->belongsTo(Post::class);
-    }
-
-    public function userType()
+    public function id_user_types()
     {
         return $this->belongsTo(UserType::class, 'id_user_types');
     }
 
-    public function post()
+    public function id_post()
     {
         return $this->belongsTo(Post::class, 'id_post');
     }

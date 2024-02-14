@@ -18,7 +18,8 @@ class Candidate extends Model
         'phone',
         'email',
         'id_life_sheet',
-        'id_state'
+        'id_state', 
+        'id_user_types'
         
     ];
 

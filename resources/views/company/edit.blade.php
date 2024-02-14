@@ -9,10 +9,10 @@
         <section class="derecha">
             <h2>Business Data</h2>
             <label for="titulo">Update your Company name</label>
-            <input type="text" id="titulo" name="company_name"><br><br>
+            <input type="text" id="titulo" name="company_name" value="{{ $company-> company_name }}"><br><br>
 
             <label for="descripcion">*Update your Legal Representative</label><br>
-            <input type="text" id="titulo" name="legal_representative" required><br><br>
+            <input type="text" id="titulo" name="legal_representative" {{ $company-> legal_representative}} ><br><br>
 
             <label for="tipo_empresa">Update your Company type</label>
             <select id="tipo_empresa" name="company_type" value="{{ $company-> company_type}}">
@@ -21,7 +21,7 @@
                 <option value="ANONYMOUS">Anonymous</option>
                 <option value="COMMAND">Command</option>
                 <option value="ASSOCIATIVE COMPANY">Associative Company</option>
-                <option value="SOLE PROPRIETORSHIPl">Sole Proprietorship</option>
+                <option value="SOLE PROPRIETORSHIP">Sole Proprietorship</option>
                 <option value="OTHER">Other</option>
                 <option value="NATURAL PERSON">Natural person</option>
                 <option value="COLLECTIVE SOCIETY">Collective society</option>
@@ -49,8 +49,8 @@
         </section>
         <section class="izquierda">
             <h2>Location data</h2>
-            <label for="direccion">*Update your Address</label>
-            <textarea id="direccion" name="email" rows="4" cols="50" value="{{ $company-> email }}" required></textarea><br><br>
+            <label for="email">*Update your Email</label>
+            <input id="email" name="email" type="email" value="{{ $company-> email }}" required></input><br><br>
 
             <label for="telefono">*Update your Phone</label>
             <input type="text" id="telefono" name="phone" required value="{{ $company-> phone }}"><br><br>
