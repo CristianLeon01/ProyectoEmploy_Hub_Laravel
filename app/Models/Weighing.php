@@ -21,7 +21,5 @@ class Weighing extends Model
         'references',
         'additional_course',
         'id_weightings'
-
-
     ];
 }

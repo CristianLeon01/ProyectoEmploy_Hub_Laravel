@@ -15,4 +15,9 @@ class State extends Model
         'state_name',
         'status_description'
     ];
+
+    public function candidates()
+    {
+        return $this->belongsTo(Candidate::class, 'id_state');
+    }
 }

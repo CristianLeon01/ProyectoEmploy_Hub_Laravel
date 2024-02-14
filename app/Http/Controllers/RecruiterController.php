@@ -31,7 +31,12 @@ class RecruiterController extends Controller
     }
 
     public function Edit (Recruiter $recruiter){
-        return view('recruiter.edit', compact('recruiter'));
+
+        $user_types = UserType::all();
+
+        return view('recruiter.edit', [
+            '$user_types' => $user_types,
+        ])->with('recruiter', $recruiter);
     }
 
 

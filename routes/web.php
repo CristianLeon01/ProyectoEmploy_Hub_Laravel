@@ -82,17 +82,15 @@ Route::resource('administrator', AdministratorController::class);
 Route::get('/headerAdmin', [AdministratorController::class, 'header'])->name('headerAdmin');
 
 //Routes Candidate
-// Route::get('/candidate', [CandidateController::class, 'Candidate'])->name('candidate');
-// Route::get('/candidate/create', [CandidateController::class, 'Create'])->name('create.candidate');
-// Route::post('/candidate/store', [CandidateController::class, 'Store'])->name('store.candidate');
-// Route::get('/candidate/edit/{candidate}', [CandidateController::class,'Edit'])->name('edit.candidate');
-// Route::put('/candidate/update/{candidate}', [CandidateController::class,'Update'])->name('update.candidate');
-// Route::get('/candidate/show/{candidate}', [CandidateController::class,'Show'])->name('show.candidate');
-// Route::delete('/candidate/destroy/{candidate}', [CandidateController::class,'Destroy'])->name('destroy.candidate');
-
-Route::resource('candidate', CandidateController::class);
 Route::get('/headerCandidate', [CandidateController::class, 'header'])->name('headerCandidate');
-
+Route::get('/candidate', [CandidateController::class, 'Candidate'])->name('candidate');
+Route::get('/candidate/create', [CandidateController::class, 'Create'])->name('create.candidate')->middleware('auth');
+Route::post('/candidate/store', [CandidateController::class, 'Store'])->name('store.candidate');
+Route::get('/candidate/edit/{candidate}', [CandidateController::class,'Edit'])->name('edit.candidate');
+Route::put('/candidate/update/{candidate}', [CandidateController::class,'Update'])->name('update.candidate');
+Route::get('/candidate/show/{candidate}', [CandidateController::class,'Show'])->name('show.candidate');
+Route::delete('/candidate/destroy/{candidate}', [CandidateController::class,'Destroy'])->name('destroy.candidate');
+// Route::resource('candidate', CandidateController::class);
 
 //Routes Company
 Route::get('/headerCompany', [CompanyController::class, 'header'])->name('headerCompany');

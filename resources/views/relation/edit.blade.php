@@ -10,7 +10,7 @@
         @method('PUT')
         @csrf
 
-        <label>Write the name of the related occupation :</label>
+        <label>Update your Write the name of the related occupation :</label>
         <input name="name_related_occupation" type="text" required value="{{ $relation-> name_related_occupation }}"><input></><br><br>
 
         <center><button type="submit" class="create-application-button">Create</button></center>

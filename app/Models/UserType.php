@@ -23,4 +23,9 @@ class UserType extends Model
     {
         return $this->belongsTo(UserType::class, 'id_user_types');
     }
+
+    public function candidates()
+    {
+        return $this->belongsTo(Candidate::class, 'id_user_types');
+    }
 }

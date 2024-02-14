@@ -30,7 +30,12 @@ class RelationController extends Controller
     }
 
     public function Edit (Relation $relation){
-        return view('relation.edit', compact('relation'));
+
+        $user_types = UserType::all();
+
+        return view('relation.edit', [
+            '$user_types' => $user_types,
+        ])->with('relation', $relation);
     }
 
 

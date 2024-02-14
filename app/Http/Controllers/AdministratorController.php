@@ -26,7 +26,12 @@ class AdministratorController extends Controller
     }
 
     public function edit(Administrator $administrator){
-        return view('administrator.edit', compact('administrator'));
+
+        $user_types = UserType::all();
+
+        return view('administrator.edit', [
+            '$user_types' => $user_types,
+        ])->with('administrator', $administrator);
     }
 
     public function update(Request $request, Administrator $administrator){
