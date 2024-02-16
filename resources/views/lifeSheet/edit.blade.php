@@ -9,16 +9,16 @@
         @method('PUT')
         @csrf
 
-        <label for="nombre">Personal Description:</label>
+        <label for="nombre">Update your Personal Description:</label>
         <input type="text" name="personal_description" value="{{ $lifeSheet-> personal_description }}" required>
 
-        <label for="experiencia">Languages:</label>
+        <label for="experiencia">Update your Languages:</label>
         <textarea name="languages" value="{{ $lifeSheet-> languages }}" required></textarea>
 
-        <label for="educacion">Experience:</label>
+        <label for="educacion">Update your Experience:</label>
         <textarea name="experience" value="{{ $lifeSheet-> experience }}" required></textarea>
 
-        <label for="educacion">Education:</label>
+        <label for="educacion">Update your Education:</label>
         <textarea name="education" value="{{ $lifeSheet-> education }}" required></textarea>
 
         <center><button type="submit" class="create-application-button" value="Update">Update</button></center>

@@ -13,23 +13,19 @@ class CompanyController extends Controller
 {
     public function Company()
     {
-
-
         $companies = Company::all();
         return view("company.index", ["companies" => $companies]);
     }
 
     public function Create()
     {
-
         $user_types = UserType::all();
         $id_post = Post::all();
         return view('company.create', ['user_types' => $user_types, 'id_post' => $id_post]);
     }
 
     public function Store(CompanyRequest $request)
-    {;
-
+    {
         $company = new Company($request->validated());
         $company->save();
         return redirect('company')->with('success', 'Compañia creada exitosamente');
@@ -37,15 +33,19 @@ class CompanyController extends Controller
 
     public function Edit(Company $company)
     {
-        return view('company.edit', compact('company'));
+        $user_types = UserType::all();
+        $id_post = Post::all();
+    
+        return view('company.edit', [
+            'user_types' => $user_types,
+            'id_post' => $id_post,
+        ])->with('company', $company);
     }
-
-
+    
     public function Update(CompanyRequest $request, Company $company)
     {
-
         $company->update($request->all());
-        return redirect()->route('company');
+        return route('company.index');
     }
 
     public function Show(Company $company)

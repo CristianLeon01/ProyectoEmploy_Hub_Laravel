@@ -17,4 +17,9 @@ class LifeSheet extends Model
         'experience',
         'education',
     ];
+
+    public function candidates()
+    {
+        return $this->belongsTo(Candidate::class, 'id_life_sheet');
+    }
 }

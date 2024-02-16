@@ -20,5 +20,4 @@
 <h1>{{ $company->id_post }}</h1>
 <h1>{{ $company->id_user_types }}</h1>
 
-
 @endsection

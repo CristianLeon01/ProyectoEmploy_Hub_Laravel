@@ -2,47 +2,59 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\VacantRequest;
 use App\Models\Vacant;
 use Illuminate\Http\Request;
 
 class VacantController extends Controller
 {
-    public function Vacant (){
-
+    public function index()
+    {
         $vacancies = Vacant::all();
-        return view("vacant.index", compact("vacancies"));
+        return view('vacant.index', compact('vacancies'));
     }
-    
-    public function Create(){
+
+    public function create()
+    {
         return view('vacant.create');
     }
 
-    public function Store(VacantRequest $request){
+    public function store(Request $request)
+    {
+        $request->validate([
+        ]);
 
-        $vacant = new Vacant($request->validated());
-        $vacant->save();
+        Vacant::create($request->all());
 
-        return redirect('vacant')->with('success', 'Vacante creado exitosamente');
+        return redirect()->route('vacancies.index')
+            ->with('success', 'Vacant created successfully');
     }
 
-    public function Edit (Vacant $vacant){
+    public function show(Vacant $vacant)
+    {
+        return view('vacant.show', compact('vacanct'));
+    }
+
+    public function edit(Vacant $vacant)
+    {
         return view('vacant.edit', compact('vacant'));
     }
 
+    public function update(Request $request, Vacant $vacanct)
+    {
+        $request->validate([
+        ]);
 
-    public function Update(VacantRequest $request, Vacant $vacant){
-        
-        $vacant->update($request->all()); 
-        return redirect()->route('vacant');
+        $vacanct->update($request->all());
+
+        return redirect()->route('vacant.index')
+            ->with('success', 'Vacant updated successfully');
     }
 
-    public function Show(Vacant $vacant){
-        return view ('vacant.show', compact('vacant'));
-    }
-
-    public function Destroy (Request $request, Vacant $vacant){ 
+    public function destroy(Vacant $vacant)
+    {
         $vacant->delete();
-        return redirect()->route('vacant');
+
+        return redirect()->route('vacant.index')
+            ->with('success', 'Vacant deleted successfully');
     }
 }

@@ -1,17 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Administrators/administrators.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Candidates/candidates.css') }}">
+
 <section class="create">
-    <h1 class="title">Create Your <span>Administrator</span></h1>
-    <form action="{{ route('administrator.store') }}" method="POST">
+    <h1 class="title">Create Your <span>Candidate</span></h1>
+    <form action="{{ route('store.candidate') }}" method="POST">
         @csrf
 
         <label>Write your document number:</label>
-        <input  type="text" name="document_number" required></input><br><br>
-        
-        <input  type="text" name="document_number" rows="4" cols="50" required></input><br><br>
-        <input  type="text" name="document_number" required></input><br><br>
+        <input  name="number_document" type="number" required></input><br><br>
 
         <label>Select your document type:</label><br>
         <select id="document_type" name="document_type">
@@ -24,20 +22,27 @@
 
         <label>Write your name:</label>
         <input type="text"  name="name" required><br><br>
-
-        <label>Write your last name:</label>
-        <input type="text" name="last_name" required><br><br>
+        
+        <label>Write phone</label>
+        <input type="number"  name="phone" required><br><br>
 
         <label>Write your email:</label>
-        <input type="text" name="email" required><br><br>
-
-        <label>Write your password:</label>
-        <input type="password" name="password" required><br><br>
+        <input type="email" name="email" required><br><br>
 
         <label for="exampleInputEmail" class="user_type">User Type Id</label>
         <select class="user_type" name="id_user_types" id="">
             @foreach ($user_types as $user_type)
-            <option value="{{$user_type->id}}">{{$user_type->user_type_name}}</option>    
+            <option value="{{$user_type->id}}">{{$user_type->user_type_name}}</option>
+            @endforeach
+        </select>
+
+        <label>Enter the life sheet ID:</label><br>
+        <input  name="id_life_sheet"type= "number" required><br><br>
+
+        <label for="exampleInputEmail" class="state">State id</label>
+        <select class="state" name="id_state" id="">
+            @foreach ($states as $state)
+            <option value="{{$state->id}}">{{$state->state_name}}</option>
             @endforeach
         </select>
 

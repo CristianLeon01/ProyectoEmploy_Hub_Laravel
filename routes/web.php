@@ -1,34 +1,35 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AbilityController;
-use App\Http\Controllers\AdministratorController;
-use App\Http\Controllers\CandidateController;
-use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\DenominationController;
-use App\Http\Controllers\FunctionController;
-use App\Http\Controllers\KnowledgeController;
-use App\Http\Controllers\LifeSheetController;
-use App\Http\Controllers\OccupationController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\RecruiterController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OfferController;
+use App\Http\Controllers\StateController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\VacantController;
+use App\Http\Controllers\AbilityController;
+use App\Http\Controllers\AboutUSController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\FunctionController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RelationController;
 use App\Http\Controllers\SelectorController;
-use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserTypeController;
 use App\Http\Controllers\WeighingController;
-use App\Http\Controllers\OfferController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\AboutUSController;
+use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\KnowledgeController;
+use App\Http\Controllers\LifeSheetController;
+use App\Http\Controllers\RecruiterController;
 use App\Http\Controllers\BienvenidaController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InstructorController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\TermsAndConditionsController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\PostulationController;
+use App\Http\Controllers\OccupationController;
 use App\Http\Controllers\NotRegisterController;
+use App\Http\Controllers\PostulationController;
+use App\Http\Controllers\DenominationController;
+use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\TermsAndConditionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,17 +83,15 @@ Route::resource('administrator', AdministratorController::class);
 Route::get('/headerAdmin', [AdministratorController::class, 'header'])->name('headerAdmin');
 
 //Routes Candidate
-// Route::get('/candidate', [CandidateController::class, 'Candidate'])->name('candidate');
-// Route::get('/candidate/create', [CandidateController::class, 'Create'])->name('create.candidate');
-// Route::post('/candidate/store', [CandidateController::class, 'Store'])->name('store.candidate');
-// Route::get('/candidate/edit/{candidate}', [CandidateController::class,'Edit'])->name('edit.candidate');
-// Route::put('/candidate/update/{candidate}', [CandidateController::class,'Update'])->name('update.candidate');
-// Route::get('/candidate/show/{candidate}', [CandidateController::class,'Show'])->name('show.candidate');
-// Route::delete('/candidate/destroy/{candidate}', [CandidateController::class,'Destroy'])->name('destroy.candidate');
-
-Route::resource('candidate', CandidateController::class);
 Route::get('/headerCandidate', [CandidateController::class, 'header'])->name('headerCandidate');
-
+Route::get('/candidate', [CandidateController::class, 'Candidate'])->name('candidate');
+Route::get('/candidate/create', [CandidateController::class, 'Create'])->name('create.candidate')->middleware('auth');
+Route::post('/candidate/store', [CandidateController::class, 'Store'])->name('store.candidate');
+Route::get('/candidate/edit/{candidate}', [CandidateController::class,'Edit'])->name('edit.candidate');
+Route::put('/candidate/update/{candidate}', [CandidateController::class,'Update'])->name('update.candidate');
+Route::get('/candidate/show/{candidate}', [CandidateController::class,'Show'])->name('show.candidate');
+Route::delete('/candidate/destroy/{candidate}', [CandidateController::class,'Destroy'])->name('destroy.candidate');
+// Route::resource('candidate', CandidateController::class);
 
 //Routes Company
 Route::get('/headerCompany', [CompanyController::class, 'header'])->name('headerCompany');
@@ -232,6 +231,8 @@ Route::put('/instructor/update/{instructor}', [InstructorController::class, 'Upd
 Route::get('/instructor/show/{instructor}', [InstructorController::class, 'Show'])->name('show.instructor');
 Route::delete('/instructor/destroy/{instructor}', [InstructorController::class, 'Destroy'])->name('destroy.instructor');
 
+//Route Vacants
+Route::resource('vacant', VacantController::class);
 
 Route::get('auth/login', [LoginController::class, 'index'])->name('login');
 Route::get('/logout', [LogoutController::class, 'store'])->name('auth.despedida');

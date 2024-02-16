@@ -10,7 +10,7 @@
         @method('PUT')
         @csrf
 
-        <label>Write your document number :</label>
+        <label>Update your Write your document number :</label>
         <input name="number_document" type="number" required value="{{ $recruiter-> number_document }}"><input></><br><br>
 
         <label for="tipo_recruiter">Document Type</label>
@@ -22,13 +22,13 @@
             <option value="CC_FOREIGNER">CC_FOREIGNER</option>
         </select>
 
-        <label>Write your name:</label>
+        <label>Update Write your name:</label>
         <input type="text"  name="name" required value="{{ $recruiter-> name }}"><br><br>
 
-        <label>Write your phone :</label>
+        <label>Update your Write your phone :</label>
         <input name="phone" type="number" required value="{{ $recruiter-> phone }}"><input></><br><br>
 
-        <label>Write your email:</label>
+        <label>Update your Write your email:</label>
         <input type="text" name="email" required value="{{ $recruiter-> email }}"><br><br>
 
         <center><button type="submit" class="create-application-button" value="Update">Update</button></center>

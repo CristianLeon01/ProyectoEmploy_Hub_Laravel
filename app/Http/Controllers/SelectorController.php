@@ -34,7 +34,12 @@ class SelectorController extends Controller
     }
 
     public function Edit (Selector $selector){
-        return view('selector.edit', compact('selector'));
+
+        $user_types = UserType::all();
+
+        return view('selector.edit', [
+            '$user_types' => $user_types,
+        ])->with('selector', $selector);
     }
 
 

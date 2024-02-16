@@ -33,7 +33,15 @@ class OfferController extends Controller
     }
 
     public function Edit (Offer $offer){
+
+        // $contract_types = Contract_type::all();
+
+        // return view('offer.edit', [
+        //     '$contract_types' => $contract_types,
+        // ])->with('offer', $offer);
+
         return view('offer.edit', compact('offer'));
+
     }
 
 

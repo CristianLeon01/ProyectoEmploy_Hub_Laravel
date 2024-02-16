@@ -73,12 +73,12 @@
         <input type="text" id=correo name="email_manager" class="textarea1" required><br><br>
 
         <label for="correo">Write ID Post</label>
-       <select class="id_post" name="id_post" id="id_post">
-    @foreach ($id_post as $post)
-        <option value="{{ $post->id }}">{{ $post->name_post }}</option>
-    @endforeach
-</select><br><br>
-
+        <select class="id_post" name="id_post" id="id_post">
+            @foreach ($id_post as $post)
+            <option value="{{ $post->id }}">{{ $post->name_post }}</option>
+            @endforeach 
+        </select><br><br>
+        
         <label for="exampleInputEmail" class="user_type">User Type Id</label>
         <select class="user_type" name="id_user_types" id="">
             @foreach ($user_types as $user_type)
