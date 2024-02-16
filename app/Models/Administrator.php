@@ -21,4 +21,10 @@ class Administrator extends Model
         'id_user_types',
 
     ];
+
+    
+    public function instructors()
+    {
+        return $this->hasMany(Instructor::class, 'id_administrator');
+    }
 }

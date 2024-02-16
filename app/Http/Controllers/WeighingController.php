@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\WeighingRequest;
 use App\Models\Weighing;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,12 @@ class WeighingController extends Controller
         return view('weighing.create');
     }
 
-    public function Store(Request $request){
+    public function Store(WeighingRequest $request){
         
-        Weighing::create($request->all());
-        return redirect()->route('weighing');
+        $weighing = new Weighing($request->validated());
+        $weighing->save();
+
+        return redirect('weighing')->with('success', 'Ponderaciones creadas exitosamente');
     }
 
     public function Edit (Weighing $weighing){
@@ -28,7 +31,7 @@ class WeighingController extends Controller
     }
 
 
-    public function Update(Request $request, Weighing $weighing){
+    public function Update(WeighingRequest $request, Weighing $weighing){
         
         $weighing->update($request->all()); 
         return redirect()->route('weighing');

@@ -2,13 +2,11 @@
 @section('content')
     <ul class="menu-candidate">
         <li class="contenedor-candidate">
-            <a href="#termino">Candidate</a>
             <ul class="sub-Menu-candidate">
-                <li><a href="">My account</a></li>
-                <li><a href="">My resume</a></li>
-                <li><a href="">My Process status</a></li>
-                <li><a href="{{ route('offer')}}">Offert</a></li>
-                <li><a href="">Setting</a></li>
+                <li><a href="">Check Vacancy</a></li>
+                <li><a href="{{ route('create.lifeSheet')}}">Register resume</a></li>
+                <li><a href="{{ route('offer') }}">Apply for a Vacancy</a></li>
+                <li><a href="">Consult Process Status</a></li>
             </ul>
         </li>
     </ul>

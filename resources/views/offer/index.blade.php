@@ -10,7 +10,7 @@
                         <h2>{{ $offer->name_vacant }}</h2>
                         <li class="oferta-item"><a>Salario: {{ $offer->salary }}</a></li>
                         <li class="oferta-item"><a>Meses de experiencia: {{ $offer->months_experience }}</a></li>
-                        <li class="oferta-item"><a>Tipo de contrato: {{ $offer->id_contract_types }}</a></li>
+                        <li class="oferta-item"><a>Tipo de contrato: {{ $offer->contractType->contract_name }}</a></li>
                         <li class="oferta-item"><a>Localidad: {{ $offer->address }}</a></li>
                         
                         <section class="contenedor-derecha">
@@ -19,7 +19,7 @@
                             <li class="oferta-item"><a>Fecha publicacion: {{ $offer->start_date }}</a></li>
                             <li class="oferta-item"><a>Fecha cierre: {{ $offer->end_date }}</a></li>
                             <section class="boton">
-                                <button class="botonUnico">Postularme</button>
+                                <a href="{{ route('postulation') }}"><button class="botonUnico">Postularme</button></a>
                             </section>
                         </section>
                     </section>

@@ -20,8 +20,12 @@ class Offer extends Model
         'start_date',
         'end_date',
         'months_experience',
-        'type_contract',
+        'id_contract_types',
         'requirements',
-        'id_weightings'
     ];
+
+    public function contractType()
+    {
+        return $this->belongsTo(Contract_type::class, 'id_contract_types');
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SelectorRequest;
 use App\Models\Selector;
 use App\Models\UserType;
 use Illuminate\Http\Request;
@@ -22,6 +23,11 @@ class SelectorController extends Controller
     }
 
     public function Store(Request $request){
+
+        // $selector = new Selector($request->validated());
+        // $selector->save();
+
+        // return redirect('selector')->with('success', 'Seleccionador creado exitosamente');
 
         Selector::create($request->all());
         return redirect()->route('selector');

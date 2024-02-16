@@ -16,21 +16,19 @@ use App\Http\Controllers\RelationController;
 use App\Http\Controllers\SelectorController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserTypeController;
-use App\Http\Controllers\VacantController;
 use App\Http\Controllers\WeighingController;
-use App\Http\Controllers\Contract_TypeController;
 use App\Http\Controllers\OfferController;
-use App\Http\Controllers\LocationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\AboutUSController;
 use App\Http\Controllers\BienvenidaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TermsAndConditionsController;
 use App\Http\Controllers\UserController;
-use App\Models\Recruiter;
-use Illuminate\Auth\Events\Logout;
+use App\Http\Controllers\PostulationController;
+use App\Http\Controllers\NotRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +45,8 @@ use Illuminate\Auth\Events\Logout;
 //     return view('welcome');
 // });
 
-
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('notRegister.index');
 });
 
 
@@ -57,7 +54,11 @@ Route::get('/aboutUs', [AboutUSController::class, 'mostrarAbout'])->name('aboutU
 
 Route::get('/termsConditions', [TermsAndConditionsController::class, 'mostrarTermsConditions'])->name('termsConditions');
 
-Route::get('/layouts', [BienvenidaController::class, 'redirect'])->name('layouts');
+Route::get('/layouts', [HomeController::class, 'redirect'])->name('layouts');
+
+Route::get('/postulation', [PostulationController::class, 'mostrar'])->name('postulation');
+
+Route::get('/notRegister', [NotRegisterController::class, 'mostrarNotRegister'])->name('notRegister');
 
 // Routes Ability
 Route::get('/skill', [AbilityController::class, 'Ability'])->name('skill');
@@ -222,16 +223,22 @@ Route::put('/weighing/update/{weighing}', [WeighingController::class,'Update'])-
 Route::get('/weighing/show/{weighing}', [WeighingController::class,'Show'])->name('show.weighing');
 Route::delete('/weighing/destroy/{weighing}', [WeighingController::class,'Destroy'])->name('destroy.weighing');
 
+// Routes Instrcutor
+Route::get('/instructor', [InstructorController::class, 'Instructor'])->name('instructor');
+Route::get('/instructor/create', [InstructorController::class, 'Create'])->name('create.instructor')->middleware('auth');
+Route::post('/instructor/store', [InstructorController::class, 'Store'])->name('store.instructor');
+Route::get('/instructor/edit/{instructor}', [InstructorController::class, 'Edit'])->name('edit.instructor');
+Route::put('/instructor/update/{instructor}', [InstructorController::class, 'Update'])->name('update.instructor');
+Route::get('/instructor/show/{instructor}', [InstructorController::class, 'Show'])->name('show.instructor');
+Route::delete('/instructor/destroy/{instructor}', [InstructorController::class, 'Destroy'])->name('destroy.instructor');
+
+
 Route::get('auth/login', [LoginController::class, 'index'])->name('login');
+Route::get('/logout', [LogoutController::class, 'store'])->name('auth.despedida');
 Route::post('logout', [LogoutController::class, 'store'])->name('logout');
 Route::post('login', [LoginController::class, 'store'])->name('login.auth');
 
-Route::get('home', [HomeController::class, 'index'])->name('home.index');
 
 Route::resource('user', UserController::class);
 Route::get('register', [UserController::class, 'create'])->name('register');
 Route::post('register', [UserController::class, 'store']);
-
-Route::get('/registro', [RegisterController::class, 'create'])->name('registro.create');
-Route::post('/registro', [RegisterController::class, 'store'])->name('registro.store');
-Route::get('/home', [HomeController::class, 'mostrarHTML'])->name('home');

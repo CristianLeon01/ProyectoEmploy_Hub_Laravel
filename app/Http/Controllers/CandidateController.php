@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CandidateRequest;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
 
 class CandidateController extends Controller
 {
     public function Candidate (){
-
-        $this->authorize('view', Candidate::class);
 
         $candidates = Candidate::all();
         return view("candidate.index", compact("candidates"));
@@ -19,10 +18,11 @@ class CandidateController extends Controller
         return view('candidate.create');
     }
 
-    public function Store(Request $request){
+    public function Store(CandidateRequest $request){
 
-        Candidate::create($request->all());
-        return redirect()->route('candidate');
+        $candidate = new Candidate($request->validated());
+        $candidate->save();
+        return redirect('candidate')->with('success', 'Candidato creado exitosamente');
     }
 
     public function Edit (Candidate $candidate){

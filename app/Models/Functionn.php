@@ -9,7 +9,7 @@ class Functionn extends Model
 {
     use HasFactory;
 
-    protected $table = 'denominations'; 
+    protected $table = 'functions'; 
 
     protected $fillable = [
         'function_description',

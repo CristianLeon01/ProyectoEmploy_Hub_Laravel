@@ -8,7 +8,6 @@
 }
 
 body {
-    background-color: #9DB4C0;
     font-family: "Ubuntu Condensed", sans-serif;
 }
 
@@ -17,7 +16,6 @@ body {
 .create {
     width: 100%;
     height: 1450px;
-    background-color: rgb(255, 255, 255);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -38,7 +36,7 @@ span {
 
 /* Aqui empieza el estilo del formulario */
 
-form {
+.form-post {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;

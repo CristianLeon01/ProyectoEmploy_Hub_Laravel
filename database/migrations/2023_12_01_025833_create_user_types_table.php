@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('user_types', function (Blueprint $table) {
             $table->id();
-            $table->set('user_type_name', ['ADMIN', 'SELECTOR', 'RECRUITER', 'CANDIDATE', 'COMPANY']);
+            $table->set('user_type_name', ['ADMIN', 'SELECTOR', 'RECRUITER', 'CANDIDATE', 'COMPANY'])->nullable;
             $table->timestamps();
         });
     }

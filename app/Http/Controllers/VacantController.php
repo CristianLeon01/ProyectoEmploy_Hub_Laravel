@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\VacantRequest;
 use App\Models\Vacant;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,12 @@ class VacantController extends Controller
         return view('vacant.create');
     }
 
-    public function Store(Request $request){
+    public function Store(VacantRequest $request){
 
-        Vacant::create($request->all());
-        return redirect()->route('vacant');
+        $vacant = new Vacant($request->validated());
+        $vacant->save();
+
+        return redirect('vacant')->with('success', 'Vacante creado exitosamente');
     }
 
     public function Edit (Vacant $vacant){
@@ -28,7 +31,7 @@ class VacantController extends Controller
     }
 
 
-    public function Update(Request $request, Vacant $vacant){
+    public function Update(VacantRequest $request, Vacant $vacant){
         
         $vacant->update($request->all()); 
         return redirect()->route('vacant');

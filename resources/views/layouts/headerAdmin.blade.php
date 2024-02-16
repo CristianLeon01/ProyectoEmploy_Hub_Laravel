@@ -2,13 +2,12 @@
 @section('content')
     <ul class="menu-admin">
         <li class="contenedor-admin">
-            <a href="#">Admin</a>
+            <a class="btnAdmin" href="#">Admin</a>
             <ul class="sub-Menu-admin">
-                <li><a href="">Delete Users</a></li>
-                <li><a href="">Delete Roles</a></li>
+                <li><a href="{{ route('create.instructor') }}">Register Instructors</a></li>
+                <li><a href="">Assign Role</a></li>
                 <li><a href="#">Change Role</a></li>
-                <li><a href="#">Delete Company</a></li>
-                <li><a href="#">Assing Role</a></li>
+                <li><a href="{{ route('instructor') }}">Delete instructor Role</a></li>
             </ul>
         </li>    
     </ul>

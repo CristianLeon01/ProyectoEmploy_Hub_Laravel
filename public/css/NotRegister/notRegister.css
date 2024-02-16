@@ -1,0 +1,116 @@
+.sectionNum1{
+    width: 100%;
+    height: 60vh;
+    background-color: rgba(196, 196, 196, 0.308);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titleNotRegister{
+    font-size: 80px;
+    margin-top: 40px;
+}
+
+.spanTitle{
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.description{
+    width: 25%;
+    height: 28vh;
+    background-color: rgba(0, 0, 255, 0);
+    margin-top: 65px;
+
+}
+
+.parrafo-section1{
+    color: white;
+    font-size: 30px;
+    text-align: justify;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sectionNum2{
+    width: 100%;
+    height: 70vh;
+    background-color: rgba(255, 25, 25, 0);
+
+}
+
+.sub1-section2{
+    width: 100%;
+    height: 50vh;
+    background-color: rgba(137, 43, 226, 0);
+    padding: 35px;
+}
+
+.tres-objetivos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.casilla1{
+    width: 30%;
+    height: 50vh;
+    background-color: rgba(196, 196, 196, 0.308);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.casilla2{
+    width: 30%;
+    height: 50vh;
+    background-color: rgba(196, 196, 196, 0.308);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.casilla3{
+    width: 30%;
+    height: 50vh;
+    background-color: rgba(196, 196, 196, 0.308);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-oportunidad{
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.text-eficacia{
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.text-variedad-laboral{
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.parrafo-tarjetas{
+    color: white;
+    font-size: 20px;
+    text-align: justify;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.img-tarjeta{
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+}

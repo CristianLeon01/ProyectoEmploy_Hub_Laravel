@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Company extends Model
 {
@@ -27,6 +28,15 @@ class Company extends Model
         'alternate_phone_2',
         'email_manager',
         'id_post',
-        'id_user_type'
+        'id_user_types'
     ];
+
+    Public function id_Post(){
+        return $this->belongsTo(Post::class);
+    }
+
+    public function userType()
+    {
+        return $this->belongsTo(UserType::class, 'id_user_types');
+    }
 }

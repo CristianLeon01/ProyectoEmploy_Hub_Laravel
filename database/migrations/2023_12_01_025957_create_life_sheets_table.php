@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('life_sheets', function (Blueprint $table) {
             $table->id();
+            $table->string('personal_description', 200);
+            $table->string('languages', 200);
             $table->string('experience', 500);
             $table->string('education', 500);
-            $table->boolean('operator');
             $table->timestamps();
         });
     }

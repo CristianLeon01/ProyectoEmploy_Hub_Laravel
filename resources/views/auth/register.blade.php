@@ -2,6 +2,11 @@
 
 @section('content')
     <section class="Formulario">
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <content class="SIGNUP">
             <link rel="stylesheet" href="{{ asset('/css/Register/register.css') }}">
             <head class="user">
