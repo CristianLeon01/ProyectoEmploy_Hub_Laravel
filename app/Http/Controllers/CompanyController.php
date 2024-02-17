@@ -21,7 +21,9 @@ class CompanyController extends Controller
     {
         $user_types = UserType::all();
         $id_post = Post::all();
-        return view('company.create', ['user_types' => $user_types, 'id_post' => $id_post]);
+        return view('company.create', 
+        ['user_types' => $user_types, 
+        'id_post' => $id_post,]);
     }
 
     public function Store(CompanyRequest $request)
@@ -33,19 +35,22 @@ class CompanyController extends Controller
 
     public function Edit(Company $company)
     {
-        $user_types = UserType::all();
-        $id_post = Post::all();
+        // $user_types = UserType::all();
+        // $id_post = Post::all();
     
-        return view('company.edit', [
-            'user_types' => $user_types,
-            'id_post' => $id_post,
-        ])->with('company', $company);
+        // return view('company.edit', [
+        //     'user_types' => $user_types,
+        //     'id_post' => $id_post,
+        // ])->with('company', $company);
+
+        return view('company.edit')->with('company', $company);
+
     }
     
     public function Update(CompanyRequest $request, Company $company)
     {
         $company->update($request->all());
-        return route('company.index');
+        return redirect()->route('company');
     }
 
     public function Show(Company $company)

@@ -28,4 +28,9 @@ class UserType extends Model
     {
         return $this->belongsTo(Candidate::class, 'id_user_types');
     }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'id_user_types');
+    }
 }

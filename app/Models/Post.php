@@ -21,4 +21,9 @@ class Post extends Model
     {
         return $this->hasMany(Occupation::class);
     }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'id_post');
+    }
 }

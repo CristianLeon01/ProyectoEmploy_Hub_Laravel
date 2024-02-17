@@ -27,7 +27,7 @@ class CompanyRequest extends FormRequest
             'company_name' => ['required', 'string', 'max:25'],
             'legal_representative' => ['required', 'string', 'max:50'],
             'company_type' => ['required', 'in:NOT_DEFINED,LIMITED,ANONYMOUS,COMMAND,ASSOCIATIVE COMPANY,SOLE PROPRIETORSHIP,OTHER,NATURAL PERSON,COLLECTIVE SOCIETY,SIMPLIFIED JOINT STOCK COMPANIES,LIMITED PARTNERSHIP,LIMITED PARTNERSHIP BY SHARES,RURAL COMPANY SENA EMPRENDE RURAL'],
-            'NIT' => ['required', 'string', 'max:50', 'unique:companies'],
+            'NIT' => ['required', 'string', 'max:50'],
             'number_workers' => ['required', 'string', 'max:50'],
             'legal_representative_email' => ['required', 'email', 'max:80'],
             'nature' => ['required', 'in:PUBLIC,PRIVATE,MIXED'],
@@ -38,8 +38,6 @@ class CompanyRequest extends FormRequest
             'phone_2' => ['nullable', 'string', 'max:30'],
             'alternate_phone_2' => ['nullable', 'string', 'max:30'],
             'email_manager' => ['required', 'email', 'max:80'],
-            'id_user_types' => ['required', 'exists:user_types,id'],
-            'id_post' => ['required', 'exists:posts,id'],
         ];
     }
 }

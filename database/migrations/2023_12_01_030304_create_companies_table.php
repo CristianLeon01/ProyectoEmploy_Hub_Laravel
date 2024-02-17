@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('company_name',25);
             $table->string('legal_representative',50);
-            $table->enum('company_type', ['NOT_DEFINED','LIMITED','ANONYMOUS','COMMAND', 'ASSOCIATIVE COMPANY', 'SOLE PROPRIETORSHIP', 'OTHER', 'NATURAL PERSON', 'COLLECTIVE SOCIETY', 'SIMPLIFIED JOINT STOCK COMPANIES', 'LIMITED PARTNERSHIP', 'LIMITED PARTNERSHIP BY SHARES', 'RURAL COMPANY SENA EMPRENDE RURAL']);
+            $table->set('company_type', ['NOT_DEFINED','LIMITED','ANONYMOUS','COMMAND', 'ASSOCIATIVE COMPANY', 'SOLE PROPRIETORSHIP', 'OTHER', 'NATURAL PERSON', 'COLLECTIVE SOCIETY', 'SIMPLIFIED JOINT STOCK COMPANIES', 'LIMITED PARTNERSHIP', 'LIMITED PARTNERSHIP BY SHARES', 'RURAL COMPANY SENA EMPRENDE RURAL']);
             $table->string('NIT',50)->unique();
             $table->string('number_workers', 50);
             $table->string('legal_representative_email',80);
-            $table->enum('nature', ['PUBLIC','PRIVATE','MIXED']);
+            $table->set('nature', ['PUBLIC','PRIVATE','MIXED']);
             $table->string('email', 80);
             $table->string('phone',30);
             $table->string('alternate_phone',30);

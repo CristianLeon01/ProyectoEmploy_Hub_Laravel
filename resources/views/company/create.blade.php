@@ -50,7 +50,7 @@
         <h2>Location data</h2>
 
         <label for="direccion">*Email</label>
-        <input type="text" id="direccion" name="email" rows="4" cols="50" required></input><br><br>
+        <input type="email" id="direccion" name="email" rows="4" cols="50" required></input><br><br>
 
         <label for="telefono">*Phone</label>
         <input type="text" id="telefono" name="phone" required><br><br>

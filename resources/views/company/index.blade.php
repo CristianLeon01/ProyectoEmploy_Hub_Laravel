@@ -46,7 +46,7 @@
         </table>
             <li>
                 <a href="{{ route('show.company', $company->id) }}">{{ $company->id }}</a> |
-                <a href="{{ route('edit.company', $company->id) }}" class="boton1">EDIT</a> |
+                <a href="{{ route('edit.company', ['company'=>$company->id]) }}" class="boton1">EDIT</a> |
                 <form method="POST" action="{{ route('destroy.company', ['company'=>$company->id]) }}"> 
                     @csrf
                     @method('DELETE')

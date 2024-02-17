@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <td><a>{{ $candidate->id }}</a></td>
-                <td><a>{{ $candidate->document_number }}</a></td>
+                <td><a>{{ $candidate->number_document }}</a></td>
                 <td><a>{{ $candidate->document_type}}</a></td>
                 <td><a>{{ $candidate->name }}</a></td>
                 <td><a>{{ $candidate->phone }}</a></td>

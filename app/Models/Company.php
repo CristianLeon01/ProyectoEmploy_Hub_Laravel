@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Company extends Model
 {
@@ -31,13 +32,13 @@ class Company extends Model
         'id_user_types'
     ];
 
+    public function id_Post(){
+        return $this->belongsTo(Post::class, 'id_post');
+    }
+
     public function userType()
     {
         return $this->belongsTo(UserType::class, 'id_user_types');
     }
 
-    public function id_post()
-    {
-        return $this->belongsTo(Post::class, 'id_post');
-    }
 }
