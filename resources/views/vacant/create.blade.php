@@ -1,38 +1,41 @@
 @extends('layouts.app')
-
 @section('content')
-    <div class="container">
-        <h2>Create New Vacant</h2>
+    <h1>create vacancy</h1>
+    <form action="{{ route('vacant.store') }}" method="POST">
+        @csrf
 
-        <form action="{{ route('vacant.store') }}" method="POST">
-            @csrf
+        <label for="">number of vacancies</label>
+        <input type="text" name="number_vacancies_applied">
 
-            <div class="form-group">
-                <label for="number_vacancies_applied">Number of Vacancies Applied:</label>
-                <input type="number" class="form-control" id="number_vacancies_applied" name="number_vacancies_applied" required>
-            </div>
+        <label for="">name vacant</label>
+        <select name="id_offers" id="">
+            @foreach ($offers as $offer)
+                <option value="{{ $offer->id }}">{{ $offer->name_vacant }}</option>
+            @endforeach
+        </select>
 
-            <div class="form-group">
-                <label for="id_offers">Offer ID:</label>
-                <input type="number" class="form-control" id="id_offers" name="id_offers" required>
-            </div>
+        <label for="">location name</label>
+        <select name="location_name" id="">
+            @foreach ($localities as $location)
+                <option value="{{ $location->id }}">{{ $location->location_name }}</option>
+            @endforeach
+        </select>
 
-            <div class="form-group">
-                <label for="id_localities">Locality ID:</label>
-                <input type="number" class="form-control" id="id_localities" name="id_localities" required>
-            </div>
+        <label for="">contract_type</label>
+        <select name="contract_type" id="">
+            @foreach ($contract_types as $contract_type)
+                <option value="{{ $contract_type->id }}">{{ $contract_type->contract_name }}</option>
+            @endforeach
+        </select>
 
-            <div class="form-group">
-                <label for="id_contract_types">Contract Type ID:</label>
-                <input type="number" class="form-control" id="id_contract_types" name="id_contract_types" required>
-            </div>
+        <label for="">weighting</label>
+        <select name="weighting" id="">
+            @foreach ($weightings as $weighting)
+                <option value="{{ $weighting->id }}">{{ $weighting->languajes }}</option>
+            @endforeach
+        </select>
 
-            <div class="form-group">
-                <label for="id_weighings">Weighing ID:</label>
-                <input type="number" class="form-control" id="id_weighings" name="id_weighings" required>
-            </div>
+        <button type="submit">Create</button>
 
-            <button type="submit" class="btn btn-primary">Create Vacant</button>
-        </form>
-    </div>
+    </form>
 @endsection
