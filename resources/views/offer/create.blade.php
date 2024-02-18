@@ -31,7 +31,7 @@
             
             <label for="exampleInputEmail" class="form-label">Contract Type</label>
             <select class="form-select" name="id_contract_types" id="">
-                @foreach ($contract_types as $contract_types)
+                @foreach ($contract_type as $contract_types)
                 <option value="{{$contract_types->id}}">{{$contract_types->contract_name}}</option>    
                 @endforeach
             </select>

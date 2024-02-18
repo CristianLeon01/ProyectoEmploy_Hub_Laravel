@@ -15,4 +15,9 @@ class Contract_type extends Model
         'contract_name',
         'description'
     ];
+
+    public function offer()
+    {
+        return $this->belongsTo(Offer::class, 'id_contract_types');
+    }
 }

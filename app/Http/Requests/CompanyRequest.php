@@ -38,6 +38,8 @@ class CompanyRequest extends FormRequest
             'phone_2' => ['nullable', 'string', 'max:30'],
             'alternate_phone_2' => ['nullable', 'string', 'max:30'],
             'email_manager' => ['required', 'email', 'max:80'],
+            'id_user_types' => ['required', 'exists:user_types,id'],
+            'id_post' => ['required', 'exists:posts,id'],
         ];
     }
 }

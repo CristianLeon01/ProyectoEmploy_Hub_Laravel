@@ -17,39 +17,34 @@ class OfferController extends Controller
     
     public function Create(){
 
-        $contract_types = Contract_type::all();
-        return view('/offer/create',['contract_types'=> $contract_types]);
+        $contract_type = Contract_type::all();
+        return view('offer.create',['contract_type'=> $contract_type]);
     }
 
-    public function Store(Request $request){
+    public function Store(OfferRequest $request){
 
-        // $offer = new Offer($request->validated());
-        // $offer->save();
+        $offerData = $request->validated();
+        $offer = new Offer($offerData);
+        $offer->save();
+        return redirect('offer')->with('success', 'Oferta creada exitosamente');
 
-        // return redirect('offer')->with('success', 'Oferta creada exitosamente');
-
-        Offer::create($request->all());
-        return redirect()->route('offer');
+        // Offer::create($request->all());
+        // return redirect()->route('offer');
     }
 
     public function Edit (Offer $offer){
 
-        // $contract_types = Contract_type::all();
-
-        // return view('offer.edit', [
-        //     '$contract_types' => $contract_types,
-        // ])->with('offer', $offer);
-
-        return view('offer.edit', compact('offer'));
-
+        $contract_type = Contract_type::all();
+        return view('offer.edit', [
+            'contract_type' => $contract_type,
+        ])->with('offer', $offer);
+        //return view('offer.edit', compact('offer'));
     }
-
 
     public function Update(OfferRequest $request, Offer $offer){
-        
-        $offer->update($request->all()); 
+        $offer->update($request->validated());
         return redirect()->route('offer');
-    }
+    }    
 
     public function Show(Offer $offer){
         return view ('offer.show', compact('offer'));

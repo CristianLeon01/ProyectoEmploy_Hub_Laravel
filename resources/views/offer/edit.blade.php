@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('/css/Offerts/createOffert.css') }}">
 <section class="crearOferta">
         <h1 class="tituloOferta">Cree Su <span>Oferta</span></h1>
-        <form action="{{ route('update.offer', $offer->id) }}" method="POST">>
+        <form action="{{ route('update.offer', ['offer'=>$offer->id]) }}" method="POST">>
             @method('PUT')
             @csrf
             <label for="titulo">Update your Offer Title:</label>
@@ -32,7 +32,9 @@
     
             <label for="requisitos">Update your Requirements:</label>
             <textarea id="requisitos" name="requirements" rows="4" cols="50" required value="{{ $offer-> requirements }}"></textarea><br><br>
-    
+
+            <input type="hidden" name="id_contract_types" value="{{ $offer->id_contract_types }}">
+
             <center><button type="submit" class="crear-oferta-button" value="Update">Update</button></center>
         </form>
     </section>

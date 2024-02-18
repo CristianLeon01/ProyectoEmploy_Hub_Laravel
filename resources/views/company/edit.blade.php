@@ -122,6 +122,9 @@
             <span>{{$message}}</span>
                 
             @enderror
+
+            <input type="hidden" name="id_user_types" value="{{ $company->id_user_types }}">
+            <input type="hidden" name="id_post" value="{{ $company->id_post }}">
             
             <center><button type="submit" class="crear-oferta-button" value="Update">Update</button></center>
         </section>
