@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Weighing;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Vacant extends Model
 {
@@ -34,8 +35,8 @@ class Vacant extends Model
         return $this->belongsTo(Contract_type::class, 'id_contract_types');
     }
 
-    public function weighting()
+    public function weighing()
     {
-        return $this->belongsTo(Weighing::class, 'id_weightings');
+        return $this->belongsTo(Weighing::class);
     }
 }

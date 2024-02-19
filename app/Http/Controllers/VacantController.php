@@ -50,7 +50,7 @@ class VacantController extends Controller
             'id_offers'=>'required',
             'id_localities'=>'required',
             'id_contract_types'=>'required',
-            'id_weightings'=>'required'
+            'weigthing_id'=>'required'
         ]);
         Vacant::create($validatedData);
         return redirect()->route('vacant.index');
