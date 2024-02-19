@@ -20,8 +20,8 @@
                 <td><a>{{ $instructor->id }}</a></td>
                 <td><a>{{ $instructor->document_number }}</a></td>
                 <td><a>{{ $instructor->document_type}}</a></td>
-                <td><a>{{ $instructor->name }}</a></td>
-                <td><a>{{ $instructor->last_name }}</a></td>
+                <td><a>{{ $instructor->instructor_name }}</a></td>
+                <td><a>{{ $instructor->instructor_lastname }}</a></td>
                 <td><a>{{ $instructor->email }}</a></td>
             </tr>
         </table>

@@ -30,6 +30,7 @@ use App\Http\Controllers\PostulationController;
 use App\Http\Controllers\DenominationController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\TermsAndConditionsController;
+use App\Http\Controllers\ManageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,8 @@ Route::get('/layouts', [HomeController::class, 'redirect'])->name('layouts');
 Route::get('/postulation', [PostulationController::class, 'mostrar'])->name('postulation');
 
 Route::get('/notRegister', [NotRegisterController::class, 'mostrarNotRegister'])->name('notRegister');
+
+Route::get('/mostrarManageUser', [ManageController::class, 'mostrarManageUser'])->name('manageUser'); 
 
 // Routes Ability
 Route::get('/skill', [AbilityController::class, 'Ability'])->name('skill');

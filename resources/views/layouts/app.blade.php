@@ -34,8 +34,7 @@
                         <a class="text-recruiter" href="#">Admin</a>
                         <ul class="sub-Menu-admin">
                             <li><a href="{{ route('create.instructor') }}">Register Instructors</a></li>
-                            <li><a href="">Assign Role</a></li>
-                            <li><a href="#">Change Role</a></li>
+                            <li><a href="{{ route('manageUser') }}">Manage Users</a></li>
                             <li><a href="{{ route('instructor') }}">Delete instructor Role</a></li>
                         </ul>
                     </li>    

@@ -8,7 +8,7 @@
         @method('PUT')
         @csrf
         <label>Update your document number:</label>
-        <textarea  type="text" name="document_number" rows="4" cols="50" value="{{ $instructor-> document_number }}" required></textarea><br><br>
+        <input  type="text" name="document_number" rows="4" cols="50" value="{{ $instructor-> document_number }}" required></input><br><br>
 
         <label>Update your document type:</label><br>
         <select id="document_type" name="document_type" value="{{ $instructor-> document_type }}">

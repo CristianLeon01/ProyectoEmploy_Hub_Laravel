@@ -1,0 +1,51 @@
+.container {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(174, 174, 174, 0.364); 
+    backdrop-filter: blur(5px); 
+    z-index: -1;
+}
+
+
+.TituloManage{
+    font-size: 40px;
+}
+
+th.Rol-th {
+    width: 150px;
+}
+
+th.Correo-th {
+    width: 400px;
+}
+
+th.Fecha-th {
+    width: 150px;
+    
+}
+
+.table-wrapper {
+    display: flex;
+}
+
+.CambiarBoton {
+    margin-right: 20px; /* Espacio entre el botón y la tabla */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+
+th {
+    background-color: #f2f2f2;
+}

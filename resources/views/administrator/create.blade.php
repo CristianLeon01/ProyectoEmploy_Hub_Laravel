@@ -9,9 +9,6 @@
 
         <label>Write your document number:</label>
         <input  type="text" name="document_number" required></input><br><br>
-        
-        <input  type="text" name="document_number" rows="4" cols="50" required></input><br><br>
-        <input  type="text" name="document_number" required></input><br><br>
 
         <label>Select your document type:</label><br>
         <select id="document_type" name="document_type">

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('instructor_lastname', 30);
             $table->string('email', 50);
             $table->string('password');
-            $table->foreignID('id_administrator')->constrained('administrators')->onDelete('cascade');
+            $table->foreignID('id_administrators')->constrained('administrators')->onDelete('cascade');
             $table->timestamps();
         });
     }
