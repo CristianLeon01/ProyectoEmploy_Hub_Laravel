@@ -9,10 +9,10 @@
         @csrf
 
         <label>Write the name of your Knowledge :</label>
-        <textarea  name="knowledge_name" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  name="knowledge_name" type="text" required></input><br><br>
 
         <label>Write the description of the Knowledge:</label><br>
-        <textarea  name="knowledge_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  name="knowledge_description"  type="text" required></input><br><br>
 
         <label>Write the occupation id:</label>
         <input type="number"  name="id_occupations" required><br><br>

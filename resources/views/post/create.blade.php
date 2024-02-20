@@ -9,13 +9,10 @@
         @csrf
 
         <label>Write the name of the post:</label>
-        <textarea  type="text" name="name_post" rows="4" cols="50" required></textarea><br><br>
+        <input  type="text" name="name_post" required></input><br><br>
 
-        <label>Write the address:</label>
-        <input type="text"  name="direction" required><br><br>
-
-        <label>Write the phone:</label>
-        <input type="text" name="phone" required><br><br>
+        <label>Write the description:</label>
+        <input type="text"  name="description" required><br><br>
 
         <center><button type="submit" class="create-application-button">Create</button></center>
     </form>

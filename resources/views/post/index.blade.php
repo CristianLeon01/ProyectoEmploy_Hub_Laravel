@@ -11,14 +11,12 @@
             <tr>
                 <th>ID</th>
                 <th>Name Post</th>
-                <th>Direccion</th>
-                <th>Phone</th>
+                <th>Description</th>
             </tr>
             <tr>
                 <td><a>{{ $post->id }}</a></td>
                 <td><a>{{ $post->name_post }}</a></td>
-                <td><a>{{ $post->direction}}</a></td>
-                <td><a>{{ $post->phone }}</a></td>
+                <td><a>{{ $post->description}}</a></td>
             </tr>
         </table>
             <li>

@@ -9,13 +9,13 @@
         @csrf
 
         <label>Write the name of the occupation :</label>
-        <textarea  name="occupation_name" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input name="occupation_name" type="text" required></input><br><br>
 
         <label>Write the description of the occupation:</label><br>
-        <textarea  name="occupation_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input name="occupation_description" type="text" required></input><br><br>
 
         <label>Enter the post ID:</label>
-        <input type="number"  name="id_post" required><br><br>
+        <input type="number" name="id_post" required><br><br>
 
         <center><button type="submit" class="create-application-button">Create</button></center>
     </form>

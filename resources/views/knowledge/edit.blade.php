@@ -8,10 +8,10 @@
         @method('PUT')
         @csrf
         <label>Update the name of your Knowledge :</label>
-        <textarea  value="{{ $knowledge-> knowledge_name }}" name="knowledge_name" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  value="{{ $knowledge-> knowledge_name }}" name="knowledge_name" type="text" required></input><br><br>
 
         <label>Update the description of the Knowledge:</label><br>
-        <textarea   value="{{ $knowledge-> knowledge_description }}"  name="knowledge_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  value="{{ $knowledge-> knowledge_description }}"  name="knowledge_description" type="text" required></input><br><br>
 
         <label>Update the occupation id:</label>
         <input value="{{ $knowledge-> id_occupations }}" type="number" name="id_occupations" required><br><br>

@@ -25,7 +25,7 @@ class InstructorRequest extends FormRequest
     {
         return [
             'document_type' => ['required', 'in:TI,CC,NIT,PASSPORT,CC_FOREIGNER'],
-            'document_number' => ['required', 'unique:instructors', 'max:20'],
+            'document_number' => ['required','max:20'],
             'instructor_name' => ['required', 'string', 'max:30'],
             'instructor_lastname' => ['required', 'string'],
             'email' => ['required', 'string', 'max:50'],

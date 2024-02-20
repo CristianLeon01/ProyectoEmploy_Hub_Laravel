@@ -8,10 +8,10 @@
         @method('PUT')
         @csrf
         <label>Update the name of your Skill :</label>
-        <textarea  value="{{ $skill-> skill_name }}" name="skill_name" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  value="{{ $skill-> skill_name }}" name="skill_name" type="text" required></input><br><br>
 
         <label>Update the description of the skill:</label><br>
-        <textarea   value="{{ $skill-> skill_description }}"  name="skill_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input   value="{{ $skill-> skill_description }}"  name="skill_description"  type="text" required></input><br><br>
 
         <label>Update the occupation id:</label>
         <input value="{{ $skill-> id_occupations }}" type="number" name="id_occupations" required><br><br>

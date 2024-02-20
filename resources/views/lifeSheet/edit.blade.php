@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<a href="{{ route ('lifeSheet') }}"> Back</a>
 
 <link rel="stylesheet" href="{{ asset('/css/Life_Sheets/createLifeSheet.css') }}">
 <section class="box">

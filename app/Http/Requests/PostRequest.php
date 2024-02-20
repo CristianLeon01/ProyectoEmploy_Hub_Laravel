@@ -25,8 +25,7 @@ class PostRequest extends FormRequest
     {
         return [
             'name_post' => ['required', 'string', 'max:300'],
-            'direction' => ['required', 'string', 'max:20'],
-            'phone' => ['required', 'string', 'max:12'],
+            'description' => ['required', 'string', 'max:500'],
         ];
     }
 }

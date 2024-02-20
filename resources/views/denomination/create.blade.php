@@ -2,7 +2,6 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/Denominations/createDenomination.css') }}">
-<a href="{{ route ('denomination') }}"> Back</a>
 
 <section class="create">
     <h1 class="title">Create Your <span>Denomination</span></h1>
@@ -10,13 +9,13 @@
         @csrf
 
         <label>Write the description of the denomination :</label>
-        <textarea  name="denomination_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input name="denomination_description" type="text" required></input><br><br>
 
         <label>Enter the occupation ID:</label><br>
-        <textarea  name="id_occupations" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  name="id_occupations" type="number" required></input><br><br>
 
         <label>Write the name of the occupation:</label>
-        <input type="number"  name="occupation_name" required><br><br>
+        <input type="text"  name="occupation_name" required><br><br>
 
         <center><button type="submit" class="create-application-button">Create</button></center>
     </form>

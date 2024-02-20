@@ -3,12 +3,12 @@
 
 <link rel="stylesheet" href="{{ asset('/css/Administrators/administrators.css') }}">
 <section class="create">
-    <h1 class="title">Create Your <span>Administrator</span></h1>
+    <h1 class="title">Update your<span> Instructor</span></h1>
     <form action="{{ route('update.instructor', $instructor->id) }}" method="POST">
         @method('PUT')
         @csrf
         <label>Update your document number:</label>
-        <input  type="text" name="document_number" rows="4" cols="50" value="{{ $instructor-> document_number }}" required></input><br><br>
+        <input  type="text" name="document_number" value="{{ $instructor-> document_number }}" required></input><br><br>
 
         <label>Update your document type:</label><br>
         <select id="document_type" name="document_type" value="{{ $instructor-> document_type }}">
@@ -20,16 +20,18 @@
         </select>
 
         <label>Update your name:</label>
-        <input type="text"  name="name" value="{{ $instructor-> instructor_name }}"required><br><br>
+        <input type="text" name="instructor_name" value="{{ $instructor-> instructor_name }}"required><br><br>
 
         <label>Update your last name:</label>
-        <input type="text" name="last_name" value="{{ $instructor-> instructor_lastname }}" required><br><br>
+        <input type="text" name="instructor_lastname" value="{{ $instructor-> instructor_lastname }}" required><br><br>
 
         <label>Update your email:</label>
         <input type="text" name="email" value="{{ $instructor-> email }}" required><br><br>
 
         <label>Update your password:</label>
         <input type="password" name="password" value="{{ $instructor-> password }}" required><br><br>
+
+        <input type="hidden" name="id_administrators" value="{{ $instructor->id_administrators }}">
 
         <center><button type="submit" class="create-application-button" value="Update">Update</button></center>
     </form>

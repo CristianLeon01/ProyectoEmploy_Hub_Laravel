@@ -9,10 +9,10 @@
         @csrf
 
         <label>Write the name of your Skill :</label>
-        <textarea  name="skill_name" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  name="skill_name" type="text" required></input><br><br>
 
         <label>Write the description of the skill:</label><br>
-        <textarea  name="skill_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  name="skill_description" type="text" required></input><br><br>
 
         <label>Write the occupation id:</label>
         <input type="number"  name="id_occupations" required><br><br>

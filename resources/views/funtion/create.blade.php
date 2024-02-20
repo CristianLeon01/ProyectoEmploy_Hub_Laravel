@@ -10,10 +10,10 @@
         @csrf
 
         <label>Write the description of the function :</label>
-        <textarea  name="function_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  name="function_description" type="text" required></input><br><br>
 
         <label>Enter the occupation ID:</label><br>
-        <input  name="id_occupations" rows="4" cols="50" type="number" required><br><br>
+        <input  name="id_occupations" type="number" required><br><br>
 
         <label>Write the name of the occupation:</label>
         <input type="text"  name="occupation_name" required><br><br>

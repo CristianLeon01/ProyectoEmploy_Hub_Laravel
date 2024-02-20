@@ -21,7 +21,7 @@ class RelationController extends Controller
         return view('/relation/create',['user_type'=> $user_types]);
     }
 
-    public function Store(Request $request){
+    public function Store(RelationRequest $request){
 
         $relation = new Relation($request->validated());
         $relation->save();

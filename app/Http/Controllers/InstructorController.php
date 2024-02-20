@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\InstructorRequest;
+use App\Models\Administrator;
 use App\Models\Instructor;
 use Illuminate\Http\Request;
 
@@ -15,30 +16,45 @@ class InstructorController extends Controller
     }
     
     public function Create(){
-        return view('instructor.create');
+
+        $id_administrators = Administrator::all();
+        return view('instructor.create', 
+        ['$id_administrators' => $id_administrators]);
+
+        // return view('instructor.create');
     }
 
     public function Store(InstructorRequest $request){
 
-        $id_administrators = auth()->user()->id;
+        // $id_administrators = auth()->user()->id;
+
+        // $instructorData = $request->validated();
+
+        // $instructorData['id_administrators'] = $id_administrators;
+
+        // $instructor = Instructor::create($instructorData);
+
+        // return redirect()->route('instructor')->with('success', 'Instructor creado exitosamente');
 
         $instructorData = $request->validated();
-
-        $instructorData['id_administrators'] = $id_administrators;
-
-        $instructor = Instructor::create($instructorData);
-
-        return redirect()->route('instructor')->with('success', 'Instructor creado exitosamente');
+        $instructor = new Instructor($instructorData);
+        $instructor->save();
+        return redirect('instructor')->with('success', 'Compañía creada exitosamente');
     }
 
     public function Edit (Instructor $instructor){
-        return view('instructor.edit', compact('instructor'));
+
+        $id_administrators = Administrator::all();
+        return view('instructor.edit', 
+        ['$id_administrators' => $id_administrators])->with('instructor', $instructor);
+
+        // return view('instructor.edit', compact('instructor'));
     }
 
 
     public function Update(InstructorRequest $request, Instructor $instructor){
         
-        $instructor->update($request->all()); 
+        $instructor->update($request->validated());
         return redirect()->route('instructor');
     }
 

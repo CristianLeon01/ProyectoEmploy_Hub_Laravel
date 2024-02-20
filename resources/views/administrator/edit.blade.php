@@ -9,7 +9,7 @@
         @method('PUT')
         @csrf
         <label>Update your document number:</label>
-        <textarea  type="text" name="document_number" rows="4" cols="50" value="{{ $administrator-> document_number }}" required></textarea><br><br>
+        <input type="text" name="document_number" value="{{ $administrator-> document_number }}" required></input><br><br>
 
         <label>Update your document type:</label><br>
         <select id="document_type" name="document_type" value="{{ $administrator-> document_type }}">
@@ -31,9 +31,6 @@
 
         <label>Update your password:</label>
         <input type="password" name="password" value="{{ $administrator-> password }}" required><br><br>
-
-        <label>Update the id of the user type:</label>
-        <input type="number" name="id_user_types" value="{{ $administrator-> id_user_types }}" required><br><br>
 
         <center><button type="submit" class="create-application-button" value="Update">Update</button></center>
     </form>

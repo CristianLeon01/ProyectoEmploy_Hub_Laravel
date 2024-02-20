@@ -13,8 +13,7 @@ class Post extends Model
 
     protected $fillable = [
         'name_post',
-        'direction',
-        'phone'
+        'description',
     ];
 
     public function occupations()

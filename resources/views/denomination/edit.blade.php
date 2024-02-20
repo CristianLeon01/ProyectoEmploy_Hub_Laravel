@@ -9,13 +9,13 @@
         @method('PUT')
         @csrf
         <label>Update the description of the denomination :</label>
-        <textarea  value="{{ $denomination-> denomination_description }}" name="denomination_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  value="{{ $denomination-> denomination_description }}" name="denomination_description" type="text" required></input><br><br>
 
         <label>Update the occupation ID:</label><br>
-        <textarea   value="{{ $denomination-> id_occupations }}"  name="id_occupations" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  value="{{ $denomination-> id_occupations }}"  name="id_occupations" type="number" required></input><br><br>
 
         <label>Update the name of the occupation:</label>
-        <input value="{{ $denomination-> occupation_name }}" type="number" name="occupation_name" required><br><br>
+        <input value="{{ $denomination-> occupation_name }}" type="text" name="occupation_name" required><br><br>
 
         <center><button type="submit" class="create-application-button" value="Update">Update</button></center>
     </form>
