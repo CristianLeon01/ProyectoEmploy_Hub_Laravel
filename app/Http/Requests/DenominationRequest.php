@@ -26,7 +26,7 @@ class DenominationRequest extends FormRequest
         return [
             'denominate_description' => ['required', 'string', 'max:450'],
             'id_occupations' => ['required', 'exists:occupations,id'],
-            'occupation_name' => ['required', 'exists:occupations,id'],
+            'occupation_name' => ['required', 'exists:occupations,occupation_name'],
         ];
     }       
 }

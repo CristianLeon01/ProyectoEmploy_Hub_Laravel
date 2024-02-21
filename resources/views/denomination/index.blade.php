@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td><a>{{ $denomination->id }}</a></td>
-                <td><a>{{ $denomination->denomination_description}}</a></td>
+                <td><a>{{ $denomination->denominate_description}}</a></td>
                 <td><a>{{ $denomination->id_occupations }}</a></td>
                 <td><a>{{ $denomination->occupation_name }}</a></td>
             </tr>

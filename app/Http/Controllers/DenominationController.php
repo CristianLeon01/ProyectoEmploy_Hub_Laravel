@@ -19,17 +19,25 @@ class DenominationController extends Controller
 
         $id_occupations = Occupation::all();
         return view('denomination.create', 
-        ['id_occupations' => $id_occupations]);
+        ['$id_occupations' => $id_occupations]);
 
         //return view('denomination.create');
     }
 
     public function Store(DenominationRequest $request){
 
-        $denominationData = $request->validated();
-        $denomination = new Denomination($denominationData);
+        $denomination = new Denomination();
+        $denomination-> denominate_description = $request->input('denominate_description');
+        $denomination-> id_occupations = $request->input('id_occupations');
+        $denomination-> occupation_name = $request->input('occupation_name');
         $denomination->save();
+
         return redirect('denomination')->with('success', 'Denominacion creada exitosamente');
+
+        // $denominationData = $request->validated();
+        // $denomination = new Denomination($denominationData);
+        // $denomination->save();
+        // return redirect('denomination')->with('success', 'Denominacion creada exitosamente');
     }    
 
     public function Edit (Denomination $denomination){
