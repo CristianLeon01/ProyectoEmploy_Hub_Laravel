@@ -21,4 +21,10 @@ class Occupation extends Model
     {
         return $this->belongsTo(Post::class);
     }
+
+    
+    public function denomination()
+    {
+        return $this->belongsTo(Denomination::class);
+    }
 }

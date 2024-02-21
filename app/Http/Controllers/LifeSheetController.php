@@ -18,14 +18,14 @@ class LifeSheetController extends Controller
         return view('lifeSheet.create');
     }
 
-    public function Store(Request $request){
+    public function Store(LifeSheetRequest $request){
 
-        // $lifeSheet = new LifeSheet($request->validated());
-        // $lifeSheet->save();
-        // return redirect('lifeSheet')->with('success', 'Hoja de vida creada Exitosamente');
+        $lifeSheet = new LifeSheet($request->validated());
+        $lifeSheet->save();
+        return redirect('lifeSheet')->with('success', 'Hoja de vida creada Exitosamente');
 
-        LifeSheet::create($request->all());
-        return redirect()->route('lifeSheet');
+        // LifeSheet::create($request->all());
+        // return redirect()->route('lifeSheet');
     }
 
     public function Edit (LifeSheet $lifeSheet){
@@ -34,9 +34,12 @@ class LifeSheetController extends Controller
 
 
     public function Update(LifeSheetRequest $request, LifeSheet $lifeSheet){
-        
-        $lifeSheet->update($request->all()); 
+
+        $lifeSheet->update($request->validated());
         return redirect()->route('lifeSheet');
+        
+        // $lifeSheet->update($request->all()); 
+        // return redirect()->route('lifeSheet');
     }
 
     public function Show(LifeSheet $lifeSheet){

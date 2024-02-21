@@ -9,10 +9,9 @@
         @method('PUT')
         @csrf
         <label>Update the description of the denomination :</label>
-        <input  value="{{ $denomination-> denomination_description }}" name="denomination_description" type="text" required></input><br><br>
+        <input  value="{{ $denomination-> denominate_description }}" name="denomination_description" type="text" required></input><br><br>
 
-        <label>Update the occupation ID:</label><br>
-        <input  value="{{ $denomination-> id_occupations }}"  name="id_occupations" type="number" required></input><br><br>
+        <input type="hidden" name="id_occupations" value="{{ $denomination->id_occupations }}"></input>
 
         <label>Update the name of the occupation:</label>
         <input value="{{ $denomination-> occupation_name }}" type="text" name="occupation_name" required><br><br>

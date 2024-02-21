@@ -24,9 +24,9 @@ class DenominationRequest extends FormRequest
     public function rules()
     {
         return [
-            'function_description' => ['required', 'string', 'max:450'],
+            'denominate_description' => ['required', 'string', 'max:450'],
             'id_occupations' => ['required', 'exists:occupations,id'],
             'occupation_name' => ['required', 'exists:occupations,id'],
         ];
-    }
+    }       
 }

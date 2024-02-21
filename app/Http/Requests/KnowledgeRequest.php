@@ -24,7 +24,7 @@ class KnowledgeRequest extends FormRequest
     public function rules()
     {
         return [
-            'knowledge_name' => ['required', 'string', 'max:30'],
+            'knowledge_name' => ['required', 'string', 'max:100'],
             'knowledge_description' => ['required', 'string', 'max:300'],
             'id_occupations' => ['required', 'exists:occupations,id'],
             'occupation_name' => ['required', 'exists:occupations,id'],

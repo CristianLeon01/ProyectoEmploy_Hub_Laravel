@@ -24,9 +24,10 @@ class LifeSheetRequest extends FormRequest
     public function rules()
     {
         return [
+            'personal_description' => ['required', 'string', 'max:200'],
+            'languages' => ['required', 'string', 'max:200'],
             'experience' => ['required', 'string', 'max:500'],
             'education' => ['required', 'string', 'max:500'],
-            'operator' => ['required', 'boolean'],
         ];
     }
 }
