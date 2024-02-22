@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RelationRequest;
+use App\Models\Occupation;
 use App\Models\Relation;
 use App\Models\UserType;
 use Illuminate\Http\Request;
@@ -17,31 +18,28 @@ class RelationController extends Controller
     
     public function Create(){
 
-        $user_types = UserType::all();
-        return view('/relation/create',['user_type'=> $user_types]);
+        return view('relation.create');;
     }
 
     public function Store(RelationRequest $request){
 
-        $relation = new Relation($request->validated());
+        $relationData = $request->validated();
+        $relation = new Relation($relationData);
         $relation->save();
-
-        return redirect('relation')->with('success',  'Relacion creada exitosamente');
+        return redirect('relation')->with('success', 'Denominacion creada exitosamente');
     }
 
     public function Edit (Relation $relation){
 
-        $user_types = UserType::all();
-
-        return view('relation.edit', [
-            '$user_types' => $user_types,
-        ])->with('relation', $relation);
+        $id_occupations = Occupation::all();
+        return view('relation.edit', 
+        ['id_occupations' => $id_occupations])->with('relation', $relation);
     }
 
 
     public function Update(RelationRequest $request, Relation $relation){
-        
-        $relation->update($request->all()); 
+
+        $relation->update($request->validated());
         return redirect()->route('relation');
     }
 

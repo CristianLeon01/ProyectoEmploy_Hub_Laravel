@@ -25,7 +25,7 @@
         </table>
             <li>
                 <a href="{{ route('show.skill', $skill->id) }}">{{ $skill->id }}</a> |
-                <a href="{{ route('show.skill', $skill->id) }}" class="boton1">EDIT</a> |
+                <a href="{{ route('edit.skill', $skill->id) }}" class="boton1">EDIT</a> |
                 <form method="POST" action="{{ route('destroy.skill', ['skill'=>$skill->id]) }}"> 
                     @csrf
                     @method('DELETE')

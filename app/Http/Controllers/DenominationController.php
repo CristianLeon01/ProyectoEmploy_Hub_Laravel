@@ -25,19 +25,11 @@ class DenominationController extends Controller
     }
 
     public function Store(DenominationRequest $request){
-
-        $denomination = new Denomination();
-        $denomination-> denominate_description = $request->input('denominate_description');
-        $denomination-> id_occupations = $request->input('id_occupations');
-        $denomination-> occupation_name = $request->input('occupation_name');
+        
+        $denominationData = $request->validated();
+        $denomination = new Denomination($denominationData);
         $denomination->save();
-
         return redirect('denomination')->with('success', 'Denominacion creada exitosamente');
-
-        // $denominationData = $request->validated();
-        // $denomination = new Denomination($denominationData);
-        // $denomination->save();
-        // return redirect('denomination')->with('success', 'Denominacion creada exitosamente');
     }    
 
     public function Edit (Denomination $denomination){

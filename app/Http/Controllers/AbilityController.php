@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ability;
 use Illuminate\Http\Request;
 use App\Http\Requests\AbilityRequest;
+use App\Models\Occupation;
 
 class AbilityController extends Controller
 {
@@ -21,14 +22,17 @@ class AbilityController extends Controller
 
     public function Store(AbilityRequest $request)
     {
-        $ability = new Ability($request->validated());
+        $abilityData = $request->validated();
+        $ability = new Ability($abilityData);
         $ability->save();
-        return redirect('skill')->with('success', 'Habilidad creada exitosamente');
+        return redirect('skill')->with('success', 'Denominacion creada exitosamente');
     }
 
     public function Edit(Ability $skill)
     {
-        return view('skill.edit', compact('skill'));
+        $id_occupations = Occupation::all();
+        return view('skill.edit', 
+        ['id_occupations' => $id_occupations])->with('skill', $skill);
     }
 
     public function Update(AbilityRequest $request, Ability $skill)

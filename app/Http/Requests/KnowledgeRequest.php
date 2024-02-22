@@ -27,7 +27,7 @@ class KnowledgeRequest extends FormRequest
             'knowledge_name' => ['required', 'string', 'max:100'],
             'knowledge_description' => ['required', 'string', 'max:300'],
             'id_occupations' => ['required', 'exists:occupations,id'],
-            'occupation_name' => ['required', 'exists:occupations,id'],
+            'occupation_name' => ['required', 'exists:occupations,occupation_name'],
         ];
     }
 }

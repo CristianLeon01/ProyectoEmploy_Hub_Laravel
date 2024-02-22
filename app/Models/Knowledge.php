@@ -17,4 +17,9 @@ class Knowledge extends Model
         'id_occupations',
         'occupation_name'
     ];
+
+    public function occupation()
+    {
+        return $this->belongsTo(Occupation::class, 'id_occupations');
+    }
 }

@@ -13,11 +13,9 @@
         <label>Update the description of the skill:</label><br>
         <input   value="{{ $skill-> skill_description }}"  name="skill_description"  type="text" required></input><br><br>
 
-        <label>Update the occupation id:</label>
-        <input value="{{ $skill-> id_occupations }}" type="number" name="id_occupations" required><br><br>
+        <input type="hidden" name="id_occupations" value="{{ $skill->id_occupations }}">
 
-        <label>Update the name of the occupation:</label>
-        <input  value="{{ $skill-> occupation_name }}" type="text" name="occupation_name" required><br><br>
+        <input type="hidden" name="occupation_name" value="{{ $skill->occupation_name }}">
 
         <center><button type="submit" class="create-application-button" value="Update">Update</button></center>
     </form>

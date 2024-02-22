@@ -13,11 +13,9 @@
         <label>Update the description of the Knowledge:</label><br>
         <input  value="{{ $knowledge-> knowledge_description }}"  name="knowledge_description" type="text" required></input><br><br>
 
-        <label>Update the occupation id:</label>
-        <input value="{{ $knowledge-> id_occupations }}" type="number" name="id_occupations" required><br><br>
+        <input type="hidden" name="id_occupations" value="{{ $relation->id_occupations }}">
 
-        <label>Update the name of the occupation:</label>
-        <input  value="{{ $knowledge-> occupation_name }}" type="text" name="occupation_name" required><br><br>
+        <input type="hidden" name="occupation_name" value="{{ $relation->occupation_name }}">
 
         <center><button type="submit" class="create-application-button" value="Update">Update</button></center>
     </form>

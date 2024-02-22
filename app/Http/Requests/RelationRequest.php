@@ -26,7 +26,7 @@ class RelationRequest extends FormRequest
         return [
             'name_related_occupation' => ['required', 'string', 'max:500'],
             'id_occupations' => ['required', 'exists:occupations,id'],
-            'occupation_name' => ['required', 'exists:occupations,id'],
+            'occupation_name' => ['required', 'exists:occupations,occupation_name'],
         ];
     }
 }

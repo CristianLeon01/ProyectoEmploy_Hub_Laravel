@@ -27,7 +27,7 @@ class AbilityRequest extends FormRequest
             'skill_name' => ['required', 'string', 'max:100'],
             'skill_description' => ['required', 'string', 'max:350'],
             'id_occupations' => ['required', 'exists:occupations,id'],
-            'occupation_name' => ['required', 'exists:occupations,id'],
+            'occupation_name' => ['required', 'exists:occupations,occupation_name'],
         ];
     }
 }
