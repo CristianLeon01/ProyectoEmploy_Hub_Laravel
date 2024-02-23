@@ -45,15 +45,16 @@ class VacantController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData=$request->validate([
-            'number_vacancies_applied'=>'required',
-            'id_offers'=>'required',
-            'id_localities'=>'required',
-            'id_contract_types'=>'required',
-            'weigthing_id'=>'required'
-        ]);
-        Vacant::create($validatedData);
+        $vacancy= new Vacant;
+        $vacancy->number_vacancies_applied = $request->number_vacancies_applied;
+        $vacancy->id_offers = $request->id_offers;
+        $vacancy->id_localities = $request->id_localities;
+        $vacancy->id_contract_types = $request->id_contract_types;
+        $vacancy->weighings_id = $request->weighings_id;
+        $vacancy->save();
+
         return redirect()->route('vacant.index');
+
     }
 
     /**
