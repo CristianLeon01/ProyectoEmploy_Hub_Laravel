@@ -19,7 +19,7 @@
                     <td>{{$vacancy->location->location_name}}</td>
                     <td>{{$vacancy->contract_type->contract_name}}</td>
                     {{-- <strong>{{$vacancy->weighting->references}}</strong> --}}
-                    <td>{{ $vacancy->weighing->languages }}</td>
+                    <td>{{ $vacancy->weighings->languages }}</td>
                 </tr>
             @endforeach
         </tbody>

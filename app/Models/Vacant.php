@@ -17,7 +17,7 @@ class Vacant extends Model
         'id_offers',
         'id_localities',
         'id_contract_types',
-        'id_weightings'
+        'weightings_id'
     ];
 
     public function offer()
@@ -35,7 +35,7 @@ class Vacant extends Model
         return $this->belongsTo(Contract_type::class, 'id_contract_types');
     }
 
-    public function weighing()
+    public function weighings()
     {
         return $this->belongsTo(Weighing::class);
     }

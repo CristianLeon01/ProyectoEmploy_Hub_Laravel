@@ -15,23 +15,23 @@
         </select>
 
         <label for="">location name</label>
-        <select name="location_name" id="">
+        <select name="id_localities" id="">
             @foreach ($localities as $location)
                 <option value="{{ $location->id }}">{{ $location->location_name }}</option>
             @endforeach
         </select>
 
         <label for="">contract_type</label>
-        <select name="contract_type" id="">
+        <select name="id_contract_types" id="">
             @foreach ($contract_types as $contract_type)
                 <option value="{{ $contract_type->id }}">{{ $contract_type->contract_name }}</option>
             @endforeach
         </select>
 
         <label for="">weighting</label>
-        <select name="weighting" id="">
+        <select name="weighings_id" id="">
             @foreach ($weightings as $weighting)
-                <option value="{{ $weighting->id }}">{{ $weighting->languajes }}</option>
+                <option value="{{ $weighting->id }}">{{ $weighting->languages }}</option>
             @endforeach
         </select>
 
