@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <link rel="stylesheet" href="{{ asset('../css/Companies/createCompany.css') }}">
+    <link rel="stylesheet" href="{{ asset('../css/Companies/editCompanies.css') }}">
     <h1 class="tituloEmpresa">Update <span>Company</span></h1>
     <form class="formulario-doble" action="{{ route('update.company', ['company'=>$company->id]) }}"  method="POST">
         @method('PUT')

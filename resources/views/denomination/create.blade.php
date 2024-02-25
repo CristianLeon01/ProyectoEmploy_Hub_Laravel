@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Denominations/createDenomination.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Denominations/createDenominations.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Denomination</span></h1>
-    <form action="{{ route('store.denomination') }}" method="POST">
+    <h1 class="titleDenomination">Create Your <span>Denomination</span></h1>
+    <form class="form-denomination" action="{{ route('store.denomination') }}" method="POST">
         @csrf
 
         <label>Write the description of the denomination :</label>
