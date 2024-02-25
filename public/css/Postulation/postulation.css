@@ -34,7 +34,7 @@
     height: 30vw;
     padding: 50px;
     background-color: rgb(210, 214, 213);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */ /* Establece un borde */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 

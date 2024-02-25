@@ -58,8 +58,6 @@ Route::get('/termsConditions', [TermsAndConditionsController::class, 'mostrarTer
 
 Route::get('/layouts', [HomeController::class, 'redirect'])->name('layouts');
 
-Route::get('/postulation', [PostulationController::class, 'mostrar'])->name('postulation');
-
 Route::get('/notRegister', [NotRegisterController::class, 'mostrarNotRegister'])->name('notRegister');
 
 Route::get('/mostrarManageUser', [ManageController::class, 'mostrarManageUser'])->name('manageUser'); 
@@ -236,6 +234,12 @@ Route::delete('/instructor/destroy/{instructor}', [InstructorController::class, 
 
 //Route Vacants
 Route::resource('vacant', VacantController::class);
+
+//Route Postulations
+Route::get('/postulation', [PostulationController::class, 'mostrar'])->name('postulation');
+//Route::get('/postulation/{offerId}', [PostulationController::class, 'index'])->name('postulation.index');
+// Route::get('/postulation/{offer}', [PostulationController::class, 'showPostulationForm'])->name('postulation.form');
+// Route::post('/postulation/{offer}', [PostulationController::class, 'storePostulation'])->name('postulation.store');
 
 Route::get('auth/login', [LoginController::class, 'index'])->name('login');
 Route::get('/logout', [LogoutController::class, 'store'])->name('auth.despedida');
