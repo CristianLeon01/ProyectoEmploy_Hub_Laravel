@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Abilities/createAbilities.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Abilities/editAbilities.css') }}">
 <section class="create">
-    <h1 class="title">Create Your <span>Skill</span></h1>
-    <form action="{{ route('update.skill', $skill->id) }}" method="POST">
+    <h1 class="titleAbility">Create Your <span>Skill</span></h1>
+    <form class="form-skill" action="{{ route('update.skill', $skill->id) }}" method="POST">
         @method('PUT')
         @csrf
         <label>Update the name of your Skill :</label>
@@ -17,7 +17,7 @@
 
         <input type="hidden" name="occupation_name" value="{{ $skill->occupation_name }}">
 
-        <center><button type="submit" class="create-application-button" value="Update">Update</button></center>
+        <center><button type="submit" class="create-ability-button" value="Update">Update</button></center>
     </form>
-    @endsection
 </section>
+@endsection

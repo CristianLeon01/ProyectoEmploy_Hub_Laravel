@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Administrators/administrators.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Administrators/editAdministrators.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Administrator</span></h1>
-    <form action="{{ route('administrator.update', $administrator->id) }}" method="POST">
+    <h1 class="titleAdmin">Create Your <span>Administrator</span></h1>
+    <form class="form-admin" action="{{ route('administrator.update', $administrator->id) }}" method="POST">
         @method('PUT')
         @csrf
         <label>Update your document number:</label>
