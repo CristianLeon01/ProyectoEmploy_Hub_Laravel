@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <link rel="stylesheet"  href="{{ asset('/css/Offerts/createOffert.css') }}">
-    <section class="crearOferta">
-        <h1 class="tituloOferta">Cree Su <span>Oferta</span></h1>
-        <form class="form-offer" action="{{ route('store.offer') }}" method="POST">
+    <section class="create">
+        <h1 class="title-offert">Cree Su <span>Oferta</span></h1>
+        <form class="form-offert" action="{{ route('store.offer') }}" method="POST">
             @csrf
             <label for="titulo">Offer Title:</label>
             <input type="text" id="titulo" name="name_vacant" required><br><br>
@@ -39,7 +39,7 @@
             <label for="requisitos">Requirements:</label>
             <textarea id="requisitos" name="requirements" rows="4" cols="50" required></textarea><br><br>
 
-            <center><button type="submit" class="crear-oferta-button">Crear Oferta</button></center>
+            <center><button type="submit" class="create-application-button">Crear Oferta</button></center>
         </form>
     </section>
 @endsection

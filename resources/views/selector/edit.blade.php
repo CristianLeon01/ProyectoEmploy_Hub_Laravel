@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Selectors/createSelector.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Selectors/editSelectors.css') }}">
 <section class="create">
-    <h1 class="title">Edit Your <span>Selector</span></h1>
-    <form action="{{ route('update.selector', $selector->id) }}" method="POST">
+    <h1 class="title-selector">Edit Your <span>Selector</span></h1>
+    <form class="form-selector" action="{{ route('update.selector', $selector->id) }}" method="POST">
         @method('PUT')
         @csrf
 
         <label>Update your document number :</label>
-        <input name="number_document_selector" type="number" required value="{{ $selector-> number_document_selector }}"><input></><br><br>
+        <input name="number_document_selector" type="number" required value="{{ $selector-> number_document_selector }}"><br><br>
 
         <label for="tipo_recruiter">Update your Document Type</label>
         <select id="tipo_recruiter" name="document_type_selector" value="{{ $selector-> document_type_selector }}">
@@ -24,7 +24,7 @@
         <input type="text"  name="name_selector" required value="{{ $selector-> name_selector }}"><br><br>
 
         <label>Update your phone :</label>
-        <input name="phone_selector" type="number" required value="{{ $selector-> phone_selector }}"><input></><br><br>
+        <input name="phone_selector" type="number" required value="{{ $selector-> phone_selector }}"><br><br>
 
         <label>Update your email:</label>
         <input type="text" name="email_selector" required value="{{ $selector-> email_selector }}"><br><br>

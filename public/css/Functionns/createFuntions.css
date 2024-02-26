@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-.title-relation {
+.title-funtion {
     text-align: center;
     font-size: 50px;
     margin-top: 50px;
@@ -21,7 +21,7 @@ span {
 
 /* Aqui empieza el estilo del formulario */
 
-.form-relation {
+.form-funtion {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
@@ -67,3 +67,5 @@ textarea {
 .create-application-button:hover {
     background-color: #0056b3;
 }
+
+/* empieza el codigo responsive */

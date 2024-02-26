@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Weighings/weighing.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Weighings/createWeighing.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Weight</span></h1>
+    <h1 class="title-weighing">Create Your <span>Weight</span></h1>
     <form class="form-weighing" action="{{ route('store.weighing') }}" method="POST">
         @csrf
         <label>Select which languages you know:</label>

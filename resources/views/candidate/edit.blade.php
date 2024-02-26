@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Candidates/editCandidate.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Candidates/editCandidates.css') }}">
 <section class="create">
-    <h1 class="title">Update <span>Candidate</span></h1>
-    <form action="{{ route('update.candidate', $candidate->id) }}" method="POST">
+    <h1 class="titleCandidate">Update <span>Candidate</span></h1>
+    <form class="form-candidate" action="{{ route('update.candidate', $candidate->id) }}" method="POST">
         @method('PUT')
         @csrf
         <label>Update your document number:</label>

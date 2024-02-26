@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="{{ asset('/css/Abilities/createAbilities.css') }}">
 
-<section class="createAbility">
+<section class="create">
     <h1 class="titleAbility">Create Your <span>Skill</span></h1>
     <form class="form-skill" action="{{ route('store.skill') }}" method="POST">
         @csrf

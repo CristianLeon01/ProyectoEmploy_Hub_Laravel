@@ -2,10 +2,10 @@
 
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Instructor/createInstructor.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Instructor/createInstructors.css') }}">
 
-<section class="createInstructor">
-    <h1 class="titleInstructor">Create Your <span>Instructor</span></h1>
+<section class="create">
+    <h1 class="title-instructor">Create Your <span>Instructor</span></h1>
     <form class="form-instructor" action="{{ route('store.instructor') }}" method="POST">
         @csrf
 

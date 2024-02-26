@@ -1,6 +1,6 @@
 .create {
     width: 100%;
-    height: 1450px;
+    height: 1000px;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-.title {
+.title-instructor {
     text-align: center;
     font-size: 50px;
     margin-top: 50px;
@@ -19,11 +19,14 @@ span {
     color: white;
 }
 
-form {
+/* Aqui empieza el estilo del formulario */
+
+.form-instructor {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0.2, 0.4);
+    width: 1000px;
     margin-top: 70px;
 }
 
@@ -31,35 +34,36 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    font-size: 1.2rem; 
+    font-size: 20px;
 }
 
 input[type="text"],
-input[type="password"],
 input[type="number"],
-select {
+select,
+textarea {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin-bottom: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1rem; 
+    font-size: 16px;
 }
 
 textarea {
     height: 100px;
 }
 
-.create-application-button {
+.create-instructor-button {
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 4px;
-    padding: 12px;
-    font-size: 1.2rem;
+    padding: 10px 20px;
+    font-size: 18px;
     cursor: pointer;
+    position: relative;
 }
 
-.create-application-button:hover {
+.create-instructor-button:hover {
     background-color: #0056b3;
 }
