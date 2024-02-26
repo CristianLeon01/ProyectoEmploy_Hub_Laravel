@@ -4,12 +4,12 @@
 <link rel="stylesheet" href="{{ asset('/css/Relations/createRelation.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Relation</span></h1>
-    <form action="{{ route('store.relation') }}" method="POST">
+    <h1 class="title-relation">Create Your <span>Relation</span></h1>
+    <form class="form-relation" action="{{ route('store.relation') }}" method="POST">
         @csrf
 
         <label>Write the name of the related occupation :</label>
-        <input name="name_related_occupation" type="text" required></><br><br>
+        <input name="name_related_occupation" type="text" required><br><br>
 
         <label for="correo">Write Id Occupation</label>
         <input type="number" id=correo name="id_occupations" class="textarea1" required><br><br>

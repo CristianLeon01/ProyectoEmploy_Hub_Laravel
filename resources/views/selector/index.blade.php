@@ -18,11 +18,11 @@
             </tr>
             <tr>
                 <td><a>{{ $selector->id }}</a></td>
-                <td><a>{{ $selector->number_document }}</a></td>
-                <td><a>{{ $selector->document_type }}</a></td>
-                <td><a>{{ $selector->name }}</a></td>
-                <td><a>{{ $selector->phone }}</a></td>
-                <td><a>{{ $selector->email }}</a></td>
+                <td><a>{{ $selector->number_document_selector }}</a></td>
+                <td><a>{{ $selector->document_type_selector }}</a></td>
+                <td><a>{{ $selector->name_selector }}</a></td>
+                <td><a>{{ $selector->phone_selector }}</a></td>
+                <td><a>{{ $selector->email_selector }}</a></td>
             </tr>
         </table>
             <li class="list-element">

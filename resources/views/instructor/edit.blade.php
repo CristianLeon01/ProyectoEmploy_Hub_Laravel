@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Administrators/administrators.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Instructor/editInstructors.css') }}">
 <section class="create">
-    <h1 class="title">Update your<span> Instructor</span></h1>
-    <form action="{{ route('update.instructor', $instructor->id) }}" method="POST">
+    <h1 class="title-instructor">Update your<span> Instructor</span></h1>
+    <form class="form-instructor" action="{{ route('update.instructor', $instructor->id) }}" method="POST">
         @method('PUT')
         @csrf
         <label>Update your document number:</label>
@@ -33,7 +33,7 @@
 
         <input type="hidden" name="id_administrators" value="{{ $instructor->id_administrators }}">
 
-        <center><button type="submit" class="create-application-button" value="Update">Update</button></center>
+        <center><button type="submit" class="create-instructor-button" value="Update">Update</button></center>
     </form>
 </section>
 @endsection

@@ -1,12 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Posts/createPost.css') }}">
-<a href="{{ route ('post') }}"> Back</a>
+<link rel="stylesheet" href="{{ asset('/css/Posts/editPosts.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Post</span></h1>
-    <form action="{{ route('update.post', $post->id) }}" method="POST">
+    <h1 class="title-post">Create Your <span>Post</span></h1>
+    <form class="form-post" action="{{ route('update.post', $post->id) }}" method="POST">
         @method('PUT')
         @csrf
 
