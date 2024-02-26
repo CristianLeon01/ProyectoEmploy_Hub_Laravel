@@ -8,7 +8,7 @@
     <form class="form-recruiter" action="{{ route('store.recruiter') }}" method="POST">
         @csrf
 
-        <label>Write your document number :</label>
+        <label>Write your document number: </label>
         <input name="number_document" type="number" required>
 
         <label for="tipo_recruiter">Document Type</label>
@@ -32,7 +32,7 @@
         <label for="" class="form-label">User Type Id</label>
         <select class="" name="id_user_types" id="id_user_types">
             @foreach ($user_type as $user_type)
-            <option value="{{$user_type->id}}">{{$user_type->user_type_name }}</option>    
+            <option value="{{$user_type->id}}">{{$user_type->user_type_name }}</option>
             @endforeach
         </select>
 
