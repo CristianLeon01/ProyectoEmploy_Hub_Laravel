@@ -1,6 +1,6 @@
 .create {
     width: 100%;
-    height: 1450px;
+    height: 1100px;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -8,20 +8,20 @@
     flex-direction: column;
 }
 
-.title{
+.titleCandidate {
     text-align: center;
     font-size: 50px;
     margin-top: 50px;
     color: #000;
 }
 
-span{
-    color:rgb(255, 255, 255);
+span {
+    color: white;
 }
 
 /* Aqui empieza el estilo del formulario */
 
-.form-weighing {
+.form-candidate {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
@@ -39,9 +39,8 @@ label {
 
 input[type="text"],
 input[type="number"],
-select,
-
-textarea {
+input[type="email"],
+select {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="{{ asset('../css/Companies/createCompany.css') }}">
+<link rel="stylesheet" href="{{ asset('../css/Companies/createCompanies.css') }}">
 <h1 class="tituloEmpresa">Create <span>Company</span></h1>
 <form class="formulario-doble" action="{{ route('store.company') }}" method="POST">
     @csrf

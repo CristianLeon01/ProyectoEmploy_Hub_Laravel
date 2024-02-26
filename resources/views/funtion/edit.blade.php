@@ -1,17 +1,17 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Functionns/createFuntion.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Functionns/editFuntions.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Funtion</span></h1>
-    <form action="{{ route('update.funtion', $funtion->id) }}" method="POST">
+    <h1 class="title-funtion">Edit Your <span>Funtion</span></h1>
+    <form class="form-funtion" action="{{ route('update.funtion', $funtion->id) }}" method="POST">
         @method('PUT')
         @csrf
         <label>Update the description of the function :</label>
         <input  value="{{ $funtion-> function_description }}" name="function_description"  type="text" required></input><br><br>
 
-        <label>Update your the occupation ID:</label><br>
+        <label>Update your the occupation ID:</label>
         <input  value="{{ $funtion-> id_occupations }}"  name="id_occupations"  type="number" required></input><br><br>
 
         <label>Update the name of the occupation:</label>

@@ -2,16 +2,16 @@
 @section('content')
 
 
-<div  class="container1">
+<div class="container1">
     <link rel="stylesheet" href="{{ asset('/css/index.css') }}">
-    <a href="{{ route('create.post') }}" class="boton1">Create New Post</a>
-    <ul>
+    <a href="{{ route('create.post') }}" class="boton2">Create New Post</a>
+    <ul class="list-general">
         @forelse ($posts as $post)
-        <table>
+        <table class="table-general">
             <tr>
-                <th>ID</th>
-                <th>Name Post</th>
-                <th>Description</th>
+                <th class="table-header">ID</th>
+                <th class="table-header">Name Post</th>
+                <th class="table-header">Description</th>
             </tr>
             <tr>
                 <td><a>{{ $post->id }}</a></td>
@@ -19,17 +19,17 @@
                 <td><a>{{ $post->description}}</a></td>
             </tr>
         </table>
-            <li>
-                <a href="{{ route('show.post', $post->id) }}">{{ $post->id }}</a> |
-                <a href="{{ route('edit.post', $post->id) }}" class="boton1">EDIT</a> |
-                <form method="POST" action="{{ route('destroy.post', ['post'=>$post->id]) }}"> 
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" value='DELETE' class="boton1">
-                </form>
-            </li>
+        <li>
+            <a href="{{ route('show.post', $post->id) }}" class="link">{{ $post->id }}</a> |
+            <a href="{{ route('edit.post', $post->id) }}" class="boton1">EDIT</a> |
+            <form method="POST" action="{{ route('destroy.post', ['post'=>$post->id]) }}" class="delete-form"> 
+                @csrf
+                @method('DELETE')
+                <input type="submit" value='DELETE' class="boton1">
+            </form>
+        </li>
         @empty
-            <p>No data.</p>
+        <p class="no-data">No data.</p>
         @endforelse
     </ul>
 </div>
