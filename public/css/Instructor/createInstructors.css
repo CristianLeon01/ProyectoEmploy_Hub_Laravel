@@ -1,6 +1,6 @@
 .create {
     width: 100%;
-    height: 900px;
+    height: 1000px;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-.title-relation {
+.title-instructor {
     text-align: center;
     font-size: 50px;
     margin-top: 50px;
@@ -21,7 +21,7 @@ span {
 
 /* Aqui empieza el estilo del formulario */
 
-.form-relation {
+.form-instructor {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
@@ -53,7 +53,7 @@ textarea {
     height: 100px;
 }
 
-.create-application-button {
+.create-instructor-button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -64,6 +64,6 @@ textarea {
     position: relative;
 }
 
-.create-application-button:hover {
+.create-instructor-button:hover {
     background-color: #0056b3;
 }

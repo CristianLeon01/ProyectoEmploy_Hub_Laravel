@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="{{ asset('/css/Life_Sheets/createLifeSheet.css') }}">
 <section class="create">
-    <h1 class="title">Create Your Life<span> Sheets </span></h1>
+    <h1 class="title-life-sheet">Create Your Life<span> Sheets </span></h1>
     <form class="form-life" method="post" action="{{ route('store.lifeSheet') }}">
         @csrf
 

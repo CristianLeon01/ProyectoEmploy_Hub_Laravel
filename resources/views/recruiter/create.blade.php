@@ -1,12 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Recruiters/createRecruiter.css') }}">
-<a href="{{ route ('recruiter') }}"> Back</a>
+<link rel="stylesheet" href="{{ asset('/css/Recruiters/createRecruiters.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Recruiter</span></h1>
-    <form action="{{ route('store.recruiter') }}" method="POST">
+    <h1 class="title-recruiter">Create Your <span>Recruiter</span></h1>
+    <form class="form-recruiter" action="{{ route('store.recruiter') }}" method="POST">
         @csrf
 
         <label>Write your document number :</label>

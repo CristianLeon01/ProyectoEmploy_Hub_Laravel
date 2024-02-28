@@ -8,15 +8,15 @@
     flex-direction: column;
 }
 
-.title{
+.title-weighing {
     text-align: center;
     font-size: 50px;
     margin-top: 50px;
     color: #000;
 }
 
-span{
-    color:rgb(255, 255, 255);
+span {
+    color: white;
 }
 
 /* Aqui empieza el estilo del formulario */
@@ -40,7 +40,6 @@ label {
 input[type="text"],
 input[type="number"],
 select,
-
 textarea {
     width: 100%;
     padding: 8px;

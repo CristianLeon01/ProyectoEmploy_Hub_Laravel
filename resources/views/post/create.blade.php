@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Posts/createPost.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/Posts/createPosts.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Post</span></h1>
+    <h1 class="title-post">Create Your <span>Post</span></h1>
     <form class="form-post" action="{{ route('store.post') }}" method="POST">
         @csrf
 
