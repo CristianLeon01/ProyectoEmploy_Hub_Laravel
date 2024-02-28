@@ -1,27 +1,29 @@
 @extends('layouts.app')
 @section('content')
-    <h1>list of vacancies</h1>
-    <table>
-        <thead>
+<div class="container1">
+    <link rel="stylesheet" href="{{ asset('/css/index.css') }}">
+    <a href="{{ route('vacant.create') }}" class="boton2">Create New Vacant</a>
+    <ul class="list-general">
+        <table class="table-general">
             <tr>
-                <th>Number vacancies</th>
-                <th>Offer</th>
-                <th>Location</th>
-                <th>Contract_type</th>
-                <th>Weighting</th>
+                <th class="table-header">Number Vacancies</th>
+                <th class="table-header">Offer</th>
+                <th class="table-header">Location</th>
+                <th class="table-header">Contract Type</th>
+                <th class="table-header">Weighting</th>
             </tr>
-        </thead>
-        <tbody>
             @foreach ($vacancies as $vacancy)
-                <tr>
-                    <td>{{$vacancy->number_vacancies_applied}}</td>
-                    <td>{{$vacancy->offer->name_vacant}}</td>
-                    <td>{{$vacancy->location->location_name}}</td>
-                    <td>{{$vacancy->contract_type->contract_name}}</td>
-                    {{-- <strong>{{$vacancy->weighting->references}}</strong> --}}
-                    <td>{{ $vacancy->weighings->languages }}</td>
-                </tr>
+            <tr>
+                <td>{{ $vacancy->number_vacancies_applied }}</td>
+                <td>{{ $vacancy->offer->name_vacant }}</td>
+                <td>{{ $vacancy->location->location_name }}</td>
+                <td>{{ $vacancy->contract_type->contract_name }}</td>
+                <td>{{ $vacancy->weighings->languages }}</td>
+            </tr>
             @endforeach
-        </tbody>
-    </table>
+        </table>
+    </ul>
+</div>
 @endsection
+
+
