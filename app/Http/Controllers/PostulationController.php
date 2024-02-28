@@ -12,7 +12,11 @@ class PostulationController extends Controller
 
     public function mostrar()
     {
-        return view('postulation.index');
+        $offers = Offer::all();
+        
+        return view('postulation.index', [
+            'offers' => $offers,
+        ]);
     }
 
     // public function index($offerId)
