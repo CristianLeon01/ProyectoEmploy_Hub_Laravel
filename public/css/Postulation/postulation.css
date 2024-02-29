@@ -11,7 +11,18 @@
     background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
     min-height: auto; /* Altura mínima automática según el contenido */
 }
-    
+
+.titulo-principal {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Cambio a la fuente Open Sans */
+    color: #333; /* Color de texto oscuro */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 1px; /* Añadir un poco de espaciado entre letras */
+    font-weight: bold; /* Texto en negrita */
+}
 
 .campo {
     flex-basis: calc(50% - 10px); /* Tamaño de las subcasillas, con espacio entre ellas */
@@ -32,36 +43,16 @@
     color: #666;
 }
 
-.boton {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.boton button {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Color del botón */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.boton button:hover {
-    background-color: #45a049; /* Cambio de color al pasar el ratón */
-}
-
 .campo-CV {
-    text-align: center; /* Centra el contenido */
     width: 25%; /* Anchura del elemento */
-    margin: 0 auto; /* Centra horizontalmente */
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
-    margin-bottom: 20px; /* Espaciado entre las subcasillas */
+    margin: 0 auto 20px; /* Centra horizontalmente y agrega espaciado en la parte inferior */
     position: relative; /* Para posicionar los elementos hijos */
+    text-align: center;
 }
+
 
 .custom-file-upload {
     display: inline-block;
@@ -101,3 +92,42 @@
 .file-name{
     color: #333;
 }
+
+.boton {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.boton button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton button:hover {
+    background-color: #45a049; /* Cambio de color al pasar el ratón */
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.nombre-oferta {
+    margin-left: 3px; /* Ajusta el margen izquierdo según sea necesario */
+    color: #878787;
+}
+.span-title{
+    color: #000;
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+.span-info{
+    color: #6d6d6d;
+}
+

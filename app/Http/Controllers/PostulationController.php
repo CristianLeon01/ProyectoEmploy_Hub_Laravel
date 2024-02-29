@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\Offer;
 use App\Models\Postulation;
 use Illuminate\Http\Request;
@@ -13,9 +14,11 @@ class PostulationController extends Controller
     public function mostrar()
     {
         $offers = Offer::all();
+        $companies = Company::all();
         
         return view('postulation.index', [
             'offers' => $offers,
+            'companies' => $companies,
         ]);
     }
 

@@ -13,4 +13,8 @@ class Postulation extends Model
     public function offer() :BelongsTo {
         return $this->belongsTo(Offer::class);
     }
+
+    public function company() :BelongsTo {
+        return $this->belongsTo(Company::class);
+    }
 }
