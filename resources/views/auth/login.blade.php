@@ -5,7 +5,6 @@
         <content class="login">
             <head class="user">
                 <h1 class="title-login">LOGIN</h1>
-                <img src="{{ asset('img/LOGIN.png') }}" alt="user" width="300px" height="300px" />
             </head>
             <content class="form">
                 <form action="{{ route('login.auth') }}" method="POST">
