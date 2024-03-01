@@ -3,7 +3,6 @@
 
 <link rel="stylesheet"  href="{{ asset('/css/Postulation/postulation.css') }}">
     <div class="hoja-de-vida">
-        @forelse ($offers as $offer)
         <h2 class="titulo-principal">{{ $offer->name_vacant }}</h2>
         <div class="campo">
             <h2>Nombre de la Oferta: <span class="nombre-oferta">{{ $offer->name_vacant }}</span></h2>
@@ -67,7 +66,6 @@
             }
             </script>
     </div>  
-            @empty
-            @endforelse
+
 @endsection
     

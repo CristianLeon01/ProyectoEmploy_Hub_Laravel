@@ -62,6 +62,8 @@ Route::get('/notRegister', [NotRegisterController::class, 'mostrarNotRegister'])
 
 Route::get('/mostrarManageUser', [ManageController::class, 'mostrarManageUser'])->name('manageUser'); 
 
+
+
 // Routes Ability
 Route::get('/skill', [AbilityController::class, 'Ability'])->name('skill');
 Route::get('/skill/create', [AbilityController::class, 'Create'])->name('create.skill');
@@ -236,7 +238,7 @@ Route::delete('/instructor/destroy/{instructor}', [InstructorController::class, 
 Route::resource('vacant', VacantController::class);
 
 //Route Postulations
-Route::get('/postulation', [PostulationController::class, 'mostrar'])->name('postulation');
+Route::get('/postulation/{oferta}', [PostulationController::class, 'mostrar'])->name('postulation');
 //Route::get('/postulation/{offerId}', [PostulationController::class, 'index'])->name('postulation.index');
 // Route::get('/postulation/{offer}', [PostulationController::class, 'showPostulationForm'])->name('postulation.form');
 // Route::post('/postulation/{offer}', [PostulationController::class, 'storePostulation'])->name('postulation.store');
