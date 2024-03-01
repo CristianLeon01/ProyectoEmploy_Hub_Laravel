@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // RUTAS USERS
 // Ruta visualizacion de usuarios
-Route::get('/users', [UserApiController::class, 'users']);
+Route::get('/user', [UserApiController::class, 'users']);
 //Rutas para visualizar por id
 Route::get('user/{id}', [UserApiController::class, 'getById']);
 // Rutas para mirar credenciales de login
@@ -47,7 +47,7 @@ Route::get('occupation/{id}', [OccupationApiController::class, 'getById']);
 //Ruta visualizacion de cargos
 Route::get('/post', [PostApiController::class, 'post']);
 //Ruta creacion desde postman
-Route::post('/posts', [PostApiController::class, 'crearPost']);
+Route::post('/post', [PostApiController::class, 'crearPost']);
 //Rutas para visualizar por id
 Route::get('post/{id}', [PostApiController::class, 'getById']);
 

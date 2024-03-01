@@ -24,8 +24,10 @@ class LifeSheetApiController extends Controller
         // ]);
 
         $lifeSheet = new LifeSheet();
-        $lifeSheet->name_post = $request->input('name_post');
-        $lifeSheet->description = $request->input('description');
+        $lifeSheet->personal_description = $request->input('personal_description');
+        $lifeSheet->languages = $request->input('languages');
+        $lifeSheet->experience = $request->input('experience');
+        $lifeSheet->education = $request->input('education');
         $lifeSheet->save();
 
         return response()->json(['mensaje' => 'Hoja de Vida insertado correctamente'], 201);

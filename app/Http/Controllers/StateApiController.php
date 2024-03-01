@@ -17,7 +17,7 @@ class StateApiController extends Controller
     }
 
     // Funcion parecida al store para crear en este caso un nuevo cargo
-    public function crearOccupation(Request $request)
+    public function crearState(Request $request)
     {
         $request->validate([
             'state_name' => 'required', 'in:IN PROGRESS,IN CONTRACT, INTERVIEW, PRE-SELECTED, HIRED,  REFUSED',
