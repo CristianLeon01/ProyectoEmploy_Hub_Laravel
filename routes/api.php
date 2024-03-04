@@ -1,6 +1,13 @@
 <?php
 
+use App\Http\Controllers\AbilityApiController;
+use App\Http\Controllers\AdministratorApiController;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\CandidateApiController;
+use App\Http\Controllers\CompanyApiController;
+use App\Http\Controllers\DenominationApiController;
+use App\Http\Controllers\FunctionApiController;
+use App\Http\Controllers\InstructorApiController;
 use App\Http\Controllers\LifeSheetApiController;
 use App\Http\Controllers\OccupationApiController;
 use App\Http\Controllers\PostApiController;
@@ -68,3 +75,76 @@ Route::get('/lifeSheet', [LifeSheetApiController::class, 'lifeSheet']);
 Route::post('/lifeSheet', [LifeSheetApiController::class, 'crearLifeSheet']);
 //Rutas para visualizar por id
 Route::get('lifeSheet/{id}', [LifeSheetApiController::class, 'getById']);
+
+
+
+// RUTAS ABILITIES
+//Ruta visualizacion de habilidades
+Route::get('/skill', [AbilityApiController::class, 'skill']);
+//Ruta creacion desde postman
+Route::post('/skill', [AbilityApiController::class, 'crearSkill']);
+//Rutas para visualizar por id
+Route::get('skill/{id}', [AbilityApiController::class, 'getById']);
+
+
+// RUTAS ADMINISTRATOR
+//Ruta visualizacion de administradores
+Route::get('/administrator', [AdministratorApiController::class, 'administrator']);
+//Ruta creacion desde postman
+Route::post('/administrator', [AdministratorApiController::class, 'crearAdministrator']);
+//Rutas para visualizar por id
+Route::get('administrator/{id}', [AdministratorApiController::class, 'getById']);
+
+
+// RUTAS CANDIDATES
+//Ruta visualizacion de candidatos
+Route::get('/candidate', [CandidateApiController::class, 'candidate']);
+//Ruta creacion desde postman
+Route::post('/candidate', [CandidateApiController::class, 'crearCandidate']);
+//Rutas para visualizar por id
+Route::get('candidate/{id}', [CandidateApiController::class, 'getById']);
+
+
+// RUTAS COMPANIES
+//Ruta visualizacion de empresas
+Route::get('/company', [CompanyApiController::class, 'company']);
+//Ruta creacion desde postman
+Route::post('/company', [CompanyApiController::class, 'crearCompany']);
+//Rutas para visualizar por id
+Route::get('company/{id}', [CompanyApiController::class, 'getById']);
+
+
+// RUTAS CONTRACT_TYPE
+//Ruta visualizacion de tipos de contrato
+Route::get('/contract_type', [AbilityApiController::class, 'contract_type']);
+//Ruta creacion desde postman
+Route::post('/contract_type', [AbilityApiController::class, 'crearContractType']);
+//Rutas para visualizar por id
+Route::get('contract_type/{id}', [AbilityApiController::class, 'getById']);
+
+
+// RUTAS DENOMINATION
+//Ruta visualizacion de denominations
+Route::get('/denomination', [DenominationApiController::class, 'denomination']);
+//Ruta creacion desde postman
+Route::post('/denomination', [DenominationApiController::class, 'crearDenomination']);
+//Rutas para visualizar por id
+Route::get('denomination/{id}', [DenominationApiController::class, 'getById']);
+
+
+// RUTAS FUNTIONS
+//Ruta visualizacion de funciones
+Route::get('/function', [FunctionApiController::class, 'function']);
+//Ruta creacion desde postman
+Route::post('/function', [FunctionApiController::class, 'crearFunction']);
+//Rutas para visualizar por id
+Route::get('function/{id}', [FunctionApiController::class, 'getById']);
+
+
+// RUTAS INSTRUCTORS
+//Ruta visualizacion de instructores
+Route::get('/instructor', [InstructorApiController::class, 'instructor']);
+//Ruta creacion desde postman
+Route::post('/instructor', [InstructorApiController::class, 'crearInstructor']);
+//Rutas para visualizar por id
+Route::get('instructor/{id}', [InstructorApiController::class, 'getById']);
