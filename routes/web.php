@@ -62,6 +62,8 @@ Route::get('/notRegister', [NotRegisterController::class, 'mostrarNotRegister'])
 
 Route::get('/mostrarManageUser', [ManageController::class, 'mostrarManageUser'])->name('manageUser'); 
 
+
+
 // Routes Ability
 Route::get('/skill', [AbilityController::class, 'Ability'])->name('skill');
 Route::get('/skill/create', [AbilityController::class, 'Create'])->name('create.skill');
@@ -236,10 +238,25 @@ Route::delete('/instructor/destroy/{instructor}', [InstructorController::class, 
 Route::resource('vacant', VacantController::class);
 
 //Route Postulations
-Route::get('/postulation', [PostulationController::class, 'mostrar'])->name('postulation');
+Route::get('/postulation/{oferta}', [PostulationController::class, 'mostrar'])->name('postulation');
 //Route::get('/postulation/{offerId}', [PostulationController::class, 'index'])->name('postulation.index');
 // Route::get('/postulation/{offer}', [PostulationController::class, 'showPostulationForm'])->name('postulation.form');
 // Route::post('/postulation/{offer}', [PostulationController::class, 'storePostulation'])->name('postulation.store');
+
+
+// Route Files
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+$controller_path = 'App\Http\Controller';
+     
+     Route::get('/pages-home',$controller_path . 'FileController@index')->name('page-home');
+    //  Route::get('/page-2',$controller_path . '\pages\Page2@index')->name('page-page-2');
+    //  Route::post('/file/store',$controller_path . '\pages\Page2@store')->name('file.store');
+     
+});
 
 Route::get('auth/login', [LoginController::class, 'index'])->name('login');
 Route::get('/logout', [LogoutController::class, 'store'])->name('auth.despedida');

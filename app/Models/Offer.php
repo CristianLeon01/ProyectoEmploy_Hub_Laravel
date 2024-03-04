@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Offer extends Model
 {
@@ -28,4 +29,9 @@ class Offer extends Model
     {
         return $this->belongsTo(Contract_type::class, 'id_contract_types');
     }
+
+    public function postulation():HasMany {
+        return $this->hasMany(Postulation::class);
+    }
+
 }

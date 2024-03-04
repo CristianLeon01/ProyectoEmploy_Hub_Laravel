@@ -11,7 +11,6 @@
             <link rel="stylesheet" href="{{ asset('/css/Register/register.css') }}">
             <head class="user">
                 <h1>SIGN IN</h1>
-                <img src="{{ asset('Img/LOGIN.png') }}" alt="user" width="300px" height="300px" />
             </head>
                 <form action="{{ route('user.store') }}" method="POST">
                     @csrf
@@ -27,12 +26,12 @@
                         <label for="exampleInputEmail" class="user_type"></label>
                         <select class="user_type" name="id_user_types" id="">
                         @foreach ($user_types as $user_type)
-                        <option value="{{$user_type->id}}">{{$user_type->user_type_name}}</option>    
+                        <option value="{{$user_type->id}}">{{$user_type->user_type_name}}</option>
                         @endforeach
                         </select>
-                    </article> 
+                    </article>
                     <br>
-                    
+
                     <article class="email">
                         <label for="email">
                             <img src="{{ asset('Img/email-icon.png') }}" alt="Imagen" width="30px" height="30px" />

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INICIO</title>
     <link rel="stylesheet" href="{{ asset('css/layouts.css') }}">
+    <link rel="icon" href="img/Logo_EmplyHub.png" type="image/x-icon">
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                             <li><a href="{{ route('manageUser') }}">Manage Users</a></li>
                             <li><a href="{{ route('instructor') }}">Delete instructor Role</a></li>
                         </ul>
-                    </li>    
+                    </li>
                 </ul>
                 @endif
                 @if (Auth::user()->id_user_types == 2)
@@ -63,7 +64,7 @@
                             <li><a href="{{ route('create.occupation')}}">Create Occupation</a></li>
                             <li><a href="{{ route('create.post')}}">Create Post</a></li>
                             <li><a href="{{ route('create.weighing')}}">Create Weighing</a></li>
-                            <li><a href="#">Register Functions Manual</a></li> 
+                            <li><a href="#">Register Functions Manual</a></li>
                             <li><a href="#">Register The Requisition of a position</a></li>
                             <li><a href="#">Post Vacancy</a></li>
                         </ul>
@@ -110,7 +111,7 @@
     </section>
 </header>
 
-    
+
 
     <div class="imagen-fondo"></div>
 
