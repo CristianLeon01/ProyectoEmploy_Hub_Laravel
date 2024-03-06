@@ -44,10 +44,14 @@ form {
     height: 100%;
     padding: 10px;
 }
+::placeholder {
+    font-size: 16px;
+  }
 article {
     padding: 15px;
     background-color: #ffffff;
     border: solid 3px;
+    font-size: 16px;
 }
 article.username label {
     display: flex;
@@ -61,6 +65,7 @@ article.username label input {
     border: none;
     background: transparent;
     outline: none;
+    font-size: 16px;
 }
 article.password label input {
     border: none;
@@ -129,15 +134,15 @@ article.user_type{
     gap: 8px;
 }
 select.user_type{
-    background-color: #5e7581;
+    background-color: lightgrey;
     border: none;
     padding: 2px;
-    border-radius: 3px;
+    font-size: 12px;
 }
 
 button[name="submit"] {
-    background-color: #5C6B73;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 10px 20px;
     font-size: 16px;
     border: none;

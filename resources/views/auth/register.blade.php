@@ -15,9 +15,9 @@
                 <form action="{{ route('user.store') }}" method="POST">
                     @csrf
                     <article class="username">
-                        <label for="username"> Username
+                        <label for="username">
                             {{-- <img src="{{ asset('Img/USERNAME.png') }}" alt="Imagen" width="40px" height="40px" /> --}}
-                            <input type="text" name="username" required value="{{ old('username') }}"/>
+                            <input type="text" name="username" placeholder="Username" required value="{{ old('username') }}"/>
                         </label>
                     </article>
                     <br>
@@ -42,8 +42,8 @@
 
                     <article class="password">
                         <label for="password">
-                            <img src="{{ asset('Img/PASSWORD.png') }}" alt="Imagen" width="40px" height="40px" />
-                            <input type="password" name="password" placeholder="| password" required value="{{ old('password') }}"/>
+                            {{-- <img src="{{ asset('Img/PASSWORD.png') }}" alt="Imagen" width="40px" height="40px" /> --}}
+                            <input type="password" name="password" placeholder="password" required value="{{ old('password') }}"/>
                         </label>
                     </article>
 
