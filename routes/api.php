@@ -8,11 +8,20 @@ use App\Http\Controllers\CompanyApiController;
 use App\Http\Controllers\DenominationApiController;
 use App\Http\Controllers\FunctionApiController;
 use App\Http\Controllers\InstructorApiController;
+use App\Http\Controllers\KnowledgeApiController;
 use App\Http\Controllers\LifeSheetApiController;
+use App\Http\Controllers\LocationApiController;
 use App\Http\Controllers\OccupationApiController;
+use App\Http\Controllers\OfferApiController;
 use App\Http\Controllers\PostApiController;
+use App\Http\Controllers\RecruiterApiController;
+use App\Http\Controllers\RelationApiController;
+use App\Http\Controllers\SelectorApiController;
 use App\Http\Controllers\StateApiController;
 use App\Http\Controllers\UserApiController;
+use App\Http\Controllers\UserTypeApiController;
+use App\Http\Controllers\VacantApiController;
+use App\Http\Controllers\WeighingApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -148,3 +157,84 @@ Route::get('/instructor', [InstructorApiController::class, 'instructor']);
 Route::post('/instructor', [InstructorApiController::class, 'crearInstructor']);
 //Rutas para visualizar por id
 Route::get('instructor/{id}', [InstructorApiController::class, 'getById']);
+
+
+// RUTAS KNOWLEDGES
+//Ruta visualizacion de conocimientos
+Route::get('/knowledge', [KnowledgeApiController::class, 'knowledge']);
+//Ruta creacion desde postman
+Route::post('/knowledge', [KnowledgeApiController::class, 'crearKnowledge']);
+//Rutas para visualizar por id
+Route::get('knowledge/{id}', [KnowledgeApiController::class, 'getById']);
+
+
+// RUTAS LOCATIONS
+//Ruta visualizacion de localidades
+Route::get('/location', [LocationApiController::class, 'location']);
+//Ruta creacion desde postman
+Route::post('/location', [LocationApiController::class, 'crearLocation']);
+//Rutas para visualizar por id
+Route::get('location/{id}', [LocationApiController::class, 'getById']);
+
+
+// RUTAS OFFERS
+//Ruta visualizacion de ofertas
+Route::get('/offer', [OfferApiController::class, 'offer']);
+//Ruta creacion desde postman
+Route::post('/offer', [OfferApiController::class, 'crearOffer']);
+//Rutas para visualizar por id
+Route::get('offer/{id}', [OfferApiController::class, 'getById']);
+
+
+// RUTAS RECRUITERS
+//Ruta visualizacion de reclutadores
+Route::get('/recruiter', [RecruiterApiController::class, 'recruiter']);
+//Ruta creacion desde postman
+Route::post('/recruiter', [RecruiterApiController::class, 'crearRecruiter']);
+//Rutas para visualizar por id
+Route::get('recruiter/{id}', [RecruiterApiController::class, 'getById']);
+
+
+// RUTAS RELATION
+//Ruta visualizacion de relaciones
+Route::get('/relation', [RelationApiController::class, 'relation']);
+//Ruta creacion desde postman
+Route::post('/relation', [RelationApiController::class, 'crearRelation']);
+//Rutas para visualizar por id
+Route::get('relation/{id}', [RelationApiController::class, 'getById']);
+
+
+// RUTAS SELECTORS
+//Ruta visualizacion de seleccionadores
+Route::get('/selector', [SelectorApiController::class, 'selector']);
+//Ruta creacion desde postman
+Route::post('/selector', [SelectorApiController::class, 'crearSelector']);
+//Rutas para visualizar por id
+Route::get('selector/{id}', [SelectorApiController::class, 'getById']);
+
+
+// RUTAS USER_TYPES
+//Ruta visualizacion de tipos de usuarios
+Route::get('/user_type', [UserTypeApiController::class, 'user_type']);
+//Ruta creacion desde postman
+Route::post('/user_type', [UserTypeApiController::class, 'crearUserType']);
+//Rutas para visualizar por id
+Route::get('user_type/{id}', [UserTypeApiController::class, 'getById']);
+
+
+// RUTAS VACANTS
+//Ruta visualizacion de vacantes
+Route::get('/vacant', [VacantApiController::class, 'vacant']);
+//Ruta creacion desde postman
+Route::post('/vacant', [VacantApiController::class, 'crearVacant']);
+//Rutas para visualizar por id
+Route::get('vacant/{id}', [VacantApiController::class, 'getById']);
+
+
+// RUTAS WEIGHINGS
+//Ruta visualizacion de ponderaciones
+Route::get('/weighing', [WeighingApiController::class, 'weighing']);
+//Ruta creacion desde postman
+Route::post('/weighing', [WeighingApiController::class, 'crearWeighing']);
+//Rutas para visualizar por id
+Route::get('weighing/{id}', [WeighingApiController::class, 'getById']);
