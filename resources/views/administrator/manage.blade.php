@@ -5,10 +5,10 @@
 
 <br><br>
 <div class="container">
-    <h2 class="TituloManage">Tabla de Usuarios Registrados</h2><br><br>
+    <h2 class="TituloManage">Registered Users Table</h2><br><br>
 
     <div class="table-wrapper">
-        <button class="CambiarBoton">Cambiar</button>
+        <button class="CambiarBoton">Change</button>
         <table>
             <thead>
                 <tr>

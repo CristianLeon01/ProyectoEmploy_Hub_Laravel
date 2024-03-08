@@ -2,7 +2,7 @@
 @section('content')
 <link rel="stylesheet"  href="{{ asset('/css/Offerts/createOffert.css') }}">
     <section class="create">
-        <h1 class="title-offert">Cree Su <span>Oferta</span></h1>
+        <h1 class="title-offert">Create Your <span>Offert</span></h1>
         <form class="form-offert" action="{{ route('store.offer') }}" method="POST">
             @csrf
             <label for="titulo">Offer Title:</label>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="{{ route('index.offer')}}">Back</a>
+<a href="{{ route('offer')}}">Back</a>
 <h1>{{ $offer->name_vacant }}</h1>
 <h1>{{ $offer->description_vacant }}</h1>
 <h1>{{ $offer->name_company }}</h1>

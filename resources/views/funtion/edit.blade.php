@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('/css/Functionns/editFuntions.css') }}">
 
 <section class="create">
-    <h1 class="title-funtion">Edit Your <span>Funtion</span></h1>
+    <h1 class="title-funtion">Update Your <span>Funtion</span></h1>
     <form class="form-funtion" action="{{ route('update.funtion', $funtion->id) }}" method="POST">
         @method('PUT')
         @csrf

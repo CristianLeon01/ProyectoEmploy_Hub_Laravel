@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('/css/Relations/editRelations.css') }}">
 
 <section class="create">
-    <h1 class="title-relation">Edit Your <span>Relation</span></h1>
+    <h1 class="title-relation">Update Your <span>Relation</span></h1>
     <form class="form-relation" action="{{ route('update.relation', $relation->id) }}" method="POST">
         @method('PUT')
         @csrf

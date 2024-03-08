@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="{{ asset('/css/Selectors/editSelectors.css') }}">
 <section class="create">
-    <h1 class="title-selector">Edit Your <span>Selector</span></h1>
+    <h1 class="title-selector">Update Your <span>Selector</span></h1>
     <form class="form-selector" action="{{ route('update.selector', $selector->id) }}" method="POST">
         @method('PUT')
         @csrf

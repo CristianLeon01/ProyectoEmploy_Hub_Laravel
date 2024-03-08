@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('/css/Administrators/editAdministrators.css') }}">
 
 <section class="create">
-    <h1 class="titleAdmin">Create Your <span>Administrator</span></h1>
+    <h1 class="titleAdmin">Update Your <span>Administrator</span></h1>
     <form class="form-admin" action="{{ route('administrator.update', $administrator->id) }}" method="POST">
         @method('PUT')
         @csrf

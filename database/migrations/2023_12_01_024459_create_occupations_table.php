@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('occupation_name', 100);
             $table->string('occupation_description', 500);
-            $table->foreignID('id_post')->constrained('posts')->onDelete('cascade');
             $table->timestamps();
         });
     }

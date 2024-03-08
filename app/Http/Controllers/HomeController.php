@@ -9,7 +9,6 @@ class HomeController extends Controller
 
     public function redirect()
     {
-        // Puedes agregar lógica adicional aquí antes de redirigir
         return view('notRegister.index');
     }
 }
