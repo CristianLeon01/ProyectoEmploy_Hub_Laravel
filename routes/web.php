@@ -60,7 +60,9 @@ Route::get('/layouts', [HomeController::class, 'redirect'])->name('layouts');
 
 Route::get('/notRegister', [NotRegisterController::class, 'mostrarNotRegister'])->name('notRegister');
 
-Route::get('/mostrarManageUser', [ManageController::class, 'mostrarManageUser'])->name('manageUser'); 
+Route::get('/mostrarManageUser', [ManageController::class, 'mostrarManageUser'])->name('manageUser');
+Route::get('/administrator/roleEdit/{user}', [ManageController::class, 'edit'])->name('administrator.roleEdit');
+Route::put('/administrator/roleEdit/{user}', [ManageController::class, 'update'])->name('administrator.roleEdit.update');
 
 
 
@@ -251,11 +253,11 @@ Route::middleware([
     'verified'
 ])->group(function () {
 $controller_path = 'App\Http\Controller';
-     
+
      Route::get('/pages-home',$controller_path . 'FileController@index')->name('page-home');
     //  Route::get('/page-2',$controller_path . '\pages\Page2@index')->name('page-page-2');
     //  Route::post('/file/store',$controller_path . '\pages\Page2@store')->name('file.store');
-     
+
 });
 
 Route::get('auth/login', [LoginController::class, 'index'])->name('login');
