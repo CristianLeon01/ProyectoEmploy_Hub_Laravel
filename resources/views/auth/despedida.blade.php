@@ -9,10 +9,10 @@
 <body class="background">
     <section class="card">
         <img class="imagen" src="{{ asset('img/Logo_EmplyHub.png') }}" alt="Logo de EmployHub">
-        <h2>¡Hasta luego!</h2>
+        <h2>See you later!</h2>
         <section class="form-group">
-            <p>Gracias por usar nuestra aplicación. ¡Vuelve pronto!</p>
-            <a href="{{ route('login') }}"><button type="submit-btn">Haga clic para inciar sesion</button></a>
+            <p>Thanks for using our app. Come back soon!</p>
+            <a href="{{ route('login') }}"><button type="submit-btn">Click to log in</button></a>
         </section>
     </section>
 </body>

@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="{{ asset('/css/Life_Sheets/createLifeSheet.css') }}">
 <section class="box">
-    <h1>Crear Hoja de Vida</h1>
+    <h1>Update Your LifeSheet</h1>
     <form method="post" action="{{ route('update.lifeSheet', $lifeSheet ->id) }}">
         @method('PUT')
         @csrf

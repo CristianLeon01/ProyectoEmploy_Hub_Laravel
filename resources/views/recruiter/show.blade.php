@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="{{ route('index.recruiter')}}">Back</a>
+<a href="{{ route('recruiter')}}">Back</a>
 <h1>{{ $recruiter->number_document }}</h1>
 <h1>{{ $recruiter->document_type }}</h1>
 <h1>{{ $recruiter->name }}</h1>
