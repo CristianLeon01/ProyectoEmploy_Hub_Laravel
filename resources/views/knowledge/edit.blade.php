@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="{{ asset('/css/Knowledges/editKnowledges.css') }}">
 <section class="create">
-    <h1 class="title-knowledge">Create Your <span>Knowledge</span></h1>
+    <h1 class="title-knowledge">Update Your <span>Knowledge</span></h1>
     <form class="form-knowledge" action="{{ route('update.knowledge', $knowledge->id) }}" method="POST">
         @method('PUT')
         @csrf

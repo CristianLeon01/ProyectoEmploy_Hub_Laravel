@@ -5,13 +5,14 @@
 
 <br><br>
 <div class="container">
-    <h2 class="TituloManage">Tabla de Usuarios Registrados</h2><br><br>
+    <h2 class="TituloManage">Registered Users Table</h2><br><br>
 
     <div class="table-wrapper">
-        <button class="CambiarBoton">Cambiar</button>
+        <button class="CambiarBoton">Change</button>
         <table>
             <thead>
                 <tr>
+                    <th></th>
                     <th class="Rol-th">Rol</th>
                     <th>Nombre</th>
                     <th class="Correo-th">Correo Electrónico</th>
@@ -19,18 +20,15 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($users as $user)
                 <tr>
-                    <td>Instructor</td>
-                    <td>Juan Pérez</td>
-                    <td>juan@example.com</td>
-                    <td>2024-02-19</td>
+                    <td><a class="editRole" href="{{ route('administrator.roleEdit', ['user'=>$user]) }}"><img src="img/Edit02.png" width="20px" height="20px"></a></td>
+                    <td>{{$user->user_types->user_type_name}}</td>
+                    <td>{{$user->username}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->created_at}}</td>
                 </tr>
-                <tr>
-                    <td>Reclutador</td>
-                    <td>María García</td>
-                    <td>maria@example.com</td>
-                    <td>2024-02-18</td>
-                </tr>
+                @endforeach
                 <!-- Aquí puedes agregar más filas según sea necesario -->
             </tbody>
         </table>

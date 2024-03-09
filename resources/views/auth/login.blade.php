@@ -15,8 +15,8 @@
                     <br />
                     <article class="username">
                         <label for="username">
-                            <img src="{{ asset('img/USERNAME.png') }}" alt="Imagen" width="40px" height="40px" />
-                            <input type="text" name="username" placeholder="| username" required value="{{ old('username') }}" />
+                            {{-- <img src="{{ asset('img/USERNAME.png') }}" alt="Imagen" width="40px" height="40px" /> --}}
+                            <input type="text" name="username" placeholder="Username" required value="{{ old('username') }}" />
                             @error('username')
                                 <h5>{{ $message }}</h5>
                             @enderror
@@ -26,8 +26,8 @@
 
                     <article class="password">
                         <label for="password">
-                            <img src="{{ asset('img/PASSWORD.png') }}" alt="Imagen" width="40px" height="40px" />
-                            <input type="password" name="password" placeholder="| password" required value="{{ old('password') }}" />
+                            {{-- <img src="{{ asset('img/PASSWORD.png') }}" alt="Imagen" width="40px" height="40px" /> --}}
+                            <input type="password" name="password" placeholder="Password" required value="{{ old('password') }}" />
                             @error('password')
                                 <h5>{{ $message }}</h5>
                             @enderror

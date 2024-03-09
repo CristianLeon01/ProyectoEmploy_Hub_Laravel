@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('/css/Denominations/editDenominations.css') }}">
 
 <section class="create">
-    <h1 class="titleDenomination">Edit Your <span>Denomination</span></h1>
+    <h1 class="titleDenomination">Update Your <span>Denomination</span></h1>
     <form class="form-denomination" action="{{ route('update.denomination', $denomination->id) }}" method="POST">
         @method('PUT')
         @csrf

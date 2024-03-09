@@ -12,11 +12,11 @@
     </ul>
 
 
-<section class="Busqueda">
-    <h1>Centro de <span>Empleo</span></h1>
-        <form action="#" method="get" class="search">
-            <input type="text" placeholder="Busqueda de empleo" name="src">
-            <button type="submit"> <img src = "{{ asset('../img/Search.png')}}" alt = "Busqueda" > </button>
-        </form>
-</section>
+    <section class="Busqueda">
+        <h1>Centro de <span>Empleo</span></h1>
+        <form action="{{ route('search.offer') }}" method="GET" class="search">
+            <input type="text" placeholder="Búsqueda de empleo" name="q">
+            <button type="submit"> <img src="{{ asset('../img/Search.png')}}" alt="Búsqueda"> </button>
+        </form> 
+    </section>
 @endsection

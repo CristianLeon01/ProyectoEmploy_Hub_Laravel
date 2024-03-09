@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="{{ asset('/css/Abilities/editAbilities.css') }}">
 <section class="create">
-    <h1 class="titleAbility">Create Your <span>Skill</span></h1>
+    <h1 class="titleAbility">Update Your <span>Skill</span></h1>
     <form class="form-skill" action="{{ route('update.skill', $skill->id) }}" method="POST">
         @method('PUT')
         @csrf

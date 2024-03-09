@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="{{ route('index.weighing')}}">Back</a>
+<a href="{{ route('weighing')}}">Back</a>
 <h1>{{ $weighing->languages }}</h1>
 <h1>{{ $weighing->education }}</h1>
 <h1>{{ $weighing->work_experience }}</h1>

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('/css/Posts/editPosts.css') }}">
 
 <section class="create">
-    <h1 class="title-post">Create Your <span>Post</span></h1>
+    <h1 class="title-post">Update Your <span>Post</span></h1>
     <form class="form-post" action="{{ route('update.post', $post->id) }}" method="POST">
         @method('PUT')
         @csrf

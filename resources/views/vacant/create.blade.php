@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('/css/Vacants/createVacant.css') }}">
 
 <section class="create">
-    <h1 class="title-vacant">Create Your <span>Vacant</span></h1>
+    <h1 class="title-vacant">Update Your <span>Vacant</span></h1>
     <form class="form-vacant" action="{{ route('vacant.store') }}" method="POST">
         @csrf
 

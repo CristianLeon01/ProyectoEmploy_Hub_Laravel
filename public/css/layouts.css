@@ -148,11 +148,11 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: 100% 100%; /* La imagen se ajustará para cubrir toda la pantalla */
+    background-size: 100% 100%;
     background-position: cover;
     background-image: url(prueba.jpg);
-    opacity: 0.5; /* Ajusta la opacidad según sea necesario */
-    z-index: -1; /* Asegura que la imagen de fondo esté detrás de la barra de navegación y el footer */
+    opacity: 0.5; 
+    z-index: -1;
 }
 
 /* ............................................. */
@@ -598,8 +598,8 @@ ul .sub-Menu-recruiter {
 h1 {
     text-align: center;
     font-size: 60px;
-    margin-top: 130px;
     min-width: 300px;
+    margin: 10px;
 }
 
 span {

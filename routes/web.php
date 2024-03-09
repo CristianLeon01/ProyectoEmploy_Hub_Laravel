@@ -60,13 +60,15 @@ Route::get('/layouts', [HomeController::class, 'redirect'])->name('layouts');
 
 Route::get('/notRegister', [NotRegisterController::class, 'mostrarNotRegister'])->name('notRegister');
 
-Route::get('/mostrarManageUser', [ManageController::class, 'mostrarManageUser'])->name('manageUser'); 
+Route::get('/mostrarManageUser', [ManageController::class, 'mostrarManageUser'])->name('manageUser');
+Route::get('/administrator/roleEdit/{user}', [ManageController::class, 'edit'])->name('administrator.roleEdit');
+Route::put('/administrator/roleEdit/{user}', [ManageController::class, 'update'])->name('administrator.roleEdit.update');
 
 
 
 // Routes Ability
-Route::get('/skill', [AbilityController::class, 'Ability'])->name('skill');
-Route::get('/skill/create', [AbilityController::class, 'Create'])->name('create.skill');
+Route::get('/skill', [AbilityController::class, 'Ability'])->name('skill')->middleware('auth');
+Route::get('/skill/create', [AbilityController::class, 'Create'])->name('create.skill')->middleware('auth');
 Route::post('/skill/store', [AbilityController::class, 'Store'])->name('store.skill');
 Route::get('/skill/edit/{skill}', [AbilityController::class,'Edit'])->name('edit.skill');
 Route::put('/skill/update/{skill}', [AbilityController::class,'Update'])->name('update.skill');
@@ -87,7 +89,7 @@ Route::get('/headerAdmin', [AdministratorController::class, 'header'])->name('he
 
 //Routes Candidate
 Route::get('/headerCandidate', [CandidateController::class, 'header'])->name('headerCandidate');
-Route::get('/candidate', [CandidateController::class, 'Candidate'])->name('candidate');
+Route::get('/candidate', [CandidateController::class, 'Candidate'])->name('candidate')->middleware('auth');
 Route::get('/candidate/create', [CandidateController::class, 'Create'])->name('create.candidate')->middleware('auth');
 Route::post('/candidate/store', [CandidateController::class, 'Store'])->name('store.candidate');
 Route::get('/candidate/edit/{candidate}', [CandidateController::class,'Edit'])->name('edit.candidate');
@@ -98,7 +100,7 @@ Route::delete('/candidate/destroy/{candidate}', [CandidateController::class,'Des
 
 //Routes Company
 Route::get('/headerCompany', [CompanyController::class, 'header'])->name('headerCompany');
-Route::get('/company', [CompanyController::class, 'Company'])->name('company');
+Route::get('/company', [CompanyController::class, 'Company'])->name('company')->middleware('auth');
 Route::get('/company/create', [CompanyController::class, 'Create'])->name('create.company')->middleware('auth');
 Route::post('/company/store', [CompanyController::class, 'Store'])->name('store.company');
 Route::get('/company/edit/{company}', [CompanyController::class,'Edit'])->name('edit.company');
@@ -107,7 +109,7 @@ Route::get('/company/show/{company}', [CompanyController::class,'Show'])->name('
 Route::delete('/company/destroy/{company}', [CompanyController::class,'Destroy'])->name('destroy.company');
 
 //Routes Denomination
-Route::get('/denomination', [DenominationController::class, 'Denomination'])->name('denomination');
+Route::get('/denomination', [DenominationController::class, 'Denomination'])->name('denomination')->middleware('auth');
 Route::get('/denomination/create', [DenominationController::class, 'Create'])->name('create.denomination')->middleware('auth');
 Route::post('/denomination/store', [DenominationController::class, 'Store'])->name('store.denomination');
 Route::get('/denomination/edit/{denomination}', [DenominationController::class,'Edit'])->name('edit.denomination');
@@ -116,7 +118,7 @@ Route::get('/denomination/show/{denomination}', [DenominationController::class,'
 Route::delete('/denomination/destroy/{denomination}', [DenominationController::class,'Destroy'])->name('destroy.denomination');
 
 //Routes Function
-Route::get('/funtion', [FunctionController::class, 'Functionn'])->name('funtion');
+Route::get('/funtion', [FunctionController::class, 'Functionn'])->name('funtion')->middleware('auth');
 Route::get('/funtion/create', [FunctionController::class, 'Create'])->name('create.funtion')->middleware('auth');
 Route::post('/funtion/store', [FunctionController::class, 'Store'])->name('store.funtion');
 Route::get('/funtion/edit/{funtion}', [FunctionController::class,'Edit'])->name('edit.funtion');
@@ -125,7 +127,7 @@ Route::get('/funtion/show/{funtion}', [FunctionController::class,'Show'])->name(
 Route::delete('/funtion/destroy/{funtion}', [FunctionController::class,'Destroy'])->name('destroy.funtion');
 
 // Routes Knowledge
-Route::get('/knowledge', [KnowledgeController::class, 'Knowledge'])->name('knowledge');
+Route::get('/knowledge', [KnowledgeController::class, 'Knowledge'])->name('knowledge')->middleware('auth');
 Route::get('/knowledge/create', [KnowledgeController::class, 'Create'])->name('create.knowledge')->middleware('auth');
 Route::post('/knowledge/store', [KnowledgeController::class, 'Store'])->name('store.knowledge');
 Route::get('/knowledge/edit/{knowledge}', [KnowledgeController::class,'Edit'])->name('edit.knowledge');
@@ -134,7 +136,7 @@ Route::get('/knowledge/show/{knowledge}', [KnowledgeController::class,'Show'])->
 Route::delete('/knowledge/destroy/{knowledge}', [KnowledgeController::class,'Destroy'])->name('destroy.knowledge');
 
 // Routes LifeSheet
-Route::get('/lifeSheet', [LifeSheetController::class, 'LifeSheet'])->name('lifeSheet');
+Route::get('/lifeSheet', [LifeSheetController::class, 'LifeSheet'])->name('lifeSheet')->middleware('auth');
 Route::get('/lifeSheet/create', [LifeSheetController::class, 'Create'])->name('create.lifeSheet')->middleware('auth');
 Route::post('/lifeSheet/store', [LifeSheetController::class, 'Store'])->name('store.lifeSheet');
 Route::get('/lifeSheet/edit/{lifeSheet}', [LifeSheetController::class,'Edit'])->name('edit.lifeSheet');
@@ -143,7 +145,7 @@ Route::get('/lifeSheet/show/{lifeSheet}', [LifeSheetController::class,'Show'])->
 Route::delete('/lifeSheet/destroy/{lifeSheet}', [LifeSheetController::class,'Destroy'])->name('destroy.lifeSheet');
 
 // Routes Occupation
-Route::get('/occupation', [OccupationController::class, 'Occupation'])->name('occupation');
+Route::get('/occupation', [OccupationController::class, 'Occupation'])->name('occupation')->middleware('auth');
 Route::get('/occupation/create', [OccupationController::class, 'Create'])->name('create.occupation')->middleware('auth');
 Route::post('/occupation/store', [OccupationController::class, 'Store'])->name('store.occupation');
 Route::get('/occupation/edit/{occupation}', [OccupationController::class,'Edit'])->name('edit.occupation');
@@ -152,7 +154,7 @@ Route::get('/occupation/show/{occupation}', [OccupationController::class,'Show']
 Route::delete('/occupation/destroy/{occupation}', [OccupationController::class,'Destroy'])->name('destroy.occupation');
 
 // Routes Post
-Route::get('/post', [PostController::class, 'Post'])->name('post');
+Route::get('/post', [PostController::class, 'Post'])->name('post')->middleware('auth')->middleware('auth');
 Route::get('/post/create', [PostController::class, 'Create'])->name('create.post')->middleware('auth');
 Route::post('/post/store', [PostController::class, 'Store'])->name('store.post');
 Route::get('/post/edit/{post}', [PostController::class,'Edit'])->name('edit.post');
@@ -162,7 +164,7 @@ Route::delete('/post/destroy/{post}', [PostController::class,'Destroy'])->name('
 
 // Routes Recruiter
 Route::get('/headerRecruiter', [RecruiterController::class, 'header'])->name('headerRecruiter');
-Route::get('/recruiter', [RecruiterController::class, 'Recruiter'])->name('recruiter');
+Route::get('/recruiter', [RecruiterController::class, 'Recruiter'])->name('recruiter')->middleware('auth');
 Route::get('/recruiter/create', [RecruiterController::class, 'Create'])->name('create.recruiter')->middleware('auth');
 Route::post('/recruiter/store', [RecruiterController::class, 'Store'])->name('store.recruiter');
 Route::get('/recruiter/edit/{recruiter}', [RecruiterController::class,'Edit'])->name('edit.recruiter');
@@ -171,7 +173,7 @@ Route::get('/recruiter/show/{recruiter}', [RecruiterController::class,'Show'])->
 Route::delete('/recruiter/destroy/{recruiter}', [RecruiterController::class,'Destroy'])->name('destroy.recruiter');
 
 // Routes Relation
-Route::get('/relation', [RelationController::class, 'Relation'])->name('relation');
+Route::get('/relation', [RelationController::class, 'Relation'])->name('relation')->middleware('auth');
 Route::get('/relation/create', [RelationController::class, 'Create'])->name('create.relation')->middleware('auth');
 Route::post('/relation/store', [RelationController::class, 'Store'])->name('store.relation');
 Route::get('/relation/edit/{relation}', [RelationController::class,'Edit'])->name('edit.relation');
@@ -181,7 +183,7 @@ Route::delete('/relation/destroy/{relation}', [RelationController::class,'Destro
 
 // Routes Selector
 Route::get('/headerSelector', [SelectorController::class, 'header'])->name('headerSelector');
-Route::get('/selector', [SelectorController::class, 'Selector'])->name('selector');
+Route::get('/selector', [SelectorController::class, 'Selector'])->name('selector')->middleware('auth');
 Route::get('/selector/create', [SelectorController::class, 'Create'])->name('create.selector')->middleware('auth');;
 Route::post('/selector/store', [SelectorController::class, 'Store'])->name('store.selector');
 Route::get('/selector/edit/{selector}', [SelectorController::class,'Edit'])->name('edit.selector');
@@ -190,7 +192,7 @@ Route::get('/selector/show/{selector}', [SelectorController::class,'Show'])->nam
 Route::delete('/selector/destroy/{selector}', [SelectorController::class,'Destroy'])->name('destroy.selector');
 
 // Routes State
-Route::get('/state', [StateController::class, 'State'])->name('state');
+Route::get('/state', [StateController::class, 'State'])->name('state')->middleware('auth');
 Route::get('/state/create', [StateController::class, 'Create'])->name('create.state')->middleware('auth');
 Route::post('/state/store', [StateController::class, 'Store'])->name('store.state');
 Route::get('/state/edit/{state}', [StateController::class,'Edit'])->name('edit.state');
@@ -199,7 +201,7 @@ Route::get('/state/show/{state}', [StateController::class,'Show'])->name('show.s
 Route::delete('/state/destroy/{state}', [StateController::class,'Destroy'])->name('destroy.state');
 
 // Routes UserType
-Route::get('/usertype', [UserTypeController::class, 'UserType'])->name('usertype');
+Route::get('/usertype', [UserTypeController::class, 'UserType'])->name('usertype')->middleware('auth');
 Route::get('/usertype/create', [UserTypeController::class, 'Create'])->name('create.usertype')->middleware('auth');
 Route::post('/usertype/store', [UserTypeController::class, 'Store'])->name('store.usertype');
 Route::get('/usertype/edit/{usertype}', [UserTypeController::class,'Edit'])->name('edit.usertype');
@@ -207,8 +209,10 @@ Route::put('/usertype/update/{usertype}', [UserTypeController::class,'Update'])-
 Route::get('/usertype/show/{usertype}', [UserTypeController::class,'Show'])->name('show.usertype');
 Route::delete('/usertype/destroy/{usertype}', [UserTypeController::class,'Destroy'])->name('destroy.usertype');
 
-// Routes Offer
-Route::get('/offer', [OfferController::class, 'Offer'])->name('offer');
+
+// Routes Offert
+Route::get('/offer', [OfferController::class, 'Offer'])->name('offer')->middleware('auth');
+Route::get('/offer/search', [OfferController::class, 'search'])->name('search.offer');
 Route::get('/offer/create', [OfferController::class, 'Create'])->name('create.offer')->middleware('auth');
 Route::post('/offer/store', [OfferController::class, 'Store'])->name('store.offer');
 Route::get('/offer/edit/{offer}', [OfferController::class,'Edit'])->name('edit.offer');
@@ -217,7 +221,7 @@ Route::get('/offer/show/{offer}', [OfferController::class,'Show'])->name('show.o
 Route::delete('/offer/destroy/{offer}', [OfferController::class,'Destroy'])->name('destroy.offer');
 
 // Routes Weighing
-Route::get('/weighing', [WeighingController::class, 'Weighing'])->name('weighing');
+Route::get('/weighing', [WeighingController::class, 'Weighing'])->name('weighing')->middleware('auth');
 Route::get('/weighing/create', [WeighingController::class, 'Create'])->name('create.weighing')->middleware('auth');
 Route::post('/weighing/store', [WeighingController::class, 'Store'])->name('store.weighing');
 Route::get('/weighing/edit/{weighing}', [WeighingController::class,'Edit'])->name('edit.weighing');
@@ -226,7 +230,7 @@ Route::get('/weighing/show/{weighing}', [WeighingController::class,'Show'])->nam
 Route::delete('/weighing/destroy/{weighing}', [WeighingController::class,'Destroy'])->name('destroy.weighing');
 
 // Routes Instrcutor
-Route::get('/instructor', [InstructorController::class, 'Instructor'])->name('instructor');
+Route::get('/instructor', [InstructorController::class, 'Instructor'])->name('instructor')->middleware('auth');
 Route::get('/instructor/create', [InstructorController::class, 'Create'])->name('create.instructor')->middleware('auth');
 Route::post('/instructor/store', [InstructorController::class, 'Store'])->name('store.instructor');
 Route::get('/instructor/edit/{instructor}', [InstructorController::class, 'Edit'])->name('edit.instructor');
@@ -251,11 +255,11 @@ Route::middleware([
     'verified'
 ])->group(function () {
 $controller_path = 'App\Http\Controller';
-     
+
      Route::get('/pages-home',$controller_path . 'FileController@index')->name('page-home');
     //  Route::get('/page-2',$controller_path . '\pages\Page2@index')->name('page-page-2');
     //  Route::post('/file/store',$controller_path . '\pages\Page2@store')->name('file.store');
-     
+
 });
 
 Route::get('auth/login', [LoginController::class, 'index'])->name('login');

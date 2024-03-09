@@ -2,7 +2,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('/css/Offerts/createOffert.css') }}">
 <section class="crearOferta">
-        <h1 class="tituloOferta">Cree Su <span>Oferta</span></h1>
+        <h1 class="tituloOferta">Update Your <span>Offert</span></h1>
         <form action="{{ route('update.offer', ['offer'=>$offer->id]) }}" method="POST">>
             @method('PUT')
             @csrf

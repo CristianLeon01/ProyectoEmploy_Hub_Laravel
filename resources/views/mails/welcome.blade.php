@@ -9,14 +9,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>¡Bienvenido a EmployHub, {{ $user->username}}! </h1>
+            <h1>¡Welcome to EmployHub, {{ $user->username}}! </h1>
         </header>
         <section>
-            <p>Gracias por unirte a EmployHub, tu agencia pública de empleo. Estamos aquí para ayudarte a encontrar oportunidades laborales que se adapten a tus habilidades y metas profesionales.</p>
-            <p>Si tienes alguna pregunta o necesitas asistencia no dudes en contactarte al siguiente correo employhub27@gmail.com, no dudes en ponerte en contacto con nuestro equipo. ¡Te deseamos mucho éxito en tu búsqueda de empleo!</p>
+            <p>Thank you for joining EmployHub, your public employment agency. We're here to help you find job opportunities that fit your skills and career goals.</p>
+            <p>If you have any questions or need assistance, do not hesitate to contact us at employhub27@gmail.com, do not hesitate to contact our team. We wish you much success in your job search!</p>
         </section>
         <footer>
-            <p>Atentamente, el equipo de EmployHub</p>
+            <p>Sincerely, EmployHub Team</p>
         </footer>
     </div>
 </body>

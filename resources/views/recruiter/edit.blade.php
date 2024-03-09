@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('/css/Recruiters/editRecruiters.css') }}">
 
 <section class="create">
-    <h1 class="title-recruiter">Edit Your <span>Recruiter</span></h1>
+    <h1 class="title-recruiter">Update Your <span>Recruiter</span></h1>
     <form class="form-recruiter" action="{{ route('update.recruiter', $recruiter->id) }}" method="POST">
         @method('PUT')
         @csrf

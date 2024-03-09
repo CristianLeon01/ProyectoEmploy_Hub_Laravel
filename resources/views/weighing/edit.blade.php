@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('/css/Weighings/editWeighings.css') }}">
 
 <section class="create">
-    <h1 class="title-weighing">Create Your <span>Weight</span></h1>
+    <h1 class="title-weighing">Update Your <span>Weighing</span></h1>
     <form class="form-weighing" action="{{ route('update.weighing', $weighing ->id) }}" method="POST">
         @method('PUT')
         @csrf
