@@ -905,3 +905,54 @@ footer {
 
     /* termina el responsive de la seccion busqueda  */
 }
+
+@media screen and (max-width: 600px) {
+    .menu {
+        display: none; /* Ocultar el menú en pantallas pequeñas */
+    }
+
+    .icon-menu {
+        display: initial; /* Mostrar el icono del menú */
+    }
+
+    .navegacion {
+        position: fixed;
+        width: 100%;
+        background-color: #5c6b73;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        padding: 10px 20px;
+    }
+
+    .menu-icono {
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #5c6b73;
+        position: absolute;
+        top: 100%; /* Colocar el menú debajo del icono */
+        left: 0;
+        width: 100%;
+        margin-top: 10px; /* Espacio entre el icono y el menú */
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu li a {
+        padding: 15px 20px;
+        color: #fff;
+    }
+
+    .menu li:hover {
+        background-color: #8e8e8e;
+        border-radius: 10px;
+    }
+}
