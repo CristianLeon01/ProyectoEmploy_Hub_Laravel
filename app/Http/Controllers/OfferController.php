@@ -9,10 +9,14 @@ use Illuminate\Http\Request;
 
 class OfferController extends Controller
 {
-    public function Offer (){
-
+    public function Offer(Request $request)
+    {
+        if ($request->has('q')) {
+            return $this->search($request);
+        }
+    
         $offers = Offer::all();
-        return view("offer.index", ["offers"=> $offers]);
+        return view("offer.index", ["offers" => $offers]);
     }
     
     public function Create(){
@@ -53,5 +57,46 @@ class OfferController extends Controller
     public function Destroy (Request $request, Offer $offer){ 
         $offer->delete();
         return redirect()->route('offer');
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('q');
+
+        $experiencia = $request->input('experiencia');
+        $tipo_contrato = $request->input('tipo_contrato');
+        $tipo_jornada = $request->input('tipo_jornada');
+        $salario = $request->input('salario');
+        $fecha_publicacion = $request->input('fecha_publicacion');
+
+        $queryBuilder = Offer::query();
+
+        if ($query) {
+            $queryBuilder->where('name_vacant', 'like', "%$query%");
+        }
+
+        if ($experiencia && $experiencia !== 'ninguna') {
+            $queryBuilder->where('months_experience', $experiencia);
+        }
+
+        if ($tipo_contrato) {
+            $queryBuilder->where('contract_type_id', $tipo_contrato);
+        }
+
+        if ($tipo_jornada) {
+            $queryBuilder->where('tipo_jornada', $tipo_jornada);
+        }
+
+        if ($salario) {
+            $queryBuilder->where('salario', $salario);
+        }
+
+        if ($fecha_publicacion) {
+            $queryBuilder->where('fecha_publicacion', $fecha_publicacion);
+        }
+
+        $results = $queryBuilder->get();
+
+        return view('offer.index', compact('results', 'query'));
     }
 }

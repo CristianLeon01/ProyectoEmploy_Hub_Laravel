@@ -209,8 +209,10 @@ Route::put('/usertype/update/{usertype}', [UserTypeController::class,'Update'])-
 Route::get('/usertype/show/{usertype}', [UserTypeController::class,'Show'])->name('show.usertype');
 Route::delete('/usertype/destroy/{usertype}', [UserTypeController::class,'Destroy'])->name('destroy.usertype');
 
-// Routes Offer
+
+// Routes Offert
 Route::get('/offer', [OfferController::class, 'Offer'])->name('offer')->middleware('auth');
+Route::get('/offer/search', [OfferController::class, 'search'])->name('search.offer');
 Route::get('/offer/create', [OfferController::class, 'Create'])->name('create.offer')->middleware('auth');
 Route::post('/offer/store', [OfferController::class, 'Store'])->name('store.offer');
 Route::get('/offer/edit/{offer}', [OfferController::class,'Edit'])->name('edit.offer');
