@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+<link rel="stylesheet" href="{{ asset('/css/Administrators/roleEdit.css') }}">
+
     <div class="container">
         <h1>Edit User Role</h1>
         <form method="POST" action="{{ route('administrator.roleEdit.update', ['user' => $user->id]) }}">

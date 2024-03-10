@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
-
 <div class="container1">
     <link rel="stylesheet" href="{{ asset('/css/index.css') }}">
     <a href="{{ route('create.skill') }}" class="boton2">Create New Ability</a>
