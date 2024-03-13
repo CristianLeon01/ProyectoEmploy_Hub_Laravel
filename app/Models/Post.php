@@ -14,6 +14,7 @@ class Post extends Model
     protected $fillable = [
         'name_post',
         'description',
+        'occupation_id'
     ];
 
     public function occupation()

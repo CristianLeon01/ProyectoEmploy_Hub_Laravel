@@ -14,9 +14,6 @@
         <label>Write the description of the occupation:</label><br>
         <input name="occupation_description" type="text" required></input><br><br>
 
-        <label>Enter the post ID:</label>
-        <input type="number" name="id_post" required><br><br>
-
         <center><button type="submit" class="create-application-button">Create</button></center>
     </form>
     @endsection

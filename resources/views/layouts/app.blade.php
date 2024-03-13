@@ -61,6 +61,7 @@
                         <a class="text-recruiter" href="#">Recruiter</a>
                         <ul class="sub-Menu-recruiter">
                             <li><a href="{{ route('create.company')}}">Create Company</a></li>
+                            <li><a href="{{ route('vacant.create')}}">Create Vacant</a></li>
                             <li><a href="{{ route('create.occupation')}}">Create Occupation</a></li>
                             <li><a href="{{ route('create.post')}}">Create Post</a></li>
                             <li><a href="{{ route('create.weighing')}}">Create Weighing</a></li>

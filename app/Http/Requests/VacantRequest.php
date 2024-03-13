@@ -26,7 +26,7 @@ class VacantRequest extends FormRequest
         return [
             'number_vacancies_applied' => ['required', 'integer', 'min:1'],
             'id_offers' => ['required', 'exists:offers,id'],
-            'id_localities' => ['required', 'exists:localities,id'],
+            'city_id' => ['required', 'exists:cities,id'],
             'id_contract_types' => ['required', 'exists:contract_types,id'],
             'id_weighings' => ['required', 'exists:weighings,id'],
         ];

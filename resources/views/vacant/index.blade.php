@@ -9,14 +9,14 @@
             <tr>
                 <th class="table-header">Number Vacancies</th>
                 <th class="table-header">Offer</th>
-                <th class="table-header">Location</th>
+                <th class="table-header">City</th>
                 <th class="table-header">Contract Type</th>
                 <th class="table-header">Weighting</th>
             </tr>
             <tr>
                 <td>{{ $vacancy->number_vacancies_applied }}</td>
                 <td>{{ $vacancy->offer->name_vacant }}</td>
-                <td>{{ $vacancy->location->location_name }}</td>
+                <td>{{ $vacancy->city->city_name }}</td>
                 <td>{{ $vacancy->contract_type->contract_name }}</td>
                 <td>{{ $vacancy->weighings->languages }}</td>
             </tr>

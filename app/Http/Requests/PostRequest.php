@@ -26,6 +26,7 @@ class PostRequest extends FormRequest
         return [
             'name_post' => ['required', 'string', 'max:300'],
             'description' => ['required', 'string', 'max:500'],
+            'occupation_id' => ['required', 'exists:occupations,id'],
         ];
     }
 }

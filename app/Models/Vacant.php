@@ -25,9 +25,9 @@ class Vacant extends Model
         return $this->belongsTo(Offer::class, 'id_offers');
     }
 
-    public function location()
+    public function city()
     {
-        return $this->belongsTo(Location::class, 'id_localities');
+        return $this->belongsTo(City::class, 'city_id');
     }
 
     public function contract_type()

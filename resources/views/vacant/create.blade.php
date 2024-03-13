@@ -18,10 +18,10 @@
             @endforeach
         </select>
 
-        <label for="" class="form-label">Location name</label>
-        <select name="id_localities" id="id_localities">
-            @foreach ($localities as $location)
-                <option value="{{ $location->id }}">{{ $location->location_name }}</option>
+        <label for="" class="form-label">City name</label>
+        <select name="city_id" id="city_id">
+            @foreach ($cities as $city)
+                <option value="{{ $city->id }}">{{ $city->city_name }}</option>
             @endforeach
         </select>
 

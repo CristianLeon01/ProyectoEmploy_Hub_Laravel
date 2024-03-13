@@ -25,8 +25,7 @@ class OccupationRequest extends FormRequest
     {
         return [
             'occupation_name' => ['required', 'string', 'max:100'],
-            'occupation_description' => ['required', 'string', 'max:500'],
-            'id_post' => ['required', 'exists:posts,id'],
+            'occupation_description' => ['required', 'string', 'max:500']
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Contract_type;
 use App\Models\Location;
 use App\Models\Offer;
@@ -31,10 +32,10 @@ class VacantController extends Controller
     public function create()
     {
         $offers = Offer::all();
-        $localities = Location::all();
+        $cities = City::all();
         $contract_types = Contract_type::all();
         $weightings = Weighing::all();
-        return view('vacant.create', compact('offers', 'localities', 'contract_types', 'weightings'));
+        return view('vacant.create', compact('offers', 'cities', 'contract_types', 'weightings'));
     }
 
     /**
@@ -48,7 +49,7 @@ class VacantController extends Controller
         $vacancy= new Vacant;
         $vacancy->number_vacancies_applied = $request->number_vacancies_applied;
         $vacancy->id_offers = $request->id_offers;
-        $vacancy->id_localities = $request->id_localities;
+        $vacancy->city_id = $request->city_id;
         $vacancy->id_contract_types = $request->id_contract_types;
         $vacancy->weighings_id = $request->weighings_id;
         $vacancy->save();
