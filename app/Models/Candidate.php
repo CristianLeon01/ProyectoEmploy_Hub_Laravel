@@ -18,7 +18,27 @@ class Candidate extends Model
         'phone',
         'email',
         'id_life_sheet',
-        'id_state'
+        'id_state', 
+        'id_user_types'
         
     ];
+
+    public function id_Post(){
+        return $this->belongsTo(Post::class);
+    }
+
+    public function userType()
+    {
+        return $this->belongsTo(UserType::class, 'id_user_type');
+    }
+
+    public function lifeSheet()
+    {
+        return $this->belongsTo(LifeSheet::class, 'id_life_sheet');
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class, 'id_state');
+    }
 }

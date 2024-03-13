@@ -20,11 +20,11 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-    
+
     public function user_types()
     {
         return $this->belongsTo(UserType::class, 'id_user_types', 'id');
-    }  
+    }
 
     protected $casts = [
         'email_verified_at' => 'datetime',

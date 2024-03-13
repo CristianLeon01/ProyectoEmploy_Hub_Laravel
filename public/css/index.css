@@ -12,90 +12,133 @@ body {
     font-family: "Ubuntu Condensed", sans-serif;
 }
 
+/* Estilos para el contenedor principal */
 .container1 {
-    max-width: 80%;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.315); /* Fondo semitransparente */
+    backdrop-filter: blur(8px); /* Aplicar desenfoque */
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
+/* Asegura que el contenido no se extienda más allá del ancho de la pantalla */
+.container1 > * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón "Create New Ability" */
 .boton1 {
     display: inline-block;
-    padding: 10px 10px;
-    margin-bottom: 20px;
-    background-color: #5C6B73;
-    color: #fff;
+    background-color: #778993;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
     text-decoration: none;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: none; /* Eliminar contorno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Agregar sombra */
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100px; /* Ancho fijo para todos los botones */
 }
 
+/* Estilos para el botón "Create New Ability" */
 .boton2 {
-    padding: 10px 10px;
-    background-color: #5C6B73;
-    color: #fff;
+    display: block; /* Convertir en bloque para centrar */
+    background-color: #778993;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
     text-decoration: none;
-    border-radius: 5px;
-    margin-left: 10%;
-    cursor: pointer;
-    margin-bottom: 40%;
+    border-radius: 4px;
+    border: none; /* Eliminar contorno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), /* Agregar sombra */
+                0 0 0 0 rgba(0, 0, 0, 0); /* Borde inicial transparente */
+    transition: transform 0.2s, box-shadow 0.4s; /* Transición de sombra */
+    width: 200px; /* Ancho fijo para todos los botones */
+    font-size: 17px;
+    margin: 0 auto; /* Centrar horizontalmente */
+    margin-top: 13px; /* Margen superior */
+    margin-bottom: 26px; /* Margen inferior */
 }
 
-ul {
-    list-style: none;
+.boton2:hover {
+    background-color: #4c575c;
+    transform: translateY(-1px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0), /* Agregar sombra normal */
+                0 0 10px 10px rgba(255, 255, 255, 0.321); /* Agregar borde con destello */
 }
 
-table {
+.boton1:hover {
+    background-color: #4c575c;
+    transform: translateY(-1px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumentar la sombra */
+}
+
+/* Estilos para los botones de edición y eliminación */
+.boton1.edit,
+.boton1.delete {
+    background-color: #007bff; /* Color azul para botones de edición */
+}
+
+.boton1.edit:hover,
+.boton1.delete:hover {
+    background-color: #0056b3; /* Color azul oscuro al pasar el mouse */
+}
+
+.boton1.edit {
+    margin-right: 10px; /* Espaciado entre botones de edición y eliminación */
+}
+
+/* Estilos para la lista de habilidades */
+.list-general{
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilos para las tablas de habilidades */
+.table-general {
     width: 100%;
-    margin-bottom: 20px;
     border-collapse: collapse;
-    border-spacing: 0;
+    margin-bottom: 20px;
 }
 
-th,
-td {
-    padding: 10px;
-    text-align: left;
+.table-general th,
+.table-general td {
+    padding: 8px;
+    text-align: center; /* Centrar el contenido */
     border-bottom: 1px solid #ddd;
 }
 
-th {
+.table-general th {
     background-color: #f2f2f2;
 }
 
-ul li {
-    margin-bottom: 10px;
+/* Estilos para los enlaces dentro de las celdas de la tabla */
+.table-general a {
+    text-decoration: none;
+    color: inherit;
 }
 
-ul li a {
-    margin-right: 10px;
+/* Estilos para los elementos de la lista */
+.list-general li {
+    margin-bottom: 20px;
 }
 
-/* Estilos responsivos */
-@media screen and (max-width: 600px) {
-    header {
-        padding: 1rem;
-    }
+/* Estilos para los enlaces dentro de los elementos de la lista */
+.link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 20px;
+}
 
-    .logo img {
-        height: 60px;
-    }
+.link:hover {
+    text-decoration: underline;
+}
 
-    .navegacion {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .menu {
-        margin-top: 10px;
-    }
-
-    .search {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .search input {
-        margin-bottom: 10px;
-    }
+/* Estilos para los formularios de eliminación */
+.delete-form {
+    display: inline-block;
 }

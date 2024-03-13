@@ -14,6 +14,16 @@ class Occupation extends Model
     protected $fillable = [
         'occupation_name',
         'occupation_description',
-        'id_post'
     ];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    
+    public function denomination()
+    {
+        return $this->belongsTo(Denomination::class);
+    }
 }

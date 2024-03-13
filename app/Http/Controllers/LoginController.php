@@ -24,8 +24,19 @@ class LoginController extends Controller
         }
 
         $user = Auth::user();
+        session(['user_types' => $user->id_user_types]);
 
-        return redirect()->route('layouts');
-    
+        switch ($user->id_user_types) {
+            case 1:
+                return redirect()->route('headerAdmin');
+            case 2:
+                return redirect()->route('headerSelector');
+            case 3:
+                return redirect()->route('headerRecruiter');
+            case 4:
+                return redirect()->route('headerCandidate');
+            case 5:
+                return redirect()->route('headerCompany');
+        }
     }
 }

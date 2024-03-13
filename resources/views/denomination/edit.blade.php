@@ -1,22 +1,21 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Denominations/createDenomination.css') }}">
-<a href="{{ route ('denomination') }}"> Back</a>
+<link rel="stylesheet" href="{{ asset('/css/Denominations/editDenominations.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>denomination</span></h1>
-    <form action="{{ route('update.denomination', $denomination->id) }}" method="POST">
+    <h1 class="titleDenomination">Update Your <span>Denomination</span></h1>
+    <form class="form-denomination" action="{{ route('update.denomination', $denomination->id) }}" method="POST">
         @method('PUT')
         @csrf
-        <label>Write the description of the denomination :</label>
-        <textarea  value="{{ $denomination-> denomination_description }}" name="denomination_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <label>Update the description of the denomination :</label>
+        <input  value="{{ $denomination-> denominate_description }}" name="denominate_description" type="text" required></input><br><br>
 
-        <label>Enter the occupation ID:</label><br>
-        <textarea   value="{{ $denomination-> id_occupations }}"  name="id_occupations" rows="4" cols="50" type="text" required></textarea><br><br>
+        <label>Update the occupation ID :</label>
+        <input type="number" name="id_occupations" value="{{ $denomination-> id_occupations }}">
 
-        <label>Write the name of the occupation:</label>
-        <input value="{{ $denomination-> occupation_name }}" type="number" name="occupation_name" required><br><br>
+        <label>Update the name of the occupation: :</label>
+        <input type="text" name="occupation_name" value="{{ $denomination-> occupation_name }}">
 
         <center><button type="submit" class="create-application-button" value="Update">Update</button></center>
     </form>

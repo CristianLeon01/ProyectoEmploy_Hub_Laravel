@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,11 @@ class PostController extends Controller
         return view('post.create');
     }
 
-    public function Store(Request $request){
+    public function Store(PostRequest $request){
 
-        Post::create($request->all());
-        return redirect()->route('post');
+        $post = new Post($request->validated());
+        $post->save();
+        return redirect('post')->with('success', 'Cargo creado exitosamente');
     }
 
     public function Edit (Post $post){
@@ -28,7 +30,7 @@ class PostController extends Controller
     }
 
 
-    public function Update(Request $request, Post $post){
+    public function Update(PostRequest $request, Post $post){
         
         $post->update($request->all()); 
         return redirect()->route('post');

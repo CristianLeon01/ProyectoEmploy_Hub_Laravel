@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\KnowledgeRequest;
 use App\Models\Knowledge;
+use App\Models\Occupation;
 use Illuminate\Http\Request;
 
 class KnowledgeController extends Controller
@@ -17,27 +19,27 @@ class KnowledgeController extends Controller
         return view('knowledge.create');
     }
 
-    public function Store(Request $request){
+    public function Store(KnowledgeRequest $request){
 
-        $knowledge = new Knowledge();
-        $knowledge->knowledge_name = $request->input('knowledge_name');
-        $knowledge->knowledge_description = $request->input('knowledge_description');
-        $knowledge->id_occupations = $request->input('id_occupations');
-        $knowledge->occupation_name = $request->input('occupation_name');
+        $knowledgeData = $request->validated();
+        $knowledge = new Knowledge($knowledgeData);
         $knowledge->save();
+        return redirect('knowledge')->with('success', 'Denominacion creada exitosamente');
 
-
-        return redirect()->route('knowledge');
     }
 
     public function Edit (Knowledge $knowledge){
-        return view('knowledge.edit', compact('knowledge'));
+
+        $id_occupations = Occupation::all();
+        return view('knowledge.edit', 
+        ['id_occupations' => $id_occupations])->with('knowledge', $knowledge);
+
     }
 
 
-    public function Update(Request $request, Knowledge $knowledge){
+    public function Update(KnowledgeRequest $request, Knowledge $knowledge){
         
-        $knowledge->update($request->all()); 
+        $knowledge->update($request->validated());
         return redirect()->route('knowledge');
     }
 

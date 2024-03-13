@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/createUser.css') }}">
 
 <section class="create-user" style="width: 30%; margin-left: 35%">
-    <h1 class="titleUser">Create Your User</h1>
+    <h1 class="titleUser">Update Your User</h1>
     <form action="{{ route('user.update', ['user' => $user->id]) }}" method="POST">
         @csrf
         @method('PUT')

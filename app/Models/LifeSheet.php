@@ -12,8 +12,14 @@ class LifeSheet extends Model
     protected $table = 'life_sheets';
 
     protected $fillable = [
+        'personal_description',
+        'languages',
         'experience',
         'education',
-        'operator'
     ];
+
+    public function candidates()
+    {
+        return $this->belongsTo(Candidate::class, 'id_life_sheet');
+    }
 }

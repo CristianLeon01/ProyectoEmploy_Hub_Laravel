@@ -5,7 +5,6 @@
         <content class="login">
             <head class="user">
                 <h1 class="title-login">LOGIN</h1>
-                <img src="{{ asset('img/LOGIN.png') }}" alt="user" width="300px" height="300px" />
             </head>
             <content class="form">
                 <form action="{{ route('login.auth') }}" method="POST">
@@ -16,8 +15,8 @@
                     <br />
                     <article class="username">
                         <label for="username">
-                            <img src="{{ asset('img/USERNAME.png') }}" alt="Imagen" width="40px" height="40px" />
-                            <input type="text" name="username" placeholder="| username" required value="{{ old('username') }}" />
+                            {{-- <img src="{{ asset('img/USERNAME.png') }}" alt="Imagen" width="40px" height="40px" /> --}}
+                            <input type="text" name="username" placeholder="Username" required value="{{ old('username') }}" />
                             @error('username')
                                 <h5>{{ $message }}</h5>
                             @enderror
@@ -27,8 +26,8 @@
 
                     <article class="password">
                         <label for="password">
-                            <img src="{{ asset('img/PASSWORD.png') }}" alt="Imagen" width="40px" height="40px" />
-                            <input type="password" name="password" placeholder="| password" required value="{{ old('password') }}" />
+                            {{-- <img src="{{ asset('img/PASSWORD.png') }}" alt="Imagen" width="40px" height="40px" /> --}}
+                            <input type="password" name="password" placeholder="Password" required value="{{ old('password') }}" />
                             @error('password')
                                 <h5>{{ $message }}</h5>
                             @enderror

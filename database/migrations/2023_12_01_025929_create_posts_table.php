@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('name_post', 20);
-            $table->string('direction', 20);
-            $table->string('phone', 12);
+            $table->string('name_post', 300);
+            $table->foreignId('occupation_id')->references('id')->on('occupations');
+            $table->string('description', 500);
             $table->timestamps();
         });
     }

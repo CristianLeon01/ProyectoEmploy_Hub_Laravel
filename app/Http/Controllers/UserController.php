@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
+use App\Mail\WelcomeEmail;
 use App\Models\User;
 use App\Models\UserType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -21,7 +24,7 @@ class UserController extends Controller
         return view('auth/register',['user_types'=> $user_types]);
     }
 
-    public function Store(Request $request){
+    public function Store(UserRequest $request){
 
         $user = new User();
         $user->username = $request->input('username');
@@ -29,6 +32,10 @@ class UserController extends Controller
         $user->id_user_types = $request->input('id_user_types');
         $user->password = Hash::make($request->password);
         $user->save();
+
+        Mail::to($request['email'])->send(new WelcomeEmail($user));
+
+        return view('auth.welcome');
 
         return redirect()->back()->with('mensaje',  'Usuario creado correctamente...');
 
@@ -38,7 +45,7 @@ class UserController extends Controller
         return view('user.edit', compact('user'));
     }
 
-    public function Update(Request $request, User $user){
+    public function Update(UserRequest $request, User $user){
         
         $user->update($request->all()); 
         return redirect()->route('user');
