@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTypeTableSeeder::class);
         $this->call(StateTableSeeder::class);
         $this->call(ContractTypeTableSeeder::class);
-        $this->call(LocationTableSeeder::class);
         $this->call(OccupationTableSeeder::class);
         $this->call(FuntionTableSeeder::class);
         $this->call(DenominationTableSeeder::class);
@@ -28,6 +27,9 @@ class DatabaseSeeder extends Seeder
         $this->call(RelationTableSeeder::class);
         $this->call(KnowledgeTableSeeder::class);
         $this->call(PostTableSeeder::class);
+        $this->call(DepartmentTableSeeder::class);
+        $this->call(CityTableSeeder::class);
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

@@ -16,9 +16,9 @@ class Post extends Model
         'description',
     ];
 
-    public function occupations()
+    public function occupation()
     {
-        return $this->hasMany(Occupation::class);
+        return $this->belongsTo(Occupation::class);
     }
 
     public function company()

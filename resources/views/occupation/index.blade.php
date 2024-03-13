@@ -1,10 +1,13 @@
 @extends('layouts.app')
 @section('content')
 
+@livewire('post-show')
 
 <div class="container1">
     <link rel="stylesheet" href="{{ asset('/css/index.css') }}">
     <a href="{{ route('create.occupation') }}" class="boton2">Create New Occupation</a>
+    <a href="{{ route('livewire.show') }}">Ver cargos por ocupación</a>
+
     <ul class="list-general">
         @forelse ($occupations as $occupation)
         <table class="table-general">

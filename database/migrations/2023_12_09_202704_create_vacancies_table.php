@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('number_vacancies_applied');
             $table->foreignID('id_offers')->constrained('offers')->onDelete('cascade');
-            $table->foreignID('id_localities')->constrained('localities')->onDelete('cascade');
+            $table->foreignId('city_id')->constrained('cities')->onDelete('cascade');
             $table->foreignID('id_contract_types')->constrained('contract_types')->onDelete('cascade');
             $table->foreignID('weighings_id')->constrained('weighings')->onDelete('cascade');
             $table->timestamps();
