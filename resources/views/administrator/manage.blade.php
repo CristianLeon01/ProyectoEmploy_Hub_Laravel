@@ -8,7 +8,6 @@
     <h2 class="TituloManage">Registered Users Table</h2><br><br>
 
     <div class="table-wrapper">
-        <button class="CambiarBoton">Change</button>
         <table>
             <thead>
                 <tr>

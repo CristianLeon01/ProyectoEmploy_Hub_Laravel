@@ -76,6 +76,7 @@
                     <li class="contenedor-candidate">
                         <a href="#termino">Candidate</a>
                         <ul class="sub-Menu-candidate">
+                            <li><a href="{{ route('headerCandidate')}}">Search offers</a></li>
                             <li><a href="">Check Vacancy</a></li>
                             <li><a href="{{ route('create.lifeSheet')}}">Register resume</a></li>
                             <li><a href="{{ route('offer') }}">Apply for a Vacancy</a></li>
