@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Offer extends Model
 {
@@ -32,6 +33,10 @@ class Offer extends Model
 
     public function postulation():HasMany {
         return $this->hasMany(Postulation::class);
+    }
+    public function vacancies()
+    {
+        return $this->hasMany(Vacant::class);
     }
 
 }

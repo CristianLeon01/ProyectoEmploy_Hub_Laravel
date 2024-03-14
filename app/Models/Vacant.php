@@ -39,4 +39,5 @@ class Vacant extends Model
     {
         return $this->belongsTo(Weighing::class);
     }
+
 }

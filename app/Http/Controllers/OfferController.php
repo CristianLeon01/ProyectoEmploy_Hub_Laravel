@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\OfferRequest;
 use App\Models\Contract_type;
 use App\Models\Offer;
+use App\Models\Vacant;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
@@ -14,11 +15,24 @@ class OfferController extends Controller
         if ($request->has('q')) {
             return $this->search($request);
         }
-    
+
+        // Obtener todas las ofertas
         $offers = Offer::all();
-        return view("offer.index", ["offers" => $offers]);
+
+        // Obtener las vacantes asociadas a cada oferta
+        $vacancies = [];
+        foreach ($offers as $offer) {
+            $vacancies[$offer->id] = Vacant::where('id_offers', $offer->id)->get();
+        }
+
+        return view("offer.index", [
+            "offers" => $offers,
+            "vacancies" => $vacancies,
+
+        ]);
     }
-    
+
+
     public function Create(){
 
         $contract_type = Contract_type::all();
@@ -48,55 +62,63 @@ class OfferController extends Controller
     public function Update(OfferRequest $request, Offer $offer){
         $offer->update($request->validated());
         return redirect()->route('offer');
-    }    
+    }
 
     public function Show(Offer $offer){
         return view ('offer.show', compact('offer'));
     }
 
-    public function Destroy (Request $request, Offer $offer){ 
+    public function Destroy (Request $request, Offer $offer){
         $offer->delete();
         return redirect()->route('offer');
     }
 
     public function search(Request $request)
-    {
-        $query = $request->input('q');
+{
+    $query = $request->input('q');
 
-        $experiencia = $request->input('experiencia');
-        $tipo_contrato = $request->input('tipo_contrato');
-        $tipo_jornada = $request->input('tipo_jornada');
-        $salario = $request->input('salario');
-        $fecha_publicacion = $request->input('fecha_publicacion');
+    $experiencia = $request->input('experiencia');
+    $tipo_contrato = $request->input('tipo_contrato');
+    $tipo_jornada = $request->input('tipo_jornada');
+    $salario = $request->input('salario');
+    $fecha_publicacion = $request->input('fecha_publicacion');
 
-        $queryBuilder = Offer::query();
+    $queryBuilder = Offer::query();
 
-        if ($query) {
-            $queryBuilder->where('name_vacant', 'like', "%$query%");
-        }
-
-        if ($experiencia && $experiencia !== 'ninguna') {
-            $queryBuilder->where('months_experience', $experiencia);
-        }
-
-        if ($tipo_contrato) {
-            $queryBuilder->where('contract_type_id', $tipo_contrato);
-        }
-
-        if ($tipo_jornada) {
-            $queryBuilder->where('tipo_jornada', $tipo_jornada);
-        }
-
-        if ($salario) {
-            $queryBuilder->where('salario', $salario);
-        }
-
-        if ($fecha_publicacion) {
-            $queryBuilder->where('fecha_publicacion', $fecha_publicacion);
-        }
-
-        $results = $queryBuilder->get();
-
-        return view('offer.index', compact('results', 'query'));
+    if ($query) {
+        $queryBuilder->where('name_vacant', 'like', "%$query%");
     }
+
+    if ($experiencia && $experiencia !== 'ninguna') {
+        $queryBuilder->where('months_experience', $experiencia);
+    }
+
+    if ($tipo_contrato) {
+        $queryBuilder->where('contract_type_id', $tipo_contrato);
+    }
+
+    if ($tipo_jornada) {
+        $queryBuilder->where('tipo_jornada', $tipo_jornada);
+    }
+
+    if ($salario) {
+        $queryBuilder->where('salario', $salario);
+    }
+
+    if ($fecha_publicacion) {
+        $queryBuilder->where('fecha_publicacion', $fecha_publicacion);
+    }
+
+    // Obtener las ofertas encontradas en la búsqueda
+    $results = $queryBuilder->get();
+
+    // Obtener las vacantes asociadas a cada oferta encontrada
+    $vacancies = [];
+    foreach ($results as $result) {
+        $vacancies[$result->id] = Vacant::where('id_offers', $result->id)->get();
+    }
+
+    return view('offer.index', compact('results', 'query', 'vacancies'));
+}
+
 }
