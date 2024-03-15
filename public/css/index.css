@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #9DB4C0;
+    background-color: #9db4c0;
     font-family: "Ubuntu Condensed", sans-serif;
 }
 
@@ -54,8 +54,8 @@ body {
     text-decoration: none;
     border-radius: 4px;
     border: none; /* Eliminar contorno */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), /* Agregar sombra */
-                0 0 0 0 rgba(0, 0, 0, 0); /* Borde inicial transparente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+        /* Agregar sombra */ 0 0 0 0 rgba(0, 0, 0, 0); /* Borde inicial transparente */
     transition: transform 0.2s, box-shadow 0.4s; /* Transición de sombra */
     width: 200px; /* Ancho fijo para todos los botones */
     font-size: 17px;
@@ -67,8 +67,8 @@ body {
 .boton2:hover {
     background-color: #4c575c;
     transform: translateY(-1px); /* Efecto de elevación al pasar el mouse */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0), /* Agregar sombra normal */
-                0 0 10px 10px rgba(255, 255, 255, 0.321); /* Agregar borde con destello */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0),
+        /* Agregar sombra normal */ 0 0 10px 10px rgba(255, 255, 255, 0.321); /* Agregar borde con destello */
 }
 
 .boton1:hover {
@@ -93,7 +93,7 @@ body {
 }
 
 /* Estilos para la lista de habilidades */
-.list-general{
+.list-general {
     list-style-type: none;
     padding: 0;
 }
@@ -141,4 +141,38 @@ body {
 /* Estilos para los formularios de eliminación */
 .delete-form {
     display: inline-block;
+}
+
+
+/* Estilos para el input */
+.barra-busqueda {
+    width: 57.5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-left: 15px;
+    height: 40px; /* Altura fija para mantenerla quieta */
+}
+
+
+.barra-busqueda:focus {
+    border-color: #007bff; /* Cambiar color del borde al enfocar */
+}
+
+/* Estilos para el select */
+.opciones {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.opciones:focus {
+    border-color: #007bff; /* Cambiar color del borde al enfocar */
 }

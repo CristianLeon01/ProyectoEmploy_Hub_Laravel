@@ -40,7 +40,7 @@
                 <button id="delete-file" class="delete-button" onclick="deleteFile()">Delete</button>
             </span>
         </div>
-        <div class="buton">
+        <div class="boton">
             <a href="{{ route('successful') }}">
                 <button type="submit-btn">Application Completed</button>
             </a>        

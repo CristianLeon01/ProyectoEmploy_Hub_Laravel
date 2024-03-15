@@ -1,6 +1,6 @@
 <div>
 
-    <select wire:model="searchOccupation" placeholder="filter by post">
+    <select class="opciones" wire:model="searchOccupation" placeholder="filter by post">
         <option value="">All posts</option>
         @foreach ($occupations as $occupation)
             <option value="{{$occupation->occupation_name}}">{{$occupation->occupation_name}}</option>
@@ -8,7 +8,7 @@
     </select>
 
     {{-- input para buscar ocupaciones por su nombre hecho con livewire --}}
-    <input type="text" wire:model="searchOccupation" placeholder="Search for occupation name">
+    <input class="barra-busqueda" type="text" wire:model="searchOccupation" placeholder=" Search for occupation name"><br><br><br>
 
     <ul class="list-general">
         @forelse ($occupations as $occupation)
@@ -17,13 +17,11 @@
                 <th class="table-header">ID</th>
                 <th class="table-header">Occupation Name</th>
                 <th class="table-header">Occupation Description</th>
-                <th class="table-header">Id Post</th>
             </tr>
             <tr>
                 <td><a>{{ $occupation->id }}</a></td>
                 <td><a>{{ $occupation->occupation_name }}</a></td>
                 <td><a>{{ $occupation->occupation_description}}</a></td>
-                <td><a>{{ $occupation->id_post }}</a></td>
             </tr>
         </table>
         <li>
