@@ -162,7 +162,7 @@ Route::get('/post/edit/{post}', [PostController::class,'Edit'])->name('edit.post
 Route::put('/post/update/{post}', [PostController::class,'Update'])->name('update.post');
 Route::get('/post/show/{post}', [PostController::class,'Show'])->name('show.post');
 Route::delete('/post/destroy/{post}', [PostController::class,'Destroy'])->name('destroy.post');
-Route::get('/livewire/show', \App\Http\Livewire\PostShow::class)->name('livewire.show');
+// Route::get('/livewire/show', \App\Http\Livewire\PostShow::class)->name('livewire.show');
 
 // Routes Recruiter
 Route::get('/headerRecruiter', [RecruiterController::class, 'header'])->name('headerRecruiter');
