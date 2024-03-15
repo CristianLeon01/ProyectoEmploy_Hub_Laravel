@@ -9,15 +9,9 @@ class Department extends Model
 {
     use HasFactory;
 
-    protected $table = 'departments'; 
+    protected $table = 'departments';
 
     protected $fillable = [
         'department_name',
-        'departament_id'
     ];
-
-    public function cities()
-    {
-        return $this->hasMany(City::class);
-    }
 }

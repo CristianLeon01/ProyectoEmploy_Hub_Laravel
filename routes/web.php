@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Livewire\PostShow;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -8,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ManageController;
 use App\Http\Controllers\VacantController;
 use App\Http\Controllers\AbilityController;
 use App\Http\Controllers\AboutUSController;
@@ -23,16 +26,15 @@ use App\Http\Controllers\KnowledgeController;
 use App\Http\Controllers\LifeSheetController;
 use App\Http\Controllers\RecruiterController;
 use App\Http\Controllers\BienvenidaController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\OccupationController;
 use App\Http\Controllers\NotRegisterController;
 use App\Http\Controllers\PostulationController;
 use App\Http\Controllers\DenominationController;
 use App\Http\Controllers\AdministratorController;
-use App\Http\Controllers\TermsAndConditionsController;
-use App\Http\Controllers\ManageController;
 use App\Http\Controllers\My_ApplicationController;
-use App\Http\Livewire\PostShow;
+use App\Http\Controllers\TermsAndConditionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -127,6 +129,12 @@ Route::get('/funtion/edit/{funtion}', [FunctionController::class,'Edit'])->name(
 Route::put('/funtion/update/{funtion}', [FunctionController::class,'Update'])->name('update.funtion');
 Route::get('/funtion/show/{funtion}', [FunctionController::class,'Show'])->name('show.funtion');
 Route::delete('/funtion/destroy/{funtion}', [FunctionController::class,'Destroy'])->name('destroy.funtion');
+
+//Routes departments
+Route::resource('department', DepartmentController::class);
+
+//Routes cities
+Route::resource('city', CityController::class);
 
 // Routes Knowledge
 Route::get('/knowledge', [KnowledgeController::class, 'Knowledge'])->name('knowledge')->middleware('auth');
