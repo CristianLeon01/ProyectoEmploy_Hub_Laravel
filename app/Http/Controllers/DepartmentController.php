@@ -40,7 +40,7 @@ class DepartmentController extends Controller
             'department_name' => 'required|min:5|max:20'
         ]);
         $department = Department::firstOrCreate([
-            'name' => $request->input('name'),
+            'department_name' => $request->input('department_name'),
         ]);
         if (!$department->wasRecentlyCreated) {
             return redirect()->back()->withErrors(['message' => 'This name already exists']);

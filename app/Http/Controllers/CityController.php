@@ -43,7 +43,7 @@ class CityController extends Controller
             'department_id' => 'required'
         ]);
         $city = City::firstOrCreate([
-            'city_name' => $request->input('name'),
+            'city_name' => $request->input('city_name'),
             'department_id' => $request->input('department_id'),
         ]);
         if (!$city->wasRecentlyCreated) {
