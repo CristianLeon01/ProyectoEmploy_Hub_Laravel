@@ -4,12 +4,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px; /* Espaciado para separar el contenido del borde */
+    padding: 20px; 
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px); /* Efecto de transparencia borrosa */
-    background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
-    min-height: auto; /* Altura mínima automática según el contenido */
+    backdrop-filter: blur(10px); 
+    background-color: rgba(255, 255, 255, 0.5);
+    min-height: auto; 
 }
 
 .titulo-principal {
@@ -18,19 +18,19 @@
     margin-bottom: 30px;
     font-size: 36px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Cambio a la fuente Open Sans */
-    color: #333; /* Color de texto oscuro */
-    text-transform: uppercase; /* Convertir texto a mayúsculas */
-    letter-spacing: 1px; /* Añadir un poco de espaciado entre letras */
-    font-weight: bold; /* Texto en negrita */
+    color: #333; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 .campo {
-    flex-basis: calc(50% - 10px); /* Tamaño de las subcasillas, con espacio entre ellas */
+    flex-basis: calc(50% - 10px); 
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
-    margin-bottom: 20px; /* Espaciado entre las subcasillas */
-    position: relative; /* Para posicionar los elementos hijos */
+    margin-bottom: 20px; 
+    position: relative; 
 }
 
 .campo h2 {
@@ -44,12 +44,12 @@
 }
 
 .campo-CV {
-    width: 25%; /* Anchura del elemento */
+    width: 25%;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
-    margin: 0 auto 20px; /* Centra horizontalmente y agrega espaciado en la parte inferior */
-    position: relative; /* Para posicionar los elementos hijos */
+    margin: 0 auto 20px; 
+    position: relative; 
     text-align: center;
 }
 
@@ -70,7 +70,7 @@
 }
 
 #file-input {
-    display: none; /* Oculta el input de archivo */
+    display: none;
 }
 
 .delete-button {
@@ -82,7 +82,7 @@
     cursor: pointer;
     font-size: 14px;
     margin-left: 10px;
-    display: none; /* Inicialmente oculto */
+    display: none;
 }
 
 .delete-button:hover {
@@ -101,7 +101,7 @@
 
 .boton button {
     padding: 10px 20px;
-    background-color: #4CAF50; /* Color del botón */
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
@@ -110,7 +110,7 @@
 }
 
 .boton button:hover {
-    background-color: #45a049; /* Cambio de color al pasar el ratón */
+    background-color: #45a049;
 }
 
 h2 {
@@ -118,7 +118,7 @@ h2 {
 }
 
 .nombre-oferta {
-    margin-left: 3px; /* Ajusta el margen izquierdo según sea necesario */
+    margin-left: 3px;
     color: #878787;
 }
 .span-title{
