@@ -21,5 +21,13 @@ class PostulationController extends Controller
         ]);
     }
 
-    
+    public function postulacionExitosa()
+    {
+        return view('postulation.successful');
+    }
+
+    public function miAplicacion()
+    {
+        return view('my_application.index');
+    }
 }

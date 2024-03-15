@@ -31,6 +31,7 @@ use App\Http\Controllers\DenominationController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\TermsAndConditionsController;
 use App\Http\Controllers\ManageController;
+use App\Http\Controllers\My_ApplicationController;
 use App\Http\Livewire\PostShow;
 
 /*
@@ -245,9 +246,12 @@ Route::resource('vacant', VacantController::class);
 
 //Route Postulations
 Route::get('/postulation/{oferta}', [PostulationController::class, 'mostrar'])->name('postulation');
-//Route::get('/postulation/{offerId}', [PostulationController::class, 'index'])->name('postulation.index');
-// Route::get('/postulation/{offer}', [PostulationController::class, 'showPostulationForm'])->name('postulation.form');
-// Route::post('/postulation/{offer}', [PostulationController::class, 'storePostulation'])->name('postulation.store');
+Route::get('successful', [PostulationController::class, 'postulacionExitosa'])->name('successful');
+Route::get('/my_application', [PostulationController::class, 'miAplicacion'])->name('my_application.index');
+
+//Route My_Application
+Route::get('/my_application/{offer}', [My_ApplicationController::class, 'mostrar'])->name('my_application');
+
 
 
 // Route Files

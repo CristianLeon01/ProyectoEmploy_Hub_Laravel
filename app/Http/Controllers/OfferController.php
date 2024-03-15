@@ -16,10 +16,8 @@ class OfferController extends Controller
             return $this->search($request);
         }
 
-        // Obtener todas las ofertas
         $offers = Offer::all();
 
-        // Obtener las vacantes asociadas a cada oferta
         $vacancies = [];
         foreach ($offers as $offer) {
             $vacancies[$offer->id] = Vacant::where('id_offers', $offer->id)->get();

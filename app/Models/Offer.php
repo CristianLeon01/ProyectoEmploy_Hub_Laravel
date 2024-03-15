@@ -34,9 +34,9 @@ class Offer extends Model
     public function postulation():HasMany {
         return $this->hasMany(Postulation::class);
     }
+
     public function vacancies()
     {
         return $this->hasMany(Vacant::class);
     }
-
 }

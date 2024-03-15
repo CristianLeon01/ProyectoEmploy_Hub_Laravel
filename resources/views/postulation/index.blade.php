@@ -40,8 +40,10 @@
                 <button id="delete-file" class="delete-button" onclick="deleteFile()">Delete</button>
             </span>
         </div>
-        <div class="boton">
-            <button>Descargar CV</button>
+        <div class="buton">
+            <a href="{{ route('successful') }}">
+                <button type="submit-btn">Application Completed</button>
+            </a>        
         </div>
         <script>
             function updateFileName(input) {
