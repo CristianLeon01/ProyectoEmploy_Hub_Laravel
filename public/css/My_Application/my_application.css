@@ -1,0 +1,68 @@
+.title-my-application {
+    font-size: 50px;
+    margin: 30px auto; /* Establece un margen vertical de 30px y un margen horizontal automático */
+    max-width: fit-content; /* Establece el ancho máximo para adaptarse al contenido */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.super-contenedor {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.315); /* Fondo semitransparente */
+    backdrop-filter: blur(8px); /* Aplicar desenfoque */
+    margin-bottom: 50px;
+    margin-top: 50px;
+    width: 70%;
+    height: auto; /* Cambiado a altura automática */
+}
+
+.contenedor {
+    background-color: #dcd020;
+    padding: 20px; /* Agregado relleno al contenedor */
+    border-radius: 10px; /* Agregado borde redondeado al contenedor */
+    display: flex; /* Utilizar flexbox */
+    justify-content: space-between; /* Centrar y espaciar los elementos horizontalmente */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.botones {
+    display: flex;
+    gap: 30px;
+    position: relative;
+    left: 0;
+    border: 2px solid blue; /* Agrega un borde azul a la sección de botones */
+}
+
+.botonHorizontal {
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    border: 2px solid #dcd020;
+    padding: 10px 20px;
+    transition: transform 0.2s ease;
+}
+
+.botonHorizontal:hover {
+    background-color: #d1c95c;
+    transform: scale(1.05);
+}
+
+.boton1 {
+    margin-left: 950px;
+    margin-top: -50px;
+}
+
+.botonUnico {
+    background-color: rgb(3, 3, 113);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 10px;
+}

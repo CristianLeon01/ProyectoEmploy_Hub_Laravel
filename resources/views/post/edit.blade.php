@@ -1,23 +1,19 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Posts/createPost.css') }}">
-<a href="{{ route ('post') }}"> Back</a>
+<link rel="stylesheet" href="{{ asset('/css/Posts/editPosts.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Post</span></h1>
-    <form action="{{ route('update.post', $post->id) }}" method="POST">
+    <h1 class="title-post">Update Your <span>Post</span></h1>
+    <form class="form-post" action="{{ route('update.post', $post->id) }}" method="POST">
         @method('PUT')
         @csrf
 
-        <label>Write the name of the post:</label>
-        <textarea  type="text" name="name_post" rows="4" cols="50" value="{{ $post-> name_post }}" required></textarea><br><br>
+        <label>Update your Write the name of the post:</label>
+        <input  type="text" name="name_post" value="{{ $post-> name_post }}" required></input><br><br>
 
-        <label>Write the address:</label>
-        <input type="text"  name="direction" value="{{ $post-> direction }}" required><br><br>
-
-        <label>Write the phone:</label>
-        <input type="text" name="phone" value="{{ $post-> phone }}" required><br><br>
+        <label>Update your Write the address:</label>
+        <input type="text"  name="description" value="{{ $post-> description }}" required><br><br>
 
         <center><button type="submit" class="create-application-button" value="Update">Update</button></center>
     </form>

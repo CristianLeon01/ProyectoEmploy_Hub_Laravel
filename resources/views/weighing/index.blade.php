@@ -2,21 +2,21 @@
 @section('content')
 
 
-<div  class="container1">
+<div class="container1">
     <link rel="stylesheet" href="{{ asset('/css/index.css') }}">
-    <a href="{{ route('create.weighing') }}" class="boton1">Create New Weighing</a>
-    <ul>
+    <a href="{{ route('create.weighing') }}" class="boton2">Create New Weighing</a>
+    <ul class="list-general">
         @forelse ($weightings as $weighing)
-        <table>
+        <table class="table-general">
             <tr>
-                <th>ID</th>
-                <th>Languages</th>
-                <th>Education</th>
-                <th>Work Experiencie</th>
-                <th>Technical Skills</th>
-                <th>Previous Project</th>
-1                <th>References</th>
-                <th>Additional Course</th>
+                <th class="table-header">ID</th>
+                <th class="table-header">Languages</th>
+                <th class="table-header">Education</th>
+                <th class="table-header">Work Experience</th>
+                <th class="table-header">Technical Skills</th>
+                <th class="table-header">Previous Project</th>
+                <th class="table-header">References</th>
+                <th class="table-header">Additional Course</th>
             </tr>
             <tr>
                 <td><a>{{ $weighing->id }}</a></td>
@@ -29,8 +29,8 @@
                 <td><a>{{ $weighing->additional_course }}</a></td>
             </tr>
         </table>
-            <li>
-                <a href="{{ route('show.weighing', $weighing->id) }}">{{ $weighing->id }}</a> |
+            <li class="list-element">
+                <a href="{{ route('show.weighing', $weighing->id) }}" class="link">{{ $weighing->id }}</a> |
                 <a href="{{ route('edit.weighing', $weighing->id) }}" class="boton1">EDIT</a> |
                 <form method="POST" action="{{ route('destroy.weighing', ['weighing'=>$weighing->id]) }}"> 
                     @csrf
@@ -39,7 +39,7 @@
                 </form>
             </li>
         @empty
-            <p>No data.</p>
+            <p class="no-data">No data.</p>
         @endforelse
     </ul>
 </div>

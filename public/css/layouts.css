@@ -1,705 +1,676 @@
 @import url("https://fonts.googleapis.com/css2?family=Phudu&family=Sedgwick+Ave+Display&family=Ubuntu+Condensed&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
-  background-color: #9DB4C0;
-  font-family: "Ubuntu Condensed", sans-serif;
+    background-color: #9db4c0;
+    font-family: "Ubuntu Condensed", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Aqui empieza todo el estilo del header */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+body {
+    scrollbar-width: thin;
+}
+
+body::-webkit-scrollbar {
+    width: thin;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    position: fixed;
+    z-index: 9999;
+}
 
 header {
-  width: 100%;
-  background-color: #5C6B73;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    width: 100%;
+    background-color: #5c6b73;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .interior {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
 .logo img {
-  height: 90px;
-  width: 110px;
-  margin-left: 20px;
-  transition: transform 0.3s;
-  min-width: 100px;
+    height: 90px;
+    width: 110px;
+    margin-left: 20px;
+    transition: transform 0.3s;
+    min-width: 100px;
 }
 
 .logo img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .navegacion {
-  display: flex;
-  font-size: 18px;
-  width: 800px;
-  height: 75%;
-  position: relative;
-  align-items: center;
-  margin: 0 auto;
-  right: 10px;
+    display: flex;
+    font-size: 18px;
+    width: 800px;
+    height: 75%;
+    position: relative;
+    align-items: center;
+    margin: 0 auto;
+    right: 10px;
 }
 
 .menu {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-left: 60px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-left: 60px;
 }
 
 .sobreNosotros {
-  width: 100%;
+    width: 100%;
 }
 
 .terminos {
-  width: 100%;
+    width: 100%;
 }
 
 .menu li a {
-  display: block;
-  padding: 15px 20px;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
 .menu li:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .sub-Menu {
-  position: absolute;
-  display: none;
-  list-style: none;
-  background-color: #5C6B73;
-  min-width: 300px;
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: #5c6b73;
+    min-width: 300px;
 }
 
-
 .menu li:hover .sub-Menu {
-  display: block;
+    display: block;
 }
 
 .sub-Menu li:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .sub-Menu li a {
-  display: block;
-  color: rgb(255, 255, 255);
-  padding: 15px 15px 15px 20px;
-  text-decoration: none;
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
 }
 
+.contenedor-admin .btnAdmin {
+    bottom: 86px;
+}
 
 /* ............................................. */
 
-ul .sub-Menu-candidate{
-  position: absolute;
-  left: 42vw;
-  bottom: 40vh;
+.imagen-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: cover;
+    background-image: url(prueba.jpg);
+    opacity: 0.5; 
+    z-index: -1;
 }
 
-.menu-candidate a{
-  background-color: rgba(255, 0, 0, 0);
-  color: #fff;
-  width: 5%;
-  position: relative;
-  left: 47vw;
-  font-size: 18px;
-  bottom: 4.8vw;
-  padding: 15px 20px;
+/* ............................................. */
+
+ul .sub-Menu-candidate {
+    position: absolute;
+    left: 42vw;
+    bottom: 40vh;
+}
+
+.menu-candidate a {
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    width: 5%;
+    position: relative;
+    right: 43.5vw;
+    font-size: 18px;
+    top: 0vw;
+    padding: 15px 20px;
 }
 
 .menu-candidate a:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .menu-candidate li:hover .sub-Menu-candidate {
-  display: block;
+    display: block;
 }
 
-.contenedor-candidate{
-  background-color: red;
-  width: 0;
+.contenedor-candidate {
+    background-color: red;
+    width: 0;
+    height: 0;
+    list-style: none;
 }
 
 .sub-Menu-candidate {
-  position: absolute;
-  display: none;
-  list-style: none;
-  background-color: #5C6B73;
-  width: 280px;
-  right: 20%;
-  top: 10vh;
-  height: 13vw;
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: #5c6b73;
+    width: 280px;
+    right: 20%;
+    top: 8.6vh;
+    height: 13.7vw;
+    z-index: 1;
 }
 .sub-Menu-candidate li:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .sub-Menu-candidate li a {
-  display: block;
-  color: rgb(255, 255, 255);
-  padding: 15px 15px 15px 20px;
-  text-decoration: none;
-  position: relative;
-  left: 60px;
-  top: 1px;
-  width: 70%;
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+    position: relative;
+    left: 60px;
+    top: 1px;
+    width: 70%;
 }
 
 /******************************************/
 
-ul .sub-Menu-admin{
-  position: absolute;
-  left: 42vw;
-  bottom: 40vh;
+ul .sub-Menu-admin {
+    position: absolute;
+    left: 41vw;
+    z-index: 1;
 }
 
-.menu-admin a{
-  background-color: rgba(255, 0, 0, 0);
-  color: #fff;
-  width: 5%;
-  position: relative;
-  left: 47vw;
-  font-size: 18px;
-  bottom: 4.8vw;
-  padding: 15px 20px;
+.menu-admin a {
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    width: 5%;
+    position: relative;
+    right: 43vw;
+    font-size: 18px;
+    padding: 15px 20px;
+    top: 0.6vw;
 }
 
 .menu-admin a:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .menu-admin li:hover .sub-Menu-admin {
-  display: block;
+    display: block;
 }
 
-.contenedor-admin{
-  background-color: red;
-  width: 0;
+.contenedor-admin {
+    background-color: red;
+    width: 0;
+    list-style: none;
 }
 
 .sub-Menu-admin {
-  position: absolute;
-  display: none;
-  list-style: none;
-  background-color: #5C6B73;
-  width: 280px;
-  right: 20%;
-  top: 12vh;
-  height: 15vw;
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: #5c6b73;
+    width: 270px;
+    right: 20vw;
+    top: 9.5vh;
+    height: 8.5vw;
 }
 .sub-Menu-admin li:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .sub-Menu-admin li a {
-  display: block;
-  color: rgb(255, 255, 255);
-  padding: 15px 15px 15px 20px;
-  text-decoration: none;
-  position: relative;
-  left: 60px;
-  top: 1px;
-  width: 70%;
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+    position: relative;
+    left: 50px;
+    top: 1px;
+    width: 70%;
 }
-/* .sub-Menu-candidate li {
-  width: 10%;
-}
-
-.sub-Menu-candidate{
-  width: 10%;
-}
-
-.sub-Menu-candidate a{
-  width: 20%;
-} */
 
 /******************************************/
 
-ul .sub-Menu-selector{
-  position: absolute;
-  left: 42vw;
-  bottom: 40vh;
+ul .sub-Menu-selector {
+    position: absolute;
+    left: 41.5vw;
 }
 
-.menu-selector a{
-  background-color: rgba(255, 0, 0, 0);
-  color: #fff;
-  width: 5%;
-  position: relative;
-  left: 47vw;
-  font-size: 18px;
-  bottom: 4.8vw;
-  padding: 15px 20px;
+.menu-selector a {
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    width: 5%;
+    position: relative;
+    right: 43vw;
+    font-size: 18px;
+    padding: 15px 20px;
 }
 
 .menu-selector a:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .menu-selector li:hover .sub-Menu-selector {
-  display: block;
+    display: block;
 }
 
-.contenedor-selector{
-  background-color: red;
-  width: 0;
+.contenedor-selector {
+    background-color: red;
+    width: 0;
+    height: 0;
+    list-style: none;
 }
 
 .sub-Menu-selector {
-  position: absolute;
-  display: none;
-  list-style: none;
-  background-color: #5C6B73;
-  width: 280px;
-  right: 20%;
-  top: 10vh;
-  height: 10vw;
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: #5c6b73;
+    width: 280px;
+    right: 20%;
+    top: 8.6vh;
+    height: 15.6vw;
 }
 .sub-Menu-selector li:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .sub-Menu-selector li a {
-  display: block;
-  color: rgb(255, 255, 255);
-  padding: 15px 15px 15px 20px;
-  text-decoration: none;
-  position: relative;
-  left: 60px;
-  top: 1px;
-  width: 70%;
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+    position: relative;
+    left: 60px;
+    top: 1px;
+    width: 70%;
 }
 
 /* ............................ */
 
-ul .sub-Menu-company{
-  position: absolute;
-  left: 42vw;
-  bottom: 40vh;
+ul .sub-Menu-company {
+    position: absolute;
+    left: 43.2vw;
 }
 
-.menu-company a{
-  background-color: rgba(255, 0, 0, 0);
-  color: #fff;
-  width: 5%;
-  position: relative;
-  left: 47vw;
-  font-size: 18px;
-  bottom: 4.8vw;
-  padding: 15px 20px;
+.menu-company a {
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    width: 5%;
+    position: relative;
+    /* left: 47vw; */
+    right: 43.5vw;
+    font-size: 18px;
+    bottom: 0vw;
+    padding: 15px 20px;
 }
 
 .menu-company a:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .menu-company li:hover .sub-Menu-company {
-  display: block;
+    display: block;
 }
 
-.contenedor-company{
-  background-color: red;
-  width: 0;
+.contenedor-company {
+    background-color: red;
+    width: 0;
+    height: 0;
+    list-style: none;
 }
 
 .sub-Menu-company {
-  position: absolute;
-  display: none;
-  list-style: none;
-  background-color: #5C6B73;
-  width: 280px;
-  right: 20%;
-  top: 10vh;
-  height: 11vw;
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: #5c6b73;
+    width: 219px;
+    top: 8.6vh;
+    height: 9.2vw;
 }
 .sub-Menu-company li:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .sub-Menu-company li a {
-  display: block;
-  color: rgb(255, 255, 255);
-  padding: 15px 15px 15px 20px;
-  text-decoration: none;
-  position: relative;
-  left: 60px;
-  top: 1px;
-  width: 70%;
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+    position: relative;
+    left: 48px;
+    top: 1px;
+    width: 70%;
 }
 
 /* ................................... */
 
-ul .sub-Menu-recruiter{
-  position: absolute;
-  left: 42vw;
-  bottom: 40vh;
+ul .sub-Menu-recruiter {
+    position: absolute;
+    left: 41.3vw;
+    bottom: 40vh;
+    z-index: 10;
 }
 
-.menu-recruiter a{
-  background-color: rgba(255, 0, 0, 0);
-  color: #fff;
-  width: 5%;
-  position: relative;
-  left: 47vw;
-  font-size: 18px;
-  bottom: 4.8vw;
-  padding: 15px 20px;
+.menu-recruiter a {
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    width: auto;
+    position: relative;
+    font-size: 18px;
+    padding: 15px 20px;
+    /* Ajusta el margen izquierdo a 0 para eliminar el espacio en blanco a la izquierda */
+    margin-left: 0;
+    right: 87vh;
 }
 
 .menu-recruiter a:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .menu-recruiter li:hover .sub-Menu-recruiter {
-  display: block;
+    display: block;
 }
 
-.contenedor-recruiter{
-  background-color: red;
-  width: 0;
+.contenedor-recruiter {
+    background-color: red;
+    width: 0;
+    list-style: none;
+    height: 0;
 }
 
 .sub-Menu-recruiter {
-  position: absolute;
-  display: none;
-  list-style: none;
-  background-color: #5C6B73;
-  width: 270px;
-  right: 20%;
-  top: 9.7vh;
-  height: 9vw;
+    position: relative;
+    display: none;
+    list-style: none;
+    background-color: #5c6b73;
+    width: 270px;
+    right: 75px;
+    top: 8.5vh;
+    height: 25vw;
 }
+
 .sub-Menu-recruiter li:hover {
-  background-color: #8e8e8e;
-  border-radius: 10px;
+    background-color: #8e8e8e;
+    border-radius: 10px;
 }
 
 .sub-Menu-recruiter li a {
-  display: block;
-  color: rgb(255, 255, 255);
-  padding: 15px 15px 15px 20px;
-  text-decoration: none;
-  position: relative;
-  left: 60px;
-  top: 1px;
-  width: 70%;
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+    position: relative;
+    left: 60px;
+    top: 1px;
+    width: 70%;
 }
 
 .Login {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  margin: 20px;
-  padding: 10px;
-  position: absolute;
-  top: 15px;
-  right: -10px;
-  min-width: 100px;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    min-width: 100px;
 }
 
 .Login a {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  background-color: transparent;
-  color: #ffffff;
-  padding: 10px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  cursor: pointer;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .Login a:hover {
-  background-color: #333;
-  color: #fff;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    background-color: #333;
+    color: #fff;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 #icon-menu {
-  display: none;
+    display: none;
 }
 
 .menu-icono {
-  width: 30px;
+    width: 30px;
 }
 
-
 .interior label {
-  cursor: pointer;
-  display: none;
+    cursor: pointer;
+    display: none;
 }
 
 /* Contenedor principal */
 #barra-superior {
-  width: 20%;
-  background-color: #9DB4C0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 10px;
+    width: 20%;
+    background-color: #9db4c0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
 }
 
 /* Estilos para el mensaje de bienvenida y menú de usuario */
 .mensaje-bienvenida {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .menu-usuario {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-usuario li a {
-  text-decoration: none;
-  color: black;
-  padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 15px 20px;
 }
 
 .sub-menu-usuario {
-  list-style: none;
-  display: none;
-  background-color: #5C6B73;
-  min-width: 300px;
+    list-style: none;
+    display: none;
+    background-color: #5c6b73;
+    min-width: 300px;
 }
 
 .menu-usuario li:hover .sub-menu-usuario {
-  display: block;
+    display: block;
 }
 
 .sub-menu-usuario li a {
-  text-decoration: none;
-  color: #ffffff;
-  padding: 15px 15px 15px 20px;
-  display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 15px 15px 15px 20px;
+    display: block;
 }
 
 .form-logout button {
-  background-color: #5C6B73;
-  color: white;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 10px;
-  transition: background-color 0.3s;
+    background-color: #5c6b73;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s;
 }
 
 .form-logout button:hover {
-  background-color: #9DB4C0;
+    background-color: #9db4c0;
 }
 
 /* Estilos para la lista de inicio de sesión/registro */
 .login {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-  margin: 20px;
-  padding: 10px;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+    padding: 10px;
 }
 
 .login a {
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-  background-color: transparent;
-  color: #ffffff;
-  padding: 10px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .login a:hover {
-  background-color: #333;
-  color: #fff;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    background-color: #333;
+    color: #fff;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 /* Aqui termina todo el estilo del header */
 
-h1 {
-  text-align: center;
-  font-size: 60px;
-  margin-top: 130px;
-  min-width: 300px;
-}
 
-span {
-  color: lightsteelblue;
-}
-
-.Busqueda {
-  width: 100%;
-  height: 500%;
-  min-width: 300px;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.search {
-  width: 50%;
-  height: 80%;
-  min-width: 300px;
-  margin: 20px auto;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 75px;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
-}
-
-.search input {
-  background: transparent;
-  flex: 1;
-  border: 0;
-  outline: none;
-  padding: 24px 20px;
-  font-size: 18px;
-  color: black;
-}
-
-::placeholder {
-  color: black;
-}
-
-.search button img {
-  width: 40%;
-  min-width: 30px;
-}
-
-.search button {
-  border: 0;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  background-color: #5C6B73;
-  cursor: pointer;
-}
-
-.barra {
-  width: 100%;
-  height: 9%;
-  min-width: 300px;
-  position: fixed;
-  transition: -4s all;
-  z-index: 1;
-}
 
 /* Aqui empieza todo el estilo del footer */
 
 footer {
-  width: 100vw;
-  height: 25vh;
-  bottom: 0;
-  left: 0;
-  padding: 2rem 8%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #5C6B73;
-  border: 2px solid rgb(105, 105, 105);
-  margin-top: 10%;
-
+    bottom: 0;
+    width: 100%;
+    height: 25vh;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #5c6b73;
+    border: 2px solid rgb(105, 105, 105);
+    margin-top: auto;
 }
 
 .redes-sociales,
 .menu-contenedor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
 .icono-redesSociales {
-  height: 50px;
-  width: 50px;
-  border-radius: 50px;
-  border: 1px solid black;
-  background-image: url(../img/Facebook.png);
-  background-position: center;
-  background-size: 40%;
-  background-repeat: no-repeat;
-  margin: 2rem;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 1px solid black;
+    background-image: url(../img/Facebook.png);
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    margin: 2rem;
 }
 
 .icono-redesSociales:hover {
-  background-color: white;
-  filter: invert(1);
+    background-color: white;
+    filter: invert(1);
 }
 
 .icono-redesSociales:nth-of-type(2) {
-  background-image: url(../img/Instragram.png);
+    background-image: url(../img/Instragram.png);
 }
 
 .icono-redesSociales:nth-of-type(3) {
-  background-image: url(../img/GitHub.png);
+    background-image: url(../img/GitHub.png);
 }
 
 .icono-redesSociales:nth-of-type(4) {
-  background-image: url(../img/Email.png);
+    background-image: url(../img/Email.png);
 }
 
 .menu-contenedor {
-  list-style-type: none;
-  color: white;
-  font-size: 18px;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
 }
 
 .menu-item {
-  margin: 1rem 1.5rem;
-  opacity: 0.6;
+    margin: 1rem 1.5rem;
+    opacity: 0.6;
 }
 
 .menu-item:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .copyright {
-  color: white;
-  opacity: 0.3;
-  text-align: center;
+    color: white;
+    opacity: 0.3;
+    text-align: center;
 }
 
 /* Aqui termina todo el estilo del footer */
@@ -707,160 +678,211 @@ footer {
 /* empieza el codigo responsive */
 
 @media screen and (max-width: 600px) {
-  /* responsive del header  */
+    /* responsive del header  */
 
-  header {
-    width: 100%;
-    height: 25vw;
-  }
+    header {
+        width: 100%;
+        height: 25vw;
+    }
 
-  .interior {
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    width: 100%;
-    height: 25vw;
-  }
+    .interior {
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        width: 100%;
+        height: 25vw;
+    }
 
-  .logo img {
-    position: relative;
-    margin-left: 0;
-    margin-top: 5px;
-    left: 36vw;
-  }
+    .logo img {
+        position: relative;
+        margin-left: 0;
+        margin-top: 5px;
+        left: 36vw;
+    }
 
-  .navegacion {
-    width: 100%;
-    text-align: center;
-    margin-right: 0;
-    padding: 10px 0;
-    top: 70vw;
-    right: 44vw;
-  }
+    .navegacion {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        padding: 10px 0;
+        top: 70vw;
+        right: 44vw;
+    }
 
-  .menu {
-    margin-left: 0;
-    flex-direction: column;
-    align-items: center;
-    width: 65vw;
-    background-color: #5C6B73;
-    position: relative;
-    bottom: 14.2vw;
-    display: none;
-    z-index: 1;
-  }
+    .menu {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 65vw;
+        background-color: #5c6b73;
+        position: relative;
+        bottom: 14.2vw;
+        display: none;
+        z-index: 1;
+    }
 
-  .sobreNosotros {
-    position: relative;
-    right: 16vw;
-  }
+    .sobreNosotros {
+        position: relative;
+        right: 16vw;
+    }
 
-  .terminos {
-    position: relative;
-    right: 30vw;
-  }
+    .terminos {
+        position: relative;
+        right: 30vw;
+    }
 
-  .menu li {
-    margin-bottom: 10px;
-  }
+    .menu li {
+        margin-bottom: 10px;
+    }
 
-  .menu li a {
-    padding-bottom: 8px;
-  }
+    .menu li a {
+        padding-bottom: 8px;
+    }
 
-  .sub-Menu {
-    position: absolute;
-    left: 51.6vw;
-    min-width: 54vw;
-    background-color: #5C6B73;
-    z-index: 2;
-  }
+    .sub-Menu {
+        position: absolute;
+        left: 51.6vw;
+        min-width: 54vw;
+        background-color: #5c6b73;
+        z-index: 2;
+    }
 
-  .menu:hover .sub-Menu {
-    display: none;
-  }
+    .menu:hover .sub-Menu {
+        display: none;
+    }
 
-  .sub-Menu li a {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 5px;
-  }
+    .sub-Menu li a {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 5px;
+    }
 
-  .Busqueda {
-    height: auto;
-  }
+    .Busqueda {
+        height: auto;
+    }
 
-  .search {
-    width: 80%;
-    margin-top: 20px;
-  }
+    .search {
+        width: 80%;
+        margin-top: 20px;
+    }
 
-  h1 {
-    font-size: 40px;
-    margin-top: 20px;
-  }
+    h1 {
+        font-size: 40px;
+        margin-top: 20px;
+    }
 
-  .Login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-    right: 2vw;
-  }
+    .Login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+        right: 2vw;
+    }
 
-  .Login a {
-    padding: 5px 10px 5px 10px;
-  }
+    .Login a {
+        padding: 5px 10px 5px 10px;
+    }
 
-  .interior label {
-    display: initial;
-    position: relative;
-    right: 18vw;
-  }
+    .interior label {
+        display: initial;
+        position: relative;
+        right: 18vw;
+    }
 
-  #icon-menu:checked ~ .navegacion .menu {
-    display: initial;
-  }
+    #icon-menu:checked ~ .navegacion .menu {
+        display: initial;
+    }
 
-  /* termina el responsive del header  */
+    /* termina el responsive del header  */
 
-  /* incia el responsive de la seccion busqueda  */
+    /* incia el responsive de la seccion busqueda  */
 
-  .Busqueda {
-    background-color: #ffffff00;
-    height: 65vw;
-  }
+    .Busqueda {
+        background-color: #ffffff00;
+        height: 65vw;
+    }
 
-  .search {
-    height: 16vw;
-    margin: 0;
-    position: relative;
-    top: 22vw;
-  }
+    .search {
+        height: 16vw;
+        margin: 0;
+        position: relative;
+        top: 22vw;
+    }
 
-  h1 {
-    margin: 0;
-    position: relative;
-    top: 14.2vw;
-  }
+    h1 {
+        margin: 0;
+        position: relative;
+        top: 14.2vw;
+    }
 
-  .search button {
-    border: 0;
-    border-radius: 50%;
-    width: 70px;
-    height: 45px;
-    background-color: #5C6B73;
-    cursor: pointer;
-    position: relative;
-    right: 20px;
-  }
+    .search button {
+        border: 0;
+        border-radius: 50%;
+        width: 70px;
+        height: 45px;
+        background-color: #5c6b73;
+        cursor: pointer;
+        position: relative;
+        right: 20px;
+    }
 
-  .search button img {
-    width: 32px;
-    margin: 5px;
-  }
+    .search button img {
+        width: 32px;
+        margin: 5px;
+    }
 
-  /* termina el responsive de la seccion busqueda  */
+    /* termina el responsive de la seccion busqueda  */
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        display: none; /* Ocultar el menú en pantallas pequeñas */
+    }
+
+    .icon-menu {
+        display: initial; /* Mostrar el icono del menú */
+    }
+
+    .navegacion {
+        position: fixed;
+        width: 100%;
+        background-color: #5c6b73;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        padding: 10px 20px;
+    }
+
+    .menu-icono {
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #5c6b73;
+        position: absolute;
+        top: 100%; /* Colocar el menú debajo del icono */
+        left: 0;
+        width: 100%;
+        margin-top: 10px; /* Espacio entre el icono y el menú */
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu li a {
+        padding: 15px 20px;
+        color: #fff;
+    }
+
+    .menu li:hover {
+        background-color: #8e8e8e;
+        border-radius: 10px;
+    }
 }

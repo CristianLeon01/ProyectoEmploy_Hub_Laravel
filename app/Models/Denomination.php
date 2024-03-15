@@ -12,8 +12,13 @@ class Denomination extends Model
     protected $table = 'denominations'; 
 
     protected $fillable = [
-        'denomination_description',
+        'denominate_description',
         'id_occupations',
         'occupation_name'
     ];
+
+    public function occupation()
+    {
+        return $this->belongsTo(Occupation::class, 'id_occupations');
+    }
 }

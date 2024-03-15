@@ -9,11 +9,21 @@ class Occupation extends Model
 {
     use HasFactory;
 
-    protected $table = 'occupations'; 
+    protected $table = 'occupations';
 
     protected $fillable = [
         'occupation_name',
         'occupation_description',
-        'id_post'
     ];
+
+    public function post()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+
+    public function denomination()
+    {
+        return $this->belongsTo(Denomination::class);
+    }
 }

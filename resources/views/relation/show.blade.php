@@ -2,6 +2,6 @@
 
 @section('content')
 
-<a href="{{ route('index.recruiter')}}">Back</a>
+<a href="{{ route('relation')}}">Back</a>
 <h1>{{ $recruiter->name_related_occupation }}</h1>
 @endsection

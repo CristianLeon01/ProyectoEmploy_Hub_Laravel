@@ -13,7 +13,17 @@ class Post extends Model
 
     protected $fillable = [
         'name_post',
-        'direction',
-        'phone'
+        'description',
+        'occupation_id'
     ];
+
+    public function occupation()
+    {
+        return $this->belongsTo(Occupation::class);
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'id_post');
+    }
 }

@@ -4,18 +4,18 @@
 
 <div  class="container1">
     <link rel="stylesheet" href="{{ asset('/css/index.css') }}">
-    <a href="{{ route('administrator.create') }}" class="boton1">Create New Administrator</a>
-    <ul>
+    <a href="{{ route('administrator.create') }}" class="boton2">Create New Administrator</a>
+    <ul class="list-general">
         @forelse ($administrators as $administrator)
-        <table>
+        <table class="table-general">
             <tr>
-                <th>ID</th>
-                <th>Document Number</th>
-                <th>Document Type</th>
-                <th>Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Id User Type</th>
+                <th class="table-header">ID</th>
+                <th class="table-header">Document Number</th>
+                <th class="table-header">Document Type</th>
+                <th class="table-header">Name</th>
+                <th class="table-header">Last Name</th>
+                <th class="table-header">Email</th>
+                <th class="table-header">Id User Type</th>
             </tr>
             <tr>
                 <td><a>{{ $administrator->id }}</a></td>
@@ -27,17 +27,17 @@
                 <td><a>{{ $administrator->id_user_types }}</a></td>
             </tr>
         </table>
-            <li>
-                <a href="{{ route('administrator.show', $administrator->id) }}">{{ $administrator->id }}</a> |
-                <a href="{{ route('administrator.edit', $administrator->id) }}" class="boton1">EDIT</a> |
-                <form method="POST" action="{{ route('administrator.destroy', ['administrator'=>$administrator->id]) }}"> 
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" value='DELETE' class="boton1">
-                </form>
-            </li>
+        <li>
+            <a href="{{ route('administrator.show', $administrator->id) }}" class="link">{{ $administrator->id }}</a> |
+            <a href="{{ route('administrator.edit', $administrator->id) }}" class="boton1">EDIT</a> |
+            <form method="POST" action="{{ route('administrator.destroy', ['administrator'=>$administrator->id]) }}" class="delete-form"> 
+                @csrf
+                @method('DELETE')
+                <input type="submit" value='DELETE' class="boton1">
+            </form>
+        </li>
         @empty
-            <p>No data.</p>
+        <p class="no-data">No data.</p>
         @endforelse
     </ul>
 </div>

@@ -2,29 +2,28 @@
 @section('content')
 
 
-<div  class="container1">
+<div class="container1">
     <link rel="stylesheet" href="{{ asset('/css/index.css') }}">
-    <a href="{{ route('create.company') }}" class="boton1">Create New Company</a>
-    <ul>
+    <a href="{{ route('create.company') }}" class="boton2">Create New Company</a>
+    <ul class="list-general">
         @forelse ($companies as $company)
-        <table>
+        <table class="table-general">
             <tr>
-                <th>ID</th>
-                <th>Company Name</th>
-                <th>Legal Representative</th>
-                <th>Company Type</th>
-                <th>NIT</th>
-                <th>Number Workers</th>
-                <th>Legal Representative Email</th>
-                <th>Nature</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Alternate Phone</th>
-                <th>Human Resources Manager</th>
-                <th>Phone 2</th>
-                <th>Alternate Phone 2</th>
-                <th>Email Manager</th>
-
+                <th class="table-header">ID</th>
+                <th class="table-header">Company Name</th>
+                <th class="table-header">Legal Representative</th>
+                <th class="table-header">Company Type</th>
+                <th class="table-header">NIT</th>
+                <th class="table-header">Number Workers</th>
+                <th class="table-header">Legal Representative Email</th>
+                <th class="table-header">Nature</th>
+                <th class="table-header">Email</th>
+                <th class="table-header">Phone</th>
+                <th class="table-header">Alternate Phone</th>
+                <th class="table-header">Human Resources Manager</th>
+                <th class="table-header">Phone 2</th>
+                <th class="table-header">Alternate Phone 2</th>
+                <th class="table-header">Email Manager</th>
             </tr>
             <tr>
                 <td><a>{{ $company->id }}</a></td>
@@ -44,17 +43,17 @@
                 <td><a>{{ $company->email_manager}}</a></td>
             </tr>
         </table>
-            <li>
-                <a href="{{ route('show.company', $company->id) }}">{{ $company->id }}</a> |
-                <a href="{{ route('edit.company', $company->id) }}" class="boton1">EDIT</a> |
-                <form method="POST" action="{{ route('destroy.company', ['company'=>$company->id]) }}"> 
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" value='DELETE' class="boton1">
-                </form>
-            </li>
+        <li>
+            <a href="{{ route('show.company', $company->id) }}" class="link"> {{ $company->id }}</a> |
+            <a href="{{ route('edit.company', ['company'=>$company->id]) }}" class="boton1">EDIT</a> |
+            <form method="POST" action="{{ route('destroy.company', ['company'=>$company->id]) }}" class="delete-form"> 
+                @csrf
+                @method('DELETE')
+                <input type="submit" value='DELETE' class="boton1">
+            </form>
+        </li>
         @empty
-            <p>No data.</p>
+        <p class="no-data">No data.</p>
         @endforelse
     </ul>
 </div>

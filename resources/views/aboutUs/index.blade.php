@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('../css/About_Us/aboutUS.css') }}">
 <section class="sobre_Nosotros">
     <section class="titulo">
-        <h1>Conocenos un<span> poco más...</span></h1>
+        <h1>Get to know <span> us a little more...</span></h1>
     </section>
         <section class="contenedor-tarjetas">
             <section class="tarjeta1">
@@ -11,8 +11,8 @@
                     <img src="../img/Logo_EmplyHub.png" alt="Imagen 1">
                 </section>
                 <section class="contenido">
-                    <h3>¿Quienes<span> Somos?</span></h3>
-                    <p>Un saludo a tod@s les deseamos la bienvenida a todos aquellos que esten observando esta pagina, nosotros somos un grupo de 3 adolecentes con un proyecto llamado EmployHub (Centro de Empleo), este fue creado en el año 2023, comenzando desde lo mas simple hasta llegar hasta este momento, como grupo de proyecto nos hemos basado en la responsabilidad, apoyo y respeto que entre nosotros tenemos, como grupo de proyecto agradecemos al SENA por confiar en nosotros y por llevar de la mano este hermoso proyecto.</p>
+                    <h3>About <span> Us?</span></h3>
+                    <p>Greetings to everyone, we wish welcome to all those who are viewing this page, we are a group of 3 teenagers with a project called EmployHub (Employment Center), this was created in the year 2023, starting from the simplest Until we reached this moment, as a project group we have based ourselves on the responsibility, support and respect that we have among ourselves. As a project group we thank SENA for trusting us and for taking this beautiful project by the hand.</p>
                 </section>
             </section>
             <section class="tarjeta2">
@@ -20,8 +20,8 @@
                     <img src="../img/objetivo.webp" alt="Imagen 1">
                 </section>
                 <section class="contenido">
-                    <h3>Objetivo</h3>
-                    <p>Desarrollar un software con la capacidad de simplificar el proceso que requiere la selección de personal,por medio de distintos lenguajes de programación (HTML5, CSS, PYTHON) Y un gestor o motor de bases de datos.</p>
+                    <h3>Objective</h3>
+                    <p>Develop software with the ability to simplify the process required for personnel selection, through different programming languages ​​(HTML5, CSS, PYTHON) and a database manager or engine.</p>
                 </section>
             </section>
             <section class="tarjeta3">
@@ -29,8 +29,8 @@
                     <img src="../img/objetivoEspecifico.avif" alt="Imagen 1">
                 </section>
                 <section class="contenido">
-                    <h3>Objetivo<span>  Especifico</span></h3>
-                    <p>-Analizar y filtrar los datos que se requieren al momento de solicitar una vacante, para la ejecución de los objetivos específicos se plantearon las siguientes actividades, desarrollar diagramas de clases e identificando actores y acciones fundamentales del sistema.</p>
+                    <h3>Specific <span>  Goal</span></h3>
+                    <p>-Analyze and filter the data required when requesting a vacancy, for the execution of the specific objectives the following activities were proposed, developing class diagrams and identifying fundamental actors and actions of the system.</p>
                 </section>
             </section>
         </section>

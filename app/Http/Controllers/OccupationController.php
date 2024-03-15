@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OccupationRequest;
 use App\Models\Occupation;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,11 @@ class OccupationController extends Controller
         return view('occupation.create');
     }
 
-    public function Store(Request $request){
+    public function Store(OccupationRequest $request){
 
-        Occupation::create($request->all());
-        return redirect()->route('occupation');
+        $occupation = new Occupation($request->validated());
+        $occupation->save();
+        return redirect('occupation')->with('success', 'Ocupación creada exitosamente');
     }
 
     public function Edit (Occupation $occupation){
@@ -28,7 +30,7 @@ class OccupationController extends Controller
     }
 
 
-    public function Update(Request $request, Occupation $occupation){
+    public function Update(OccupationRequest $request, Occupation $occupation){
         
         $occupation->update($request->all()); 
         return redirect()->route('occupation');

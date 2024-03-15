@@ -1,19 +1,18 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/Knowledges/createKnowledge.css') }}">
-<a href="{{ route ('knowledge') }}"> Back</a>
+<link rel="stylesheet" href="{{ asset('/css/Knowledges/createKnowledges.css') }}">
 
 <section class="create">
-    <h1 class="title">Create Your <span>Knowledge</span></h1>
-    <form action="{{ route('store.knowledge') }}" method="POST">
+    <h1 class="title-knowledge">Create Your <span>Knowledge</span></h1>
+    <form class="form-knowledge" action="{{ route('store.knowledge') }}" method="POST">
         @csrf
 
         <label>Write the name of your Knowledge :</label>
-        <textarea  name="knowledge_name" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  name="knowledge_name" type="text" required></input><br><br>
 
         <label>Write the description of the Knowledge:</label><br>
-        <textarea  name="knowledge_description" rows="4" cols="50" type="text" required></textarea><br><br>
+        <input  name="knowledge_description"  type="text" required></input><br><br>
 
         <label>Write the occupation id:</label>
         <input type="number"  name="id_occupations" required><br><br>

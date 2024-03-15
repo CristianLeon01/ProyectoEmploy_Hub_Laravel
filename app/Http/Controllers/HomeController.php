@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
-    public function mostrarHTML()
+    public function redirect()
     {
-        return view('home');
+        return view('notRegister.index');
     }
 }

@@ -8,6 +8,9 @@ class LogoutController extends Controller
 {
     public function store(){
         auth()->logout();
+
+        return view('auth.despedida');
+        
         return redirect()->route('login');
     }
 }

@@ -2,11 +2,10 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/Selectors/createSelector.css') }}">
-<a href="{{ route ('selector') }}"> Back</a>
 
 <section class="create">
-    <h1 class="title">Create Your <span>Selector</span></h1>
-    <form action="{{ route('store.selector') }}" method="POST">
+    <h1 class="title-selector">Create Your <span>Selector</span></h1>
+    <form class="form-selector" action="{{ route('store.selector') }}" method="POST">
         @csrf
 
         <label>Write your document number :</label>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RelationRequest;
+use App\Models\Occupation;
 use App\Models\Relation;
 use App\Models\UserType;
 use Illuminate\Http\Request;
@@ -16,29 +18,28 @@ class RelationController extends Controller
     
     public function Create(){
 
-        $user_types = UserType::all();
-        return view('/relation/create',['user_type'=> $user_types]);
+        return view('relation.create');;
     }
 
-    public function Store(Request $request){
+    public function Store(RelationRequest $request){
 
-        $relation = new Relation();
-        $relation->name_related_occupation = $request->input('name_related_occupation');
-        $relation->id_occupations = $request->input('id_occupations');
-        $relation->occupation_name = $request->input('occupation_name ');
+        $relationData = $request->validated();
+        $relation = new Relation($relationData);
         $relation->save();
-
-        return redirect()->back()->with('mensaje',  'Usuario creado correctamente...');;
+        return redirect('relation')->with('success', 'Denominacion creada exitosamente');
     }
 
     public function Edit (Relation $relation){
-        return view('relation.edit', compact('relation'));
+
+        $id_occupations = Occupation::all();
+        return view('relation.edit', 
+        ['id_occupations' => $id_occupations])->with('relation', $relation);
     }
 
 
-    public function Update(Request $request, Relation $relation){
-        
-        $relation->update($request->all()); 
+    public function Update(RelationRequest $request, Relation $relation){
+
+        $relation->update($request->validated());
         return redirect()->route('relation');
     }
 
