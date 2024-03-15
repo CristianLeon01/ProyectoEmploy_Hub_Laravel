@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\PostShow;
+//use App\Http\Livewire\PostShow;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
@@ -33,8 +33,11 @@ use App\Http\Controllers\NotRegisterController;
 use App\Http\Controllers\PostulationController;
 use App\Http\Controllers\DenominationController;
 use App\Http\Controllers\AdministratorController;
-use App\Http\Controllers\My_ApplicationController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\TermsAndConditionsController;
+use App\Http\Controllers\My_ApplicationController;
+use App\Http\Livewire\PostShow;
 
 /*
 |--------------------------------------------------------------------------
@@ -285,3 +288,9 @@ Route::post('login', [LoginController::class, 'store'])->name('login.auth');
 Route::resource('user', UserController::class);
 Route::get('register', [UserController::class, 'create'])->name('register');
 Route::post('register', [UserController::class, 'store']);
+
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
