@@ -9,34 +9,21 @@ use Illuminate\Support\Facades\Password;
 
 class ForgotPasswordController extends Controller
 {
-    // use SendsPasswordResetEmails;
+    public function showLinkRequestForm()
+    {
+        return view('auth.forgot-password');
+    }
 
-    // /**
-    //  * Show the form for requesting a password reset link.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function showLinkRequestForm()
-    // {
-    //     return view('auth.email');
-    // }
+    public function sendResetLinkEmail(Request $request)
+    {
+        $request->validate(['email' => 'required|email']);
 
-    // /**
-    //  * Send a reset link to the given user.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @return \Illuminate\Http\RedirectResponse
-    //  */
-    // public function sendResetLinkEmail(Request $request)
-    // {
-    //     $this->validateEmail($request);
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
 
-    //     $response = $this->broker()->sendResetLink(
-    //         $request->only('email')
-    //     );
-
-    //     return $response == Password::RESET_LINK_SENT
-    //                 ? back()->with('status', trans($response))
-    //                 : back()->withErrors(['email' => trans($response)]);
-    // }
+        return $status === Password::RESET_LINK_SENT
+                    ? back()->with(['status' => __($status)])
+                    : back()->withErrors(['email' => __($status)]);
+    }
 }
