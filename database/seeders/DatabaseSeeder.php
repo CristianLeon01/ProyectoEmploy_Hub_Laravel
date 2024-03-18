@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call(UserTypeTableSeeder::class);
+        $this->call(UserTableSeeder::class);
         $this->call(StateTableSeeder::class);
         $this->call(ContractTypeTableSeeder::class);
         $this->call(OccupationTableSeeder::class);
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PostTableSeeder::class);
         $this->call(DepartmentTableSeeder::class);
         $this->call(CityTableSeeder::class);
+        $this->call(MunicipalitySeeder::class);
 
         // \App\Models\User::factory(10)->create();
 
