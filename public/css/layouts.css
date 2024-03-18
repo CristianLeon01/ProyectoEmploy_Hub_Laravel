@@ -151,7 +151,7 @@ header {
     background-size: 100% 100%;
     background-position: cover;
     background-image: url(prueba.jpg);
-    opacity: 0.5; 
+    opacity: 0.5;
     z-index: -1;
 }
 
@@ -473,6 +473,8 @@ ul .sub-Menu-recruiter {
 }
 
 .Login a {
+    width: 90%;
+    text-align: center;
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 14px;

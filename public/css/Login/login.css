@@ -145,6 +145,13 @@ button[name="login"]:hover {
   background-color: #9DB4C0;
 }
 
+.forgot-password{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 /* empieza el codigo responsive */
 
 @media screen and (max-width: 600px) {

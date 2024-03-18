@@ -37,10 +37,11 @@
                     <article class="submit">
                             <button type="submit" name="login" placeholder="submit" value="login">Login</button>
                     </article>
-                </form>
+                    <br>
                     <div class="forgot-password">
                         <a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
                     </div>
+                </form>
             </content>
         </content>
     </section>
