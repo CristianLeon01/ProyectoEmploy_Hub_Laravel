@@ -141,6 +141,12 @@ button[name="login"] {
   cursor: pointer;
 }
 
+.GoogleLogin{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+}
+
 button[name="login"]:hover {
   background-color: #9DB4C0;
 }
