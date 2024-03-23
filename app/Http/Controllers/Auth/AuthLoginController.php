@@ -27,6 +27,19 @@ class AuthLoginController extends Controller
         if ($existingUser) {
             // Si el usuario existe, inicia sesión
             Auth::login($existingUser, true);
+            //En el controlador AuthLoginController, en el método handleGoogleCallback(), se realiza una verificación del tipo de usuario después de iniciar sesión con Google. Esto se logra accediendo al objeto de usuario existente en la base de datos y verificando su campo id_user_types.
+            switch ($existingUser->id_user_types) {
+                case 1:
+                    return redirect()->route('headerAdmin');
+                case 2:
+                    return redirect()->route('headerSelector');
+                case 3:
+                    return redirect()->route('headerRecruiter');
+                case 4:
+                    return redirect()->route('headerCandidate');
+                case 5:
+                    return redirect()->route('headerCompany');
+            }
         } else {
             // Si el usuario no existe, créalo automáticamente
             $newUser = new User();
