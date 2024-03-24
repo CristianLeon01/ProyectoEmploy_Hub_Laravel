@@ -39,6 +39,7 @@ use App\Http\Controllers\My_ApplicationController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\TermsAndConditionsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\CandidateStateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -205,6 +206,10 @@ Route::get('/selector/edit/{selector}', [SelectorController::class,'Edit'])->nam
 Route::put('/selector/update/{selector}', [SelectorController::class,'Update'])->name('update.selector');
 Route::get('/selector/show/{selector}', [SelectorController::class,'Show'])->name('show.selector');
 Route::delete('/selector/destroy/{selector}', [SelectorController::class,'Destroy'])->name('destroy.selector');
+//rutas para que el seleccionador pueda ver a los CANDIDATES y pueda cambiar su STATE
+Route::get('/viewStatus', [CandidateStateController::class, 'viewStatus'])->name('viewStatus');
+Route::get('/selector/stateEdit/{user}', [CandidateStateController::class, 'edit'])->name('selector.stateEdit');
+Route::put('/selector/stateEdit/{user}', [CandidateStateController::class, 'update'])->name('selector.stateEdit.update');
 
 // Routes State
 Route::get('/state', [StateController::class, 'State'])->name('state')->middleware('auth');

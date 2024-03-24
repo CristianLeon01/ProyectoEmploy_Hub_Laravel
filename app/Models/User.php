@@ -13,17 +13,23 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
-    protected $table='users';
+    protected $table = 'users';
     protected $fillable = [
         'username',
         'id_user_types',
         'email',
         'password',
+        'state_id',
     ];
 
     public function user_types()
     {
         return $this->belongsTo(UserType::class, 'id_user_types', 'id');
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class, 'state_id', 'id');
     }
 
     protected $casts = [
