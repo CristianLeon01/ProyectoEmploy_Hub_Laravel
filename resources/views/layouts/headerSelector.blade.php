@@ -12,3 +12,4 @@
         </li>
     </ul>
 @endsection
+{{-- El problema esta en Layouts.css ya que aqui en la clase .sub-Menu-selector el display none esta generando error a la hora de intentar oprimir algun link, toca buscarlo por la ruta http://127.0.0.1:8000/viewStatus --}}
