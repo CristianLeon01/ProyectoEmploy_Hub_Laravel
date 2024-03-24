@@ -267,7 +267,9 @@ Route::get('successful', [PostulationController::class, 'postulacionExitosa'])->
 Route::get('/my_application', [PostulationController::class, 'miAplicacion'])->name('my_application.index');
 
 //Route My_Application
-Route::get('/my_application/{offer}', [My_ApplicationController::class, 'mostrar'])->name('my_application');
+Route::get('/my_application', [My_ApplicationController::class, 'index'])->name('my_application.index');
+Route::get('/my_application/{offer_id}', [My_ApplicationController::class, 'mostrar'])->name('my_application.mostrar');
+Route::post('/postulation/exitosa', [PostulationController::class, 'postulacionExitosa'])->name('postulation.exitosa');
 
 
 
