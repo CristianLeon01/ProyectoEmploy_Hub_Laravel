@@ -1,53 +1,54 @@
-.title-my-application {
-    font-size: 50px;
-    margin: 30px auto; /* Establece un margen vertical de 30px y un margen horizontal automático */
-    max-width: fit-content; /* Establece el ancho máximo para adaptarse al contenido */
-    display: flex; /* Usa flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+/* Aqui termina todo el estilo del header */
+h1 {
+    font-size: 30px;
+    margin: 30px;
+    margin-left: 15%;
+    margin-top: 50px;
 }
 
-.super-contenedor {
-    margin: 0 auto;
+h2{
+    font-size: 20px;
+    margin: 20px;
+    margin-top: 20px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.315); /* Fondo semitransparente */
-    backdrop-filter: blur(8px); /* Aplicar desenfoque */
-    margin-bottom: 50px;
-    margin-top: 50px;
-    width: 70%;
-    height: auto; /* Cambiado a altura automática */
+}
+
+p{
+    font-size: 20px;
+    margin-left: 39px;
+    font-weight: bold;
 }
 
 .contenedor {
-    background-color: #dcd020;
-    padding: 20px; /* Agregado relleno al contenedor */
-    border-radius: 10px; /* Agregado borde redondeado al contenedor */
-    display: flex; /* Utilizar flexbox */
-    justify-content: space-between; /* Centrar y espaciar los elementos horizontalmente */
-    align-items: center; /* Centrar verticalmente los elementos */
+    width: 64%;
+    height: 150px;
+    margin-left: 15%;
+    background-color: rgb(210,214,213);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    border: 2px solid #5c6b73;
 }
 
 .botones {
     display: flex;
-    gap: 30px;
-    position: relative;
-    left: 0;
-    border: 2px solid blue; /* Agrega un borde azul a la sección de botones */
+    font-size: 12px;
+    margin-left: 35%;
+    margin-top: -50px;
+    gap: 30px; 
 }
 
-.botonHorizontal {
+.botonHorizontal{
     font-size: 12px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: white;
-    border: 2px solid #dcd020;
+    background-color:white;
+    border: 2px solid #76a7c7;
     padding: 10px 20px;
     transition: transform 0.2s ease;
 }
 
 .botonHorizontal:hover {
-    background-color: #d1c95c;
+    background-color: #9db4c0;
     transform: scale(1.05);
 }
 
@@ -56,7 +57,7 @@
     margin-top: -50px;
 }
 
-.botonUnico {
+.botonUnico{
     background-color: rgb(3, 3, 113);
     color: white;
     padding: 10px;

@@ -31,8 +31,9 @@ class Offer extends Model
         return $this->belongsTo(Contract_type::class, 'id_contract_types');
     }
 
-    public function postulation():HasMany {
-        return $this->hasMany(Postulation::class);
+    public function postulations()
+    {
+        return $this->hasMany(Postulation::class, 'id_offer');
     }
 
     public function vacancies()

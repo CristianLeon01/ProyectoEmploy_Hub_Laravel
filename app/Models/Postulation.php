@@ -10,8 +10,17 @@ class Postulation extends Model
 {
     use HasFactory;
 
-    public function offer() :BelongsTo {
-        return $this->belongsTo(Offer::class);
+    protected $table = 'postulations';
+
+    protected $fillable = [
+        'id_user',
+        'id_offer',
+    ];
+
+
+    public function offer()
+    {
+        return $this->belongsTo(Offer::class, 'id_offer');
     }
 
     public function company() :BelongsTo {
