@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('city_id')->constrained('cities')->onDelete('cascade');
             $table->foreignID('id_contract_types')->constrained('contract_types')->onDelete('cascade');
             $table->foreignID('weighings_id')->constrained('weighings')->onDelete('cascade');
+            $table->foreignID('requisition_id')->constrained('requisitions')->onDelete('cascade');
             $table->timestamps();
         });
     }

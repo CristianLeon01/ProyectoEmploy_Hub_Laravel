@@ -40,6 +40,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\TermsAndConditionsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\CandidateStateController;
+use App\Http\Controllers\RequisitionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -257,6 +258,16 @@ Route::get('/instructor/edit/{instructor}', [InstructorController::class, 'Edit'
 Route::put('/instructor/update/{instructor}', [InstructorController::class, 'Update'])->name('update.instructor');
 Route::get('/instructor/show/{instructor}', [InstructorController::class, 'Show'])->name('show.instructor');
 Route::delete('/instructor/destroy/{instructor}', [InstructorController::class, 'Destroy'])->name('destroy.instructor');
+
+
+// Routes Requisition
+Route::get('/requisition', [RequisitionController::class, 'Requisition'])->name('requisition')->middleware('auth');
+Route::get('/requisition/create', [RequisitionController::class, 'Create'])->name('create.requisition')->middleware('auth');
+Route::post('/requisition/store', [RequisitionController::class, 'Store'])->name('store.requisition');
+Route::get('/requisition/edit/{requisition}', [RequisitionController::class, 'Edit'])->name('edit.requisition');
+Route::put('/requisition/update/{requisition}', [RequisitionController::class, 'Update'])->name('update.requisition');
+Route::get('/requisition/show/{requisition}', [RequisitionController::class, 'Show'])->name('show.requisition');
+Route::delete('/requisition/destroy/{requisition}', [RequisitionController::class, 'Destroy'])->name('destroy.requisition');
 
 //Route Vacants
 Route::resource('vacant', VacantController::class);
