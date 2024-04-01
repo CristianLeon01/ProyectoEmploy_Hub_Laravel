@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+<link rel="stylesheet" href="{{ asset('/css/Selectors/stateEdit.css') }}">
+
     <div class="container">
         <h1>Edit Candidate state</h1>
         <form method="POST" action="{{ route('selector.stateEdit.update', ['user' => $user->id]) }}">

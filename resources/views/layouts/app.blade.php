@@ -50,7 +50,7 @@
                             <li><a href="">Consult list of selected</a></li>
                             <li><a href="">Quote candidates</a></li>
                             <li><a href="">Record result of the selection process</a></li>
-                            <li><a href="">Change Status</a></li>
+                            <li><a href="{{ route('viewStatus') }}">Change Statuss</a></li>
                         </ul>
                     </li>
                 </ul>

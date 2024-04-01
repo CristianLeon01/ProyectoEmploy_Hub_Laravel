@@ -282,6 +282,7 @@ ul .sub-Menu-admin {
 ul .sub-Menu-selector {
     position: absolute;
     left: 41.5vw;
+    z-index: 1;
 }
 
 .menu-selector a {

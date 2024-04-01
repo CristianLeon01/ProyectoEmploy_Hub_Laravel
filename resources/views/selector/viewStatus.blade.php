@@ -1,11 +1,17 @@
 @extends('layouts.app')
 @section('content')
-    <h1>View of candidates</h1>
-    <article>
+
+<link rel="stylesheet" href="{{ asset('/css/Selectors/viewStatus.css') }}">
+
+<br><br>
+<div class="container">
+    <h1 class="TituloManage">View of candidates</h1><br>
+    <h2 class="TituloManage2">Edit State</h2><br>
+    
+    <div class="table-wrapper">
         <table>
             <thead>
                 <tr>
-                    <th>Edit State</th>
                     <th>Name Candidate</th>
                     <th>Candidate Status</th>
                 </tr>
@@ -27,5 +33,6 @@
                 @endforeach
             </tbody>
         </table>
-    </article>
+    </div>
+</div>
 @endsection
